@@ -1,0 +1,28 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 68vh;
+    width: 82%;
+    margin: auto;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profile-describe {
+    padding-top: 10px;
+    font-size: 26px;
+    font-weight: normal;
+    color: rgba(255,255,255,0.6);
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e0e0e0;
+    background-color: #e0e0e0;
+}

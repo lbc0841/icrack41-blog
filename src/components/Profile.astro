@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import profileImg from '../assets/profile_img.png';
+
+import "../styles/profile.css";
+---
+
+<div class="profile-container flex-col sm:flex-row">
+    
+    <div style="margin: 20px;">
+        <Image class="profile-img" src={profileImg} alt="img">
+    </div>
+    
+    <div class="text-white text-4xl font-bold text-center sm:text-left" style="margin: 20px;">
+        我裂開<br>
+
+        <div class="profile-describe">
+            走一步 看一步，
+            實在不行死半路<br>
+            日常崩潰 × 生活破防
+        <div/>
+    </div>
+</div>
