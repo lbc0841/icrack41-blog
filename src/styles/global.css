@@ -36,8 +36,6 @@ body {
     background: url("../assets/grid.svg");
     background-position: top;
     opacity: 0.6;
-
-    background-blend-mode: darken;
 }
 
 .scroll-hint {
