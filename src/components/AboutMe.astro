@@ -8,6 +8,13 @@ import MyAbility from "../components/MyAbility.astro";
 import FindMe from "../components/FindMe.astro";
 
 import "../styles/about_me.css";
+
+const youtubeLink = "https://space.bilibili.com/3494375061457383?spm_id_from=333.1007.0.0";
+const bilibiliLink = "https://youtube.com/@lbc0841?si=0sn28TYgzdA0UpWU";
+const gmailLink = "";
+const instagramLink = "https://www.instagram.com/lbc0841/";
+
+
 ---
 
 <div class="about-me-container">
@@ -21,10 +28,10 @@ import "../styles/about_me.css";
             <h3 style="color: white; margin-bottom: 10px;">Small D</h3>
 
             <ul style="list-style: none; display: flex; gap: 10px;">
-                <li><a href="" style="color: rgb(0,174,231);"><i class="fa-brands fa-bilibili"></i></a></li>
-                <li><a href="" style="color: rgb(255,0,51);"><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a href="" style="color: rgb(249,181,0);"><i class="fa-regular fa-envelope"></i></a></li>
-                <li><a href="" style="color: rgb(99,230,190);"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href={bilibiliLink} style="color: rgb(0,174,231);"><i class="fa-brands fa-bilibili"></i></a></li>
+                <li><a href={youtubeLink} style="color: rgb(255,0,51);"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href={gmailLink} style="color: rgb(249,181,0);"><i class="fa-regular fa-envelope"></i></a></li>
+                <li><a href={instagramLink} style="color: rgb(99,230,190);"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
         </div>
 
