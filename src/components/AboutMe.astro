@@ -11,14 +11,14 @@ import "../styles/about_me.css";
 ---
 
 <div class="about-me-container">
-    <div class="hidden sm:flex flex-col" style="margin-right: 20px;">
+    <div class="hidden sm:flex flex-col" style="margin-right: 20px; margin-top: 70px;">
         <div class="profile-container">
     
             <div class="profile-img">
                 <Image class="profile-img" src={profileImg} alt="profile-img" style="border: solid 2px rgba(255, 255, 255, 0.4);"/>
             </div>
             
-            <h3 style="color: white; margin-bottom: 10px;">ICRACK</h3>
+            <h3 style="color: white; margin-bottom: 10px;">Small D</h3>
 
             <ul style="list-style: none; display: flex; gap: 10px;">
                 <li><a href="" style="color: rgb(0,174,231);"><i class="fa-brands fa-bilibili"></i></a></li>
@@ -46,8 +46,9 @@ import "../styles/about_me.css";
     </div>
 
 
-    <div id="contents-container" class="contents-container overflow-auto">
+    <div id="contents-container" class="contents-container overflow-y-auto overflow-x-hidden">
         <div class="w-full h-full">
+            <!-- <div style="height: 70px;"></div> -->
             
             <div id="my-self-intro"><MySelfIntro/></div>
             <div id="my-skill-tree"><MySkillTree/></div>
@@ -62,11 +63,18 @@ import "../styles/about_me.css";
     function scrollToElement(containerId, elementId)
     {
         const container = document.getElementById(containerId);
-        const element = document.getElementById(elementId);
 
-        if(container && element)
+        const containerTop = document.getElementById(containerId).getBoundingClientRect().top;
+        const elementTop = document.getElementById(elementId).getBoundingClientRect().top;
+        const scrollOffset = containerTop - elementTop + 70;
+
+        if(container)
         {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            container.scrollTo({ 
+                top: container.scrollTop - scrollOffset,
+                behavior: 'smooth',
+                
+            });
             // container.scrollTop = element.offsetTop - container.offsetTop;
         }
     }

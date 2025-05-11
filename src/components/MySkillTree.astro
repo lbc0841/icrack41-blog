@@ -21,7 +21,7 @@ let icon_size = 50;
     </div>
 
     <div class="relative h-86" style="z-index: 2;">
-        <div id="android-studio" class="skill-tree-item" style="top: 10%; right: 64%;">
+        <div id="android-studio" class="skill-tree-item" style="top: 10%; right: 64%;" balloon-data="Android 應用開發">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -33,7 +33,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="painting" class="skill-tree-item" style="top: 22%; right: 40%;">
+        <div id="painting" class="skill-tree-item" style="top: 22%; right: 40%;" balloon-data="繪畫">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -45,7 +45,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="blender" class="skill-tree-item" style="top: 33%; right: 80%;">
+        <div id="blender" class="skill-tree-item" style="top: 33%; right: 80%;" balloon-data="3D 建模">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -57,7 +57,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="solder" class="skill-tree-item" style="top: 45%; right: 22%;">
+        <div id="solder" class="skill-tree-item" style="top: 45%; right: 22%;" balloon-data="焊接">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -69,7 +69,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="git" class="skill-tree-item" style="top: 45%; right: 53%;">
+        <div id="git" class="skill-tree-item" style="top: 45%; right: 53%;" balloon-data="版本控制">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -81,7 +81,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="easy-eda" class="skill-tree-item" style="top: 77%; right: 27%;">
+        <div id="easy-eda" class="skill-tree-item" style="top: 77%; right: 27%;" balloon-data="PCB Layout">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -93,7 +93,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="astro" class="skill-tree-item" style="top: 81%; right: 45%;">
+        <div id="astro" class="skill-tree-item" style="top: 81%; right: 45%;" balloon-data="現代化的前端框架">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -105,7 +105,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="printer-3d" class="skill-tree-item" style="top: 76%; right: 74%;">
+        <div id="printer-3d" class="skill-tree-item" style="top: 76%; right: 74%;" balloon-data="3D 列印">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -117,7 +117,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="vs-code" class="skill-tree-item" style="top: 69%; right: 61%;">
+        <div id="vs-code" class="skill-tree-item" style="top: 69%; right: 61%;" balloon-data="功能強大的 IDE">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -129,7 +129,7 @@ let icon_size = 50;
             </div>
         </div>
 
-        <div id="ultimaker-cura" class="skill-tree-item" style="top: 58%; right: 87%;">
+        <div id="ultimaker-cura" class="skill-tree-item" style="top: 58%; right: 87%;" balloon-data="切片工具">
             <div class="corner-tl" style="width: 5px; height: 5px"/>
             <div class="corner-tr" style="width: 5px; height: 5px"/>
             <div class="corner-bl" style="width: 5px; height: 5px"/>
@@ -145,9 +145,34 @@ let icon_size = 50;
         <svg id="lines" class="absolute top-0 left-0 w-full h-full pointer-events-none" style="z-index: -1;"></svg>
     </div>
 
-    <b style="color: rgb(160,160,160);">
-        技能樹擴展中... (React | Next.js | STM32CubeIDE)
-    </b>
+    <div style="color: rgb(160,160,160); margin-top: 20px;">
+        <b class="text-center block" style="width: 86%;">[ 技能擴展中... (React | Next.js | STM32CubeIDE) ]</b>
+    </div>
+
+    <div class="flex" style="color: rgb(160,160,160);  margin-bottom: 20px; margin-top: 60px;">
+        <ul class="list-disc" style="margin-left: 40px;">
+            <li><b class="text-white">Blender</b> - ✓ 建模，✗ 不會shader，動畫只會一點</li>
+            <li><b class="text-white">Ultimaker Cura</b> - 3D 模型切片</li>
+            <li><b class="text-white">3D Print</b> - 有相關的 3D 列印經驗，用過 PLA、POM 材質</li>
+            <br>
+            <li><b class="text-white">Git</b> - 版本控制工具，雖然我很少 push 上 Github</li>
+            <li><b class="text-white">VS Code</b> - 我最喜歡，也最常用的 IDE</li>
+            <li><b class="text-white">Android Studio</b> - Android 應用程式開發</li>
+            <li><b class="text-white">Astro</b> - 前端框架，這個網頁就是 Astro 做的</li>
+            <br>
+            <li><b class="text-white">Easy EDA</b> - PCB Layout，目前只畫過 2 層的板子</li>
+            <li><b class="text-white">焊接</b> - 擅用洛鐵&吹焊機，可以焊 0402、QFN 等封裝小的元件</li>
+            <br>
+            <li><b class="text-white">繪畫</b> - 素描、色鉛筆</li>
+        </ul>
+
+        <ul class="list-disc" style="margin-left: 40px;">
+            <li><b class="text-white">Easy EDA</b> - PCB Layout，目前只畫過 2 層的板子</li>
+            <li><b class="text-white">焊接</b> - 擅用洛鐵&吹焊機，可以焊 0402、QFN 等較小的封裝</li>
+            <br>
+            <li><b class="text-white">繪畫</b> - 素描、色鉛筆</li>
+        </ul>
+    </div>
 
 </div>
 
