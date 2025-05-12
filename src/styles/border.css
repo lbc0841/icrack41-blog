@@ -1,0 +1,89 @@
+.border-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* corner ============================================================================================================== */
+.border-container .corner-tl,
+.border-container .corner-tr,
+.border-container .corner-bl,
+.border-container .corner-br {
+    position: absolute;
+    padding: 3px;
+    border-width: 3px;
+    border-style: solid;
+
+}
+
+.border-container .corner-tl {
+    top: -3px;
+    left: -3px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.border-container .corner-tr {
+    top: -3px;
+    right: -3px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.border-container .corner-bl {
+    bottom: -3px;
+    left: -3px;
+    border-right: none;
+    border-top: none;
+}
+
+.border-container .corner-br {
+    bottom: -3px;
+    right: -3px;
+    border-left: none;
+    border-top: none;
+}
+
+/* edge ============================================================================================================== */
+.border-container .edge-t,
+.border-container .edge-b,
+.border-container .edge-r,
+.border-container .edge-l {
+    position: absolute;
+    padding: 3px;
+}
+
+.border-container .edge-t {
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+
+    border-top: solid 1px rgba(255, 255, 255, 0.5);
+}
+.border-container .edge-b {
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+
+    border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+}
+.border-container .edge-r {
+    top: 50%;
+    right: -2px;
+    transform: translateY(-50%);
+    height: calc(100% - 30px);
+
+    border-right: solid 1px rgba(255, 255, 255, 0.5);
+}
+.border-container .edge-l {
+    top: 50%;
+    left: -2px;
+    transform: translateY(-50%);
+    height: calc(100% - 30px);
+
+    border-left: solid 1px rgba(255, 255, 255, 0.5);
+}
