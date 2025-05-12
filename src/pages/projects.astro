@@ -2,7 +2,7 @@
 import MainContent from '../components/MainContent.astro';
 import MainNavigation from '../components/MainNavigation.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import Profile from '../components/Profile.astro';
+import MyProjects from '../components/MyProjects.astro';
 import Layout from '../layouts/Layout.astro';
 
 import "../styles/global.css";
@@ -14,7 +14,9 @@ import "../styles/global.css";
 	
 	<MainNavigation/>
 
-	<h1 style="position:absolute; left:50%; bottom:50%; transform:translateX(-50%); color:white;">
+	<MyProjects/>
+
+	<!-- <h1 style="position:absolute; left:50%; bottom:50%; transform:translateX(-50%); color:white;">
 		<i class="fa-solid fa-hammer"></i> 施工中... 
-	</h1>
+	</h1> -->
 </Layout>

@@ -1,0 +1,15 @@
+.project-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 96%;
+    height: 100%;
+
+    backdrop-filter: blur(6px);
+
+    border-left: solid 2px rgba(255, 255, 255, 0.4) ;
+    border-right: solid 2px rgba(255, 255, 255, 0.4) ;
+}
+
