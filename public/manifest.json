@@ -1,0 +1,13 @@
+{
+    "name": "ICRACK's Web",
+    "short_name": "ICRACK",
+    "theme_color": "#0b171d",
+    "background_color": "#0b171d",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "/favicon.png",
+        "type": "image/svg"
+      }
+    ]
+  }
