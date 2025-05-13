@@ -5,26 +5,38 @@ import "../styles/main_navigation.css";
 <div class="main-nav-container">
     <nav class="main-nav">
         <div class="logo">ICRACK</div>
-        <ul class="main-nav-links hidden sm:flex">
+
+        <ul class="main-nav-links">
             <li><a href="/icrack41-blog/">Home</a></li>
             <li><a href="/icrack41-blog/about">About</a></li>
             <li><a href="/icrack41-blog/projects">Projects</a></li>
             <li><a href="/icrack41-blog/posts">Posts</a></li>
         </ul>
         
-        <div class="flex" style="margin-right: 30px;">
+        <div class="flex" style="margin-right: 24px;">
             <div class="language-switch">
                 <i class="fa-solid fa-globe"></i>
                 <span>English</span>
             </div>
 
-            <div class="menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-        
+            <input type="checkbox" id="toggler">
 
-        
-        
+            <label for="toggler" class="hamburger-menu">
+                <i id="hamburger" class="fa-solid fa-bars"></i>
+                <i id="close" class="fa-solid fa-xmark"></i>
+            </label>
+
+            
+                <ul class="main-nav-links-hamburger">
+                    <li><a href="/icrack41-blog/">Home</a></li>
+                    <li><a href="/icrack41-blog/about">About</a></li>
+                    <li><a href="/icrack41-blog/projects">Projects</a></li>
+                    <li><a href="/icrack41-blog/posts">Posts</a></li>
+                </ul>
+            
+        </div>
+
     </nav>
 </div>
+
+

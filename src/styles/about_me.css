@@ -9,7 +9,7 @@
     top: 0px;
     transform: translateX(-50%);
 
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(3px);
 
     padding-left: 16px;
     padding-right: 16px;
@@ -191,17 +191,12 @@
 @media screen and (max-width: 480px){
 
     .motto {
-        background: linear-gradient(45deg, #20ffff, #509de1);
-        background-clip: text;
-        color: transparent;
+
         font-size: 12px;
     
         width: 90%;
-    
-        padding-top: 6px;
-        padding-bottom: 10px;
+
         padding-left: 10px;
-        border-left: solid 2px #20ffff;
         margin-left: 4px;
     }
 

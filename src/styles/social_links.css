@@ -3,7 +3,7 @@
     bottom: 10px;
 
     width: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 .social-links {
@@ -41,4 +41,20 @@
 .social-links li a{
     color: rgba(255, 255, 255, 0.9);
     font-size: 30px;
+}
+
+@media screen and (max-width: 640px) {
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-links li {
+        height: 50px;
+        width: 50px;
+    }
+
+    .social-links li a{
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 20px;
+    }
 }

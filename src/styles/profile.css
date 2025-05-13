@@ -12,6 +12,7 @@
 }
 
 .profile-describe {
+    line-height: 1.4;
     padding-top: 10px;
     font-size: 26px;
     font-weight: normal;
@@ -25,4 +26,14 @@
     object-fit: cover;
     border: 3px solid #e0e0e0;
     background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 640px) {
+
+    .profile-describe {
+        padding-top: 10px;
+        font-size: 18px;
+        font-weight: normal;
+        color: rgba(255,255,255,0.6);
+    }
 }
