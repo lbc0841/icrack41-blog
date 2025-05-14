@@ -5,22 +5,96 @@ import { Border1 } from "../assets/borders.tsx"
 
 ---
 
-<div class="project-container">
-    <div class="project">
+<div id="project-container" class="project-container">
+    <!-- <div class="project">
         <Border1/>
 
-        project
+        <b style="font-size: 40px;">畫集</b>
+        
     </div>
 		
     <div class="project">
         <Border1/>
 
-        project
-    </div>
+        <b style="font-size: 40px;">隨身供電器 - DC2DC 5~12V</b>
 
-    <div class="project">
+    </div> -->
+
+    <div class="project" style="background: blue;">
         <Border1/>
 
-        project
+        <b style="font-size: 40px;">A</b>
+
     </div>
+
+    <div class="project" style="background: green;">
+        <Border1/>
+
+        <b style="font-size: 40px;">B</b>
+
+    </div>
+
+    <div class="project" style="background: red;">
+        <Border1/>
+
+        <b style="font-size: 40px;">C</b>
+
+    </div>
+
+    <div class="project" style="background: yellow;">
+        <Border1/>
+
+        <b style="font-size: 40px;">D</b>
+
+    </div>
+
 </div>
+
+<script is:browser>
+
+    const projectContainer = document.getElementById('project-container');
+
+    let projectItems = projectContainer.innerHTML
+    projectContainer.innerHTML += projectItems;
+    projectContainer.innerHTML += projectItems;
+
+    const boundaryL = projectContainer.scrollWidth*1/3 - projectContainer.clientWidth/2;
+    const boundaryR = projectContainer.scrollWidth*2/3 - projectContainer.clientWidth/2;
+
+    let pos = (projectContainer.scrollWidth - projectContainer.clientWidth)/2;
+    projectContainer.scrollLeft = pos;
+
+    
+
+    function loopScroll(scrollAmount){
+        
+        pos += scrollAmount;
+        let centerPos = pos + projectContainer.clientWidth/2;
+
+        if(projectContainer.scrollLeft < projectContainer.scrollWidth*1/3){
+            pos = projectContainer.scrollWidth*2/3;
+            projectContainer.scrollLeft = pos;
+            // projectContainer.innerHTML += projectItems;
+        }
+        else if(projectContainer.scrollLeft > projectContainer.scrollWidth*2/3){
+            // pos = projectContainer.scrollWidth*1/3;
+            // projectContainer.scrollLeft = pos;
+            projectContainer.innerHTML += projectItems;
+        }
+
+        projectContainer.scrollTo({
+            left: pos,
+            behavior: 'smooth',
+        })
+
+        console.log(`pos: ${centerPos}/${projectContainer.scrollWidth}`);
+    }
+
+    projectContainer.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        loopScroll(event.deltaY);
+        
+    }, { passive: false });
+    
+</script>
+
