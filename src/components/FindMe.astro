@@ -1,6 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import GithubQrcode from "../assets/qrcodes/qrcode_github.webp"
+
 const DISCORD_LINK = "https://discordapp.com/users/1086832595943305236";
 const GITHUB_LINK = "https://github.com/lbc0841";
+
+const QRCODE_SIZE = 180;
 ---
 
 <div style="margin-bottom: 80px;">
@@ -24,5 +29,14 @@ const GITHUB_LINK = "https://github.com/lbc0841";
         <br>
 
     </div>
+
+    <div class="flex justify-center" style="margin-top: 70px; margin-bottom: 100px; margin-right: 14px; gap: 50px;">
+        <Image src={GithubQrcode} alt="Github" width={QRCODE_SIZE} height={QRCODE_SIZE} class={"hidden md:block"}/>
+        <Image src={GithubQrcode} alt="Github" width={QRCODE_SIZE} height={QRCODE_SIZE}/>
+        <Image src={GithubQrcode} alt="Github" width={QRCODE_SIZE} height={QRCODE_SIZE} class={"hidden md:block"}/>
+    </div>
     
+    <div class="to-top-button">
+        到底了 ^•ﻌ•^
+    </div>
 </div>

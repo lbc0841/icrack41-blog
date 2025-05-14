@@ -24,8 +24,8 @@
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #e0e0e0;
-    background-color: #e0e0e0;
+    border: 3px solid #94dbfa;
+    background-color: #2581a9;
 }
 
 @media screen and (max-width: 640px) {
