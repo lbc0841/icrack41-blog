@@ -24,9 +24,9 @@
     overflow-y: hidden;
     overflow-x: auto;
 }
-/* .project-container::-webkit-scrollbar-thumb {
+.project-container::-webkit-scrollbar-thumb {
     display: none;
-} */
+}
 
 .project {
     position: relative;

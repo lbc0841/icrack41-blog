@@ -53,48 +53,60 @@ import { Border1 } from "../assets/borders.tsx"
 <script is:browser>
 
     const projectContainer = document.getElementById('project-container');
+    projectContainer.innerHTML += projectContainer.innerHTML;
 
-    let projectItems = projectContainer.innerHTML
-    projectContainer.innerHTML += projectItems;
-    projectContainer.innerHTML += projectItems;
-
-    const boundaryL = projectContainer.scrollWidth*1/3 - projectContainer.clientWidth/2;
-    const boundaryR = projectContainer.scrollWidth*2/3 - projectContainer.clientWidth/2;
-
-    let pos = (projectContainer.scrollWidth - projectContainer.clientWidth)/2;
-    projectContainer.scrollLeft = pos;
-
-    
+    const posCenter = (projectContainer.scrollWidth-projectContainer.clientWidth)/2;
+    projectContainer.scrollLeft = posCenter;
 
     function loopScroll(scrollAmount){
-        
-        pos += scrollAmount;
-        let centerPos = pos + projectContainer.clientWidth/2;
 
-        if(projectContainer.scrollLeft < projectContainer.scrollWidth*1/3){
-            pos = projectContainer.scrollWidth*2/3;
-            projectContainer.scrollLeft = pos;
-            // projectContainer.innerHTML += projectItems;
+        if(projectContainer.scrollLeft > posCenter+10 || projectContainer.scrollLeft < posCenter-10){
+
+            projectContainer.scrollTo({
+                left: posCenter,
+                behavior: "smooth",
+            });
+            
+            return;
         }
-        else if(projectContainer.scrollLeft > projectContainer.scrollWidth*2/3){
-            // pos = projectContainer.scrollWidth*1/3;
-            // projectContainer.scrollLeft = pos;
-            projectContainer.innerHTML += projectItems;
+
+        if(scrollAmount < 0){
+
+            console.log(`<`);
+
+            let lastItem = projectContainer.lastElementChild;
+            if(lastItem){
+                projectContainer.insertBefore(lastItem, projectContainer.firstElementChild);
+                projectContainer.scrollLeft += (lastItem.offsetWidth + 30);
+            }
+        }
+        else if(scrollAmount > 0){
+            console.log(`>`);
+
+            let firstItem = projectContainer.firstElementChild;
+            if(firstItem){
+                projectContainer.appendChild(firstItem);
+                projectContainer.scrollLeft -= (firstItem.offsetWidth + 30);
+            }
         }
 
         projectContainer.scrollTo({
-            left: pos,
-            behavior: 'smooth',
-        })
-
-        console.log(`pos: ${centerPos}/${projectContainer.scrollWidth}`);
+            left: posCenter,
+            behavior: "smooth",
+        });
     }
 
-    projectContainer.addEventListener("wheel", (event) => {
-        event.preventDefault();
-        loopScroll(event.deltaY);
-        
-    }, { passive: false });
+
+    projectContainer.addEventListener("wheel", 
+
+        (event) => {
+            event.preventDefault();
+            loopScroll(event.deltaY);
+        },
+        { passive: false },
+    );
+
+    
     
 </script>
 

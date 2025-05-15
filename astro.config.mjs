@@ -13,7 +13,6 @@ export default defineConfig({
   integrations: [react()],
 
   site: 'https://lbc0841.github.io',
-  base: 'icrack41-blog',
 
   server: {
     host: '0.0.0.0',  // 允許區域網訪問
