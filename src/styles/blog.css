@@ -1,0 +1,26 @@
+.blog-container {
+    width: 98%;
+    height: 100%;
+
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+
+    backdrop-filter: blur(3px);
+
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 70px;
+    padding-bottom: 16px;
+    
+    border-radius: 2px;
+    border-left: solid 2px rgba(255, 255, 255, 0.4) ;
+    border-right: solid 2px rgba(255, 255, 255, 0.4) ;
+    z-index: 4;
+}
+
+
+
+
+

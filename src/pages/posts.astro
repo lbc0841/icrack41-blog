@@ -1,11 +1,11 @@
 ---
-import MainContent from '../components/MainContent.astro';
 import MainNavigation from '../components/MainNavigation.astro';
-import MyPosts from '../components/MyPosts.astro';
-import Profile from '../components/Profile.astro';
 import Layout from '../layouts/Layout.astro';
 
+import { Border1 } from "../assets/borders.tsx"
+
 import "../styles/global.css";
+import "../styles/my_posts.css"
 ---
 
 
@@ -14,9 +14,40 @@ import "../styles/global.css";
 	
 	<MainNavigation/>
 
-	<MyPosts/>
+	<div class="post-container">
 
-	<!-- <h1 style="position:absolute; left:50%; bottom:50%; transform:translateX(-50%); color:white;">
-		<i class="fa-solid fa-hammer"></i> 施工中... 
-	</h1> -->
+		<div class="post-tag-container">
+			<input id="tag-tutorial" type="checkbox">
+			<label for="tag-tutorial" class="post-tag">教學</label>
+	
+			<input id="tag-tutorial" type="checkbox">
+			<label for="tag-tutorial" class="post-tag">廢話</label>
+	
+			<input id="tag-tutorial" type="checkbox">
+			<label for="tag-tutorial" class="post-tag">日常</label>
+	
+		</div>
+	
+		<div class="post" onclick="location.href='/icrack41-blog/blog'">
+			<Border1/>
+	
+			<b style="font-size: 40px;">關於 small 家族</b>
+			
+		</div>
+
+		<div class="post">
+			<Border1/>
+	
+			<b style="font-size: 40px;">C++ IO 優化</b><br>
+	
+		</div>
+
+		<div class="post">
+			<Border1/>
+	
+			<b style="font-size: 40px;">解決 Commit 後才想起 LFS</b>
+	
+		</div>
+	</div>
+
 </Layout>
