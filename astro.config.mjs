@@ -11,6 +11,11 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  
+  markdown: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
 
   site: 'https://lbc0841.github.io',
   base: 'icrack41-blog', 

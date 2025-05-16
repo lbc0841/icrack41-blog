@@ -1,6 +1,6 @@
 .blog-container {
-    width: 98%;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
 
     position: absolute;
     left: 50%;
@@ -13,13 +13,62 @@
     padding-right: 16px;
     padding-top: 70px;
     padding-bottom: 16px;
+
+    color: white;
     
-    border-radius: 2px;
-    border-left: solid 2px rgba(255, 255, 255, 0.4) ;
-    border-right: solid 2px rgba(255, 255, 255, 0.4) ;
+
     z-index: 4;
 }
 
+.blog-container::-webkit-scrollbar-track {
+
+    margin-top: 70px;
+}
+
+.blog-context-container {
+    width: 98%;
+    height: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    overflow-y: auto;
+
+    color: white;
+}
+
+.title b {
+
+    font-size: 40px;
+    font-weight: bold;
+    color: #94dbfa;
+
+    padding-left: 40px;
+}
+.title small {
+
+    font-size: 18px;
+    color: #909090;
+
+    padding-left: 20px;
+}
+.contents-table {
+    width: 14%;
+
+    margin-left: 20px;
+
+}
+
+
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+
+    font-size: 40px;
+}
 
 
 
