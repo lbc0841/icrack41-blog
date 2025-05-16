@@ -5,59 +5,69 @@ import { Border1 } from "../assets/borders.tsx"
 
 ---
 
-<div id="project-container" class="project-container">
+<div class="project-container">
 
-    <div class="project">
-        <Border1/>
-
-        <b style="font-size: 40px;">畫集</b><br>
-        <small>色鉛筆 & 素描</small>
+    <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <textarea name="a"  cols="5" rows="1"></textarea>
     </div>
-		
-    <div class="project">
+    
 
-        <Border1/>
+    <div id="project-view" class="project-view">
 
-        <b style="font-size: 40px;">隨身電供</b><br>
-        <small>DC2DC 5~12V</small>
-    </div>
-
-    <div class="project">
-
-        <Border1/>
-
-        <b style="font-size: 40px;">動漫角色建模</b><br>
-        <small>Blender 3D建模</small>
-    </div>
-
-    <div class="project">
-
-        <Border1/>
-
-        <b style="font-size: 40px;">無人機</b><br>
-        <small>就...無人機</small>
-    </div>
-
-    <div class="project">
-
-        <Border1/>
-
-        <b style="font-size: 40px;">synaptix</b><br>
-        <small>代碼編輯器</small>
-    </div>
-
-    <div class="project">
-
-        <Border1/>
-
-        <b style="font-size: 40px;">音樂撥放器</b><br>
-        <small>Android</small>
+        <div class="project">
+            <Border1/>
+    
+            <b style="font-size: 40px;">畫集</b><br>
+            <small>色鉛筆 & 素描</small>
+        </div>
+            
+        <div class="project">
+    
+            <Border1/>
+    
+            <b style="font-size: 40px;">隨身電供</b><br>
+            <small>DC2DC 5~12V</small>
+        </div>
+    
+        <div class="project">
+    
+            <Border1/>
+    
+            <b style="font-size: 40px;">動漫角色建模</b><br>
+            <small>Blender 3D建模</small>
+        </div>
+    
+        <div class="project">
+    
+            <Border1/>
+    
+            <b style="font-size: 40px;">無人機</b><br>
+            <small>就...無人機</small>
+        </div>
+    
+        <div class="project">
+    
+            <Border1/>
+    
+            <b style="font-size: 40px;">synaptix</b><br>
+            <small>代碼編輯器</small>
+        </div>
+    
+        <div class="project">
+    
+            <Border1/>
+    
+            <b style="font-size: 40px;">音樂撥放器</b><br>
+            <small>Android</small>
+        </div>
+        
     </div>
 </div>
 
 <script is:browser>
 
-    const projectContainer = document.getElementById('project-container');
+    const projectContainer = document.getElementById('project-view');
     projectContainer.innerHTML = projectContainer.innerHTML.repeat(4);
 
     const posCenter = (projectContainer.scrollWidth-projectContainer.clientWidth)/2;

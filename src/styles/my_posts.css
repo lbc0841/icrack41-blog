@@ -4,10 +4,10 @@
     left: 50%;
     transform: translateX(-50%);
 
-    width: 96%;
+    width: 98%;
     height: 100%;
 
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(3px);
 
     border-left: solid 2px rgba(255, 255, 255, 0.4);
     border-right: solid 2px rgba(255, 255, 255, 0.4);

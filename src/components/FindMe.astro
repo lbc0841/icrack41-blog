@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import GithubQrcode from "../assets/qrcodes/qrcode_github.webp"
+import RepoQrcode from "../assets/qrcodes/qrcode_repo.webp"
+
 
 const DISCORD_LINK = "https://discordapp.com/users/1086832595943305236";
 const GITHUB_LINK = "https://github.com/lbc0841";
@@ -30,10 +32,18 @@ const QRCODE_SIZE = 180;
 
     </div>
 
-    <div class="flex justify-center" style="margin-top: 70px; margin-bottom: 100px; margin-right: 14px; gap: 50px; padding:20px;">
-        <Image src={GithubQrcode} alt="Github" width={QRCODE_SIZE} height={QRCODE_SIZE} class={"w-44 hidden md:block "}/>
-        <Image src={GithubQrcode} alt="Github" width={QRCODE_SIZE} height={QRCODE_SIZE} class={"w-60 md:w-44"}/>
-        <Image src={GithubQrcode} alt="Github" width={QRCODE_SIZE} height={QRCODE_SIZE} class={"w-44 hidden md:block"}/>
+    <div class="flex justify-center" style="margin-top: 70px; margin-bottom: 100px; margin-right: 14px; gap: 80px; padding:20px;">
+
+        <div class="w-40 hidden md:block text-white">
+            <Image src={GithubQrcode} alt="Github" class={"w-full"}/>
+            <small class="block w-full text-center">My Github</small>
+        </div>
+
+        <div class="w-40 hidden md:block text-white">
+            <Image src={RepoQrcode} alt="Github" class={"w-full"}/>
+            <small class="block w-full text-center">Github Repo</small>
+        </div>
+
     </div>
     
     <div class="to-top-button">
