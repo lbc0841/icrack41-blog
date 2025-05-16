@@ -10,4 +10,6 @@
 - 豐富的內容（還在寫）
 - 使用 Astro 搭建
 
-部落格網址: <http://localhost:4321/icrack41-blog/>
+部落格網址:<br>
+　~~<http://localhost:4321/icrack41-blog/>~~<br>
+　<https://lbc0841.github.io/icrack41-blog/>

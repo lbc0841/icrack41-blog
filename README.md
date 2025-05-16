@@ -10,4 +10,6 @@
 - Rich content (still writing)
 - built with Astro.
 
-Blog Url: <http://localhost:4321/icrack41-blog/>
+Blog Url:<br>
+　~~<http://localhost:4321/icrack41-blog/>~~<br>
+　<https://lbc0841.github.io/icrack41-blog/>
