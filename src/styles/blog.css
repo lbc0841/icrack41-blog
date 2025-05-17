@@ -7,8 +7,6 @@
     top: 0px;
     transform: translateX(-50%);
 
-    backdrop-filter: blur(3px);
-
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 70px;
@@ -16,7 +14,6 @@
 
     color: white;
     
-
     z-index: 4;
 }
 
@@ -59,6 +56,11 @@
 
     margin-left: 20px;
 
+}
+
+li {
+    list-style: square;
+    margin-left: 30px;
 }
 
 

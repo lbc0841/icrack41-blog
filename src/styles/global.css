@@ -12,7 +12,6 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    /* background-color: #121212; */
     background: linear-gradient(170deg, #283a4b, #0c1422);
 
     height: 100vh;
@@ -22,13 +21,16 @@ body {
 }
 
 .page-content {
-    visibility: hidden;
+    opacity: 0;
+
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 2;
+
+    animation: none;
 }
 
 .background {
@@ -43,6 +45,19 @@ body {
     background: url("../assets/grid.svg");
     background-position: top;
     opacity: 0.6;
+}
+
+@keyframes page-content-appear {
+    
+    0%{
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+
 }
 
 .scroll-hint {
