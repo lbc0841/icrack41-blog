@@ -4,8 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
-    /* overflow: hidden; */
+html {
+    background: black;
 }
 
 body {
@@ -19,11 +21,12 @@ body {
     overflow: hidden;
 }
 
-.slot-container {
+.page-content {
+    visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 2;
 }
