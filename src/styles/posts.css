@@ -60,6 +60,7 @@
 }
 
 .post {
+    display: flex;
     position: relative;
     color: white;
 
@@ -92,6 +93,25 @@
     margin-top: 10px;
 
     width: 60%;
+    height: 50%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.post-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    
+    width: 36%;
+    height: 100%;
+
+    color: white;
 }
 
 .read-button {

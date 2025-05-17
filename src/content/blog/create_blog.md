@@ -4,7 +4,6 @@
 創建項目
 `npm create astro@latest` `poject-name`
 
-
 📁public/
 📁src/
 ├── 📁assets/
