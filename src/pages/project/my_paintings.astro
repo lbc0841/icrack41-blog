@@ -1,0 +1,104 @@
+---
+import MainNavigation from "../../components/MainNavigation.astro";
+import Layout from "../../layouts/Layout.astro";
+
+---
+
+<Layout>
+    <div class="background opacity-30"></div>
+    <MainNavigation/>
+
+    <div class="paintings-container">
+        
+        <div class="img-comtainer">
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img1.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img2.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img3.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img4.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img5.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img6.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img7.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img8.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img9.png" alt="">
+            </div>
+    
+            <div class="img-box">
+                <img src="/icrack41-blog/assets/project_img/my_paintings/img10.png" alt="">
+            </div>
+
+            </div>
+        </div>
+    </div>
+    
+
+    <style>
+        .paintings-container {
+            position: absolute;
+            top: 0;
+
+            width: 100vw;
+            height: 100vh;
+
+            overflow-y: auto;
+        }
+        .paintings-container::-webkit-scrollbar-track {
+            margin-top: 70px;
+            margin-bottom: 10px;
+        }
+
+        .img-comtainer {
+            width: 90vw;
+
+            column-count: 4;
+            column-gap: 1vw;
+
+            margin: auto;
+            padding-top: 70px;
+            padding-bottom: 60px;
+        }
+
+        .img-box {
+            width: 100%;
+            
+            margin-bottom: 1vw;
+            overflow: hidden;
+
+            border-radius: 8px;
+        }
+
+        .img-box img {
+            display: block;
+            object-fit: cover;
+
+        }
+
+    </style>
+
+</Layout>
+
+

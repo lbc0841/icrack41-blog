@@ -26,7 +26,7 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 	<MainNavigation/>
 	
 	<div class="about-me-container">
-		<div class="hidden sm:flex flex-col" style="margin-right: 20px; margin-top: 70px;">
+		<div class="profile-bar">
 			<div class="profile-container">
 		
 				<div class="profile-img">
@@ -43,24 +43,21 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 				</ul>
 			</div>
 	
-			<div class="contents-table-container">
-				<div class="contents-table">
-					<div class="text-xl font-bold" style="color: rgba(200, 200, 200, 0.7); margin-bottom: 12px;">
-						<i class="fa-solid fa-tags"></i>
-						Tags
-					</div>
-		
-					<ul>
-						<li><button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button></li>
-						<li><button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button></li>
-						<li><button onclick="scrollToElement('contents-container', 'my-ability')">能力</button></li>
-						<li><button onclick="scrollToElement('contents-container', 'futrue-goals')">未來目標</button></li>
-						<li><button onclick="scrollToElement('contents-container', 'find-me')">找到我</button></li>
-					</ul>
+			<div class="contents-table">
+				<div class="text-xl font-bold" style="color: rgba(200, 200, 200, 0.7); margin-bottom: 12px;">
+					<i class="fa-solid fa-tags"></i>
+					Tags
 				</div>
+		
+				<ul>
+					<li><button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button></li>
+					<li><button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button></li>
+					<li><button onclick="scrollToElement('contents-container', 'my-ability')">能力</button></li>
+					<li><button onclick="scrollToElement('contents-container', 'futrue-goals')">未來目標</button></li>
+					<li><button onclick="scrollToElement('contents-container', 'find-me')">找到我</button></li>
+				</ul>
 			</div>
 		</div>
-	
 	
 		<div id="contents-container" class="contents-container overflow-y-auto overflow-x-hidden">
 			<div class="w-full h-full">

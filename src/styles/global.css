@@ -8,6 +8,8 @@
 :root {
     background: black;
     overflow: hidden;
+    height: 100vh;
+    width: 100vw;
 }
 
 body {
