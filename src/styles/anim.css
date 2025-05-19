@@ -1,0 +1,37 @@
+@keyframes anim-loading {
+    0%{
+        stroke-dashoffset: 0;
+        transform: rotateZ(-45deg);
+    }
+    30%{
+        stroke-dashoffset: 100;
+        transform: rotateZ(45deg);
+    }
+
+    70%{
+        transform: rotateZ(45deg);
+        stroke-dashoffset: 200;
+    }
+    100%{
+        transform: rotateZ(45deg);
+        stroke-dashoffset: 200;
+    }
+}
+
+.entering-text {
+    /* display: inline-block; */
+    /* display: block; */
+    /* transform: rotateZ(0); */
+    animation: none;
+}
+
+@keyframes anim-entering-text {
+    0%{
+        opacity: 0;
+        transform: scaleY(0.4);
+    }
+    100%{
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}

@@ -3,6 +3,7 @@ import MainNavigation from '../components/MainNavigation.astro';
 import Layout from '../layouts/Layout.astro';
 
 import "../styles/about_me.css";
+import "../styles/anim.css";
 
 import { Image } from 'astro:assets';
 import profileImg from '../assets/profile_img2.png';
@@ -92,6 +93,27 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 				// container.scrollTop = element.offsetTop - container.offsetTop;
 			}
 		}
+
+		const enteringTexts = document.querySelectorAll('.entering-text');
+
+		const observer = new IntersectionObserver((entrise) => {
+			entrise.forEach(entry => {
+				if(entry.isIntersecting){
+					entry.target.style.animation = "anim-entering-text 0.4s ease-out";
+				}
+				else{
+					entry.target.style.animation = "none";
+				}
+			});
+		},
+		{
+			threshold: 0.15
+		});
+
+		enteringTexts.forEach(enteringText => {
+			observer.observe(enteringText);
+		});
+		
 	</script>
 </Layout>
 

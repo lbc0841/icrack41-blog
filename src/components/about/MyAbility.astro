@@ -40,5 +40,42 @@
             </div>
         </div>
     </div>
+
+    <div class="zj-progress">
+        <svg width="300px" height="300px" viewBox="0 0 200 200">
+            <circle cx="86" cy="100" r="80"></circle>
+            <text x="30" y="120">153</text>
+        </svg>
+
+        
+    </div>
 </div>
 
+<style>
+    .zj-progress {
+        margin-top: 40px;
+        position: relative;
+
+        width: 100%;
+    }
+
+    .zj-progress svg {
+        overflow: visible;
+    }
+
+    .zj-progress svg circle {
+        fill: transparent;
+        stroke: #418bd4;
+        stroke-width: 6;
+        stroke-dasharray: 500;
+        stroke-linecap: round;
+    }
+
+    .zj-progress svg text {
+
+        fill: #418bd4;
+        font-size: 60px;
+
+    }
+
+</style>

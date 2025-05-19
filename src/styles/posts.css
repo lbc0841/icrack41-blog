@@ -60,7 +60,8 @@
 }
 
 .post {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     position: relative;
     color: white;
 
@@ -71,7 +72,22 @@
     margin-bottom: 40px;
 
     transition: all 0.1s;
+
 }
+
+@media screen and (max-width: 760px) {
+    .post {
+
+        height: 460px;
+
+    }
+
+    .post {
+        grid-template-columns: 1fr;
+
+    }
+}
+
 .post:hover {
     color: #94dbfa;
     transform: scaleX(1.01);
@@ -86,29 +102,31 @@
 }
 
 .post-description {
-    display: block;
+    display: -webkit-box;
     color: rgba(255, 255, 255, 0.5);
     
     margin-left: 20px;
     margin-top: 10px;
 
-    width: 60%;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+
+    width: 90%;
     height: 50%;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .post-img {
-    position: absolute;
-    right: 0;
-    top: 0;
+
 
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     
-    width: 36%;
+    width: 100%;
     height: 100%;
 
     color: white;
