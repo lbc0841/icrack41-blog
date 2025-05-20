@@ -19,19 +19,27 @@
 }
 
 .entering-text {
-    /* display: inline-block; */
+    display: inline-block;
+    animation: none;
+    visibility: hidden;
+}
+
+.entering-progress {
+    display: inline-block;
     /* display: block; */
     /* transform: rotateZ(0); */
     animation: none;
+    visibility: hidden;
 }
 
 @keyframes anim-entering-text {
     0%{
         opacity: 0;
-        transform: scaleY(0.4);
+        transform: scale(0.8, 0);
     }
     100%{
         opacity: 1;
-        transform: scaleY(1);
+        transform: scale(1, 1);
     }
 }
+

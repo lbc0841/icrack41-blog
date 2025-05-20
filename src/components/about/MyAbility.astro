@@ -1,7 +1,7 @@
 ---
 ---
 
-<div style="margin-bottom: 120px;">
+<div class="about-me-item-container">
     <div class="text-white text-2xl font-bold" style="margin-bottom: 40px; margin-right: 20px;">能力條<hr></div>
 
     <div class="flex" style="color: rgb(160,160,160);">
@@ -41,26 +41,59 @@
         </div>
     </div>
 
-    <div class="zj-progress">
-        <svg width="300px" height="300px" viewBox="0 0 200 200">
-            <circle cx="86" cy="100" r="80"></circle>
-            <text x="30" y="120">153</text>
-        </svg>
+    <div class="oj">
 
-        
+    
+        <div class="zj-progress">
+            <svg width="200px" height="200px" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="80"></circle>
+                <text style="oj-count-text" x="100" y="120">000</text>
+            </svg>
+    
+            <b class="text-white" style="display: block; width: 100%; text-align: center;">Zerojudge</b>
+        </div>
+    
+        <div class="zj-progress">
+            <svg width="200px" height="200px" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="80"></circle>
+                <text style="oj-count-text" x="100" y="120">000</text>
+            </svg>
+    
+            <b class="text-white" style="display: block; width: 100%; text-align: center;">Leetcode</b>
+        </div>
+
+        <div class="zj-progress">
+            <svg width="200px" height="200px" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="80"></circle>
+                <text style="oj-count-text" x="100" y="120">000</text>
+            </svg>
+    
+            <b class="text-white" style="display: block; width: 100%; text-align: center;">DMOJ</b>
+        </div>
+
     </div>
+    
 </div>
 
 <style>
-    .zj-progress {
+    .oj {
         margin-top: 40px;
-        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+    }
 
+
+
+    .zj-progress {
+
+        position: relative;
         width: 100%;
     }
 
     .zj-progress svg {
         overflow: visible;
+        margin: auto;
     }
 
     .zj-progress svg circle {
@@ -75,7 +108,7 @@
 
         fill: #418bd4;
         font-size: 60px;
-
+        text-anchor: middle;
     }
 
 </style>

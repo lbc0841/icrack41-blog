@@ -2,7 +2,7 @@
 import MainNavigation from '../components/MainNavigation.astro';
 import Layout from '../layouts/Layout.astro';
 
-import "../styles/about_me.css";
+import "../styles/about.css";
 import "../styles/anim.css";
 
 import { Image } from 'astro:assets';
@@ -11,7 +11,7 @@ import profileImg from '../assets/profile_img2.png';
 import MySelfIntro from "../components/about/MySelfIntro.astro";
 import MySkillTree from "../components/about/MySkillTree.astro";
 import MyAbility from "../components/about/MyAbility.astro";
-import MyFutrueGoals from "../components/about/MyFutrueGoals.astro";
+import MyNowAndFutrue from "../components/about/MyNowAndFutrue.astro";
 import FindMe from "../components/about/FindMe.astro";
 
 const youtubeLink = "https://space.bilibili.com/3494375061457383?spm_id_from=333.1007.0.0";
@@ -34,9 +34,9 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 					<Image class="profile-img" src={profileImg} alt="profile-img" style="border: solid 2px #94dbfa;"/>
 				</div>
 				
-				<h3 style="color: white; margin-bottom: 10px;">Small D</h3>
+				<h3 class="profile-name">small D</h3>
 	
-				<ul style="list-style: none; display: flex; gap: 10px;">
+				<ul class="profile-links">
 					<li><a href={bilibiliLink} style="color: rgb(0,174,231);"><i class="fa-brands fa-bilibili"></i></a></li>
 					<li><a href={youtubeLink} style="color: rgb(255,0,51);"><i class="fa-brands fa-youtube"></i></a></li>
 					<li><a href={gmailLink} style="color: rgb(249,181,0);"><i class="fa-regular fa-envelope"></i></a></li>
@@ -54,20 +54,20 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 					<li><button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button></li>
 					<li><button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button></li>
 					<li><button onclick="scrollToElement('contents-container', 'my-ability')">能力</button></li>
-					<li><button onclick="scrollToElement('contents-container', 'futrue-goals')">未來目標</button></li>
+					<li><button onclick="scrollToElement('contents-container', 'now-and-futrue')">現在 & 未來</button></li>
 					<li><button onclick="scrollToElement('contents-container', 'find-me')">找到我</button></li>
 				</ul>
 			</div>
 		</div>
 	
-		<div id="contents-container" class="contents-container overflow-y-auto overflow-x-hidden">
+		<div id="contents-container" class="contents-container">
 			<div class="w-full h-full">
 				<!-- <div style="height: 70px;"></div> -->
 				
 				<div id="my-self-intro"><MySelfIntro/></div>
 				<div id="my-skill-tree"><MySkillTree/></div>
 				<div id="my-ability"><MyAbility/></div>
-				<div id="futrue-goals"><MyFutrueGoals/></div>
+				<div id="now-and-futrue"><MyNowAndFutrue/></div>
 				<div id="find-me"><FindMe/></div>
 	
 			</div>
@@ -99,10 +99,12 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 		const observer = new IntersectionObserver((entrise) => {
 			entrise.forEach(entry => {
 				if(entry.isIntersecting){
-					entry.target.style.animation = "anim-entering-text 0.4s ease-out";
+					entry.target.style.animation = "anim-entering-text 0.3s ease-out";
+					entry.target.style.visibility = "visible";
 				}
 				else{
 					entry.target.style.animation = "none";
+					entry.target.style.visibility = "hidden";
 				}
 			});
 		},
