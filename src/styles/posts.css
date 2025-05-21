@@ -71,15 +71,16 @@
 
     margin-bottom: 40px;
 
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+
     transition: all 0.1s;
 
 }
 
 @media screen and (max-width: 760px) {
     .post {
-
         height: 460px;
-
     }
 
     .post {
@@ -103,7 +104,7 @@
 
 .post-description {
     display: -webkit-box;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
     
     margin-left: 20px;
     margin-top: 10px;

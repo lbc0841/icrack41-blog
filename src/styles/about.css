@@ -4,7 +4,7 @@
 
     display: grid;
     grid-template-columns: 1fr 6fr;
-    column-gap: 10px;
+    column-gap: 30px;
 
     position: absolute;
     left: 50%;
@@ -20,6 +20,8 @@
     border-left: solid 2px rgba(255, 255, 255, 0.4) ;
     border-right: solid 2px rgba(255, 255, 255, 0.4) ;
     
+    background-color: rgba(0, 0, 0, 0.1);
+
     z-index: 4;
 }
 
@@ -53,7 +55,7 @@
 
     margin-bottom: 40px;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 14px;
 }
@@ -73,7 +75,7 @@
     min-width: 180px;
     display: grid;
     grid-template-rows: 1fr 100fr;
-    margin-top: 84px;
+    margin-top: 76px;
 
     overflow-y: auto;
 
@@ -97,7 +99,7 @@
     border-bottom: solid 2px rgba(255, 255, 255, 0.4);
     border-top: solid 2px rgba(255, 255, 255, 0.4);
 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     /* border-radius: 6px; */
     transition: all 0.2s;
@@ -113,13 +115,16 @@
 
     transform: translateY(-10px);
     transform-origin: 50% 50%;
+
+    opacity: 0.9;
+
     transition: all 0.3s;
 }
 
 .profile-name {
     position: absolute;
     bottom: 22px;
-    color: rgba(148, 219, 250, 1);
+    color: #002d2d;
     font-weight: bold;
     transition: all 0.2s;
 }
@@ -175,7 +180,7 @@
     border-bottom: solid 2px rgba(255, 255, 255, 0.4);
     border-top: solid 2px rgba(255, 255, 255, 0.4);
 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
 }
 
@@ -215,9 +220,8 @@
     width: 100%;
     height: 100vh;
 
-    padding-left: 30px;
     padding-right: 6px;
-    padding-top: 80px;
+    padding-top: 72px;
     padding-bottom: 16px;
 
     transition: all 0.2s;
@@ -267,7 +271,7 @@
 }
 
 .intro-text {
-    color: rgb(160,160,160);
+    color: rgb(200,200,200);
     font-size: 20px;
 }
 .intro-text ul{
@@ -301,8 +305,8 @@
     height: 50px;
 
     position: absolute;
-    color: rgb(160,160,160);
-    background: #1b2838;
+    color: rgb(200,200,200);
+    background: #405087;
     border: solid 1px rgb(20,255,255);
     transform: rotate(45deg);
 
@@ -392,7 +396,7 @@
 }
 
 .skill-describe {
-    color: rgb(160,160,160);
+    color: rgb(200,200,200);
     margin-bottom: 20px;
     margin-top: 60px;
 }
@@ -462,15 +466,20 @@
     height: auto;
 }
 
-
-.ability-progress {
-    display: inline-block;
-    width: 100%;
-
-    height: 6px;
+.code-ability {
+    position: relative;
+    margin-bottom: 20px;
 }
 
-.ability-text {
+.code-ability progress {
+    display: inline-block;
+    width: 100%;
+    height: 6px;
+
+    transform-origin: 0% 50%;
+}
+
+.code-ability b {
     position: absolute;
     color: rgba(0, 0, 0, 0.8);
     top: -10px;
@@ -484,17 +493,17 @@
             -1px -1px rgba(81, 162, 255, 0.8);
 }
 
-progress::-webkit-progress-bar {
+.code-ability progress::-webkit-progress-bar {
     /* background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(200, 200, 200, 0.5)); */
     background: rgba(0, 0, 0, 0.3);
-
 
     border-radius: 4px;
 }
 
-progress::-webkit-progress-value {
+.code-ability progress::-webkit-progress-value {
     background: linear-gradient(45deg, rgba(81, 162, 255, 0.8), rgba(0, 255, 255, 0.8));
     border-radius: 4px;
+    
 }
 
 @media screen and (max-width: 960px) {
@@ -505,11 +514,12 @@ progress::-webkit-progress-value {
         height: auto;
     }
 
-    .ability-progress {
+    .code-ability progress {
         display: inline-block;
         width: 90%;
     
         height: 12px;
+        transform-origin: 0% 50%;
     }
 }
 

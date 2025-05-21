@@ -11,8 +11,6 @@
     width: 98%;
     height: 100%;
 
-    backdrop-filter: blur(3px);
-
     border-left: solid 2px rgba(255, 255, 255, 0.4);
     border-right: solid 2px rgba(255, 255, 255, 0.4);
 
@@ -99,8 +97,10 @@
     min-width: 300px;
 
     padding: 10px;
-
     margin-bottom: 40px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
 
     transition: all 0.1s;
 }

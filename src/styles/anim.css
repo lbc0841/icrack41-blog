@@ -24,12 +24,10 @@
     visibility: hidden;
 }
 
-.entering-progress {
-    display: inline-block;
-    /* display: block; */
-    /* transform: rotateZ(0); */
+.entering-progress{
+
     animation: none;
-    visibility: hidden;
+
 }
 
 @keyframes anim-entering-text {
@@ -43,3 +41,22 @@
     }
 }
 
+@keyframes anim-entering-route {
+    0% {
+        stroke-dashoffset: 400;
+        transform: rotate3d(1, 0, 0, 50deg);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        transform: rotate3d(1, 0, 0, 55deg);
+    }
+}
+
+@keyframes anim-entering-progress {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}

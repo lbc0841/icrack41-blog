@@ -31,7 +31,7 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 			<div class="profile-container">
 		
 				<div class="profile-img">
-					<Image class="profile-img" src={profileImg} alt="profile-img" style="border: solid 2px #94dbfa;"/>
+					<Image class="profile-img" src={profileImg} alt="profile-img" style="border: solid 2px #7f91b1;"/>
 				</div>
 				
 				<h3 class="profile-name">small D</h3>
@@ -53,7 +53,7 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 				<ul>
 					<li><button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button></li>
 					<li><button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button></li>
-					<li><button onclick="scrollToElement('contents-container', 'my-ability')">能力</button></li>
+					<li><button onclick="scrollToElement('contents-container', 'my-ability')">編程能力</button></li>
 					<li><button onclick="scrollToElement('contents-container', 'now-and-futrue')">現在 & 未來</button></li>
 					<li><button onclick="scrollToElement('contents-container', 'find-me')">找到我</button></li>
 				</ul>
@@ -94,9 +94,11 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 			}
 		}
 
+		const enteringRoute = document.querySelector('.route path');
+		const enteringProgress = document.querySelectorAll('.entering-progress');
 		const enteringTexts = document.querySelectorAll('.entering-text');
 
-		const observer = new IntersectionObserver((entrise) => {
+		const enteringTextObserver = new IntersectionObserver((entrise) => {
 			entrise.forEach(entry => {
 				if(entry.isIntersecting){
 					entry.target.style.animation = "anim-entering-text 0.3s ease-out";
@@ -112,10 +114,49 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 			threshold: 0.15
 		});
 
-		enteringTexts.forEach(enteringText => {
-			observer.observe(enteringText);
+		const enteringRouteObserver = new IntersectionObserver((entrise) => {
+			entrise.forEach(entry => {
+				if(entry.isIntersecting){
+					entry.target.style.animation = "anim-entering-route 1s ease-out";
+					entry.target.style.visibility = "visible";
+				}
+				else{
+					entry.target.style.animation = "none";
+					entry.target.style.visibility = "hidden";
+				}
+			});
+		},
+		{
+			threshold: 0.4
+		});
+
+		const enteringProgressObserver = new IntersectionObserver((entrise) => {
+			entrise.forEach(entry => {
+				if(entry.isIntersecting){
+					entry.target.style.animation = "anim-entering-progress 0.3s ease-out";
+					entry.target.style.visibility = "visible";
+				}
+				else{
+					entry.target.style.animation = "none";
+					entry.target.style.visibility = "hidden";
+				}
+			});
+		},
+		{
+			threshold: 0.4
+		});
+
+		enteringTexts.forEach(item => {
+			enteringTextObserver.observe(item);
 		});
 		
+		enteringProgress.forEach(item => {
+			enteringProgressObserver.observe(item);
+		});
+
+		enteringRouteObserver.observe(enteringRoute);
+
+
 	</script>
 </Layout>
 

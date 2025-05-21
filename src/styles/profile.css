@@ -16,7 +16,7 @@
     padding-top: 10px;
     font-size: 26px;
     font-weight: normal;
-    color: rgba(255,255,255,0.8);
+    color: #11274e;
 }
 
 .profile-img {
@@ -24,7 +24,7 @@
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #94dbfa;
+    border: 3px solid #2554a5;
     background-color: #2581a9;
 }
 
