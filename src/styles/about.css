@@ -32,8 +32,8 @@
         grid-template-columns: 1fr;
 
     
-        padding-left: 16px;
-        padding-right: 6px;
+        padding-left: 0px;
+        padding-right: 0px;
         padding-top: 16px;
         padding-bottom: 16px;
     }
@@ -54,7 +54,7 @@
 .about-me-item-container {
 
     margin-bottom: 40px;
-    padding: 40px;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 14px;
@@ -116,7 +116,7 @@
     transform: translateY(-10px);
     transform-origin: 50% 50%;
 
-    opacity: 0.9;
+    opacity: 0.95;
 
     transition: all 0.3s;
 }
@@ -124,9 +124,11 @@
 .profile-name {
     position: absolute;
     bottom: 22px;
-    color: #002d2d;
+    color: #181d3c;
     font-weight: bold;
     transition: all 0.2s;
+
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .profile-links{
@@ -246,7 +248,7 @@
     
         padding-left: 6px;
         padding-right: 2px;
-        padding-top: 80px;
+        padding-top: 60px;
         padding-bottom: 16px;
     
         transition: all 0.2s;
@@ -399,6 +401,7 @@
     color: rgb(200,200,200);
     margin-bottom: 20px;
     margin-top: 60px;
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 640px){
@@ -437,7 +440,7 @@
     }
 
     .skill-describe {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .skill-tree-item::after {  /* text */
@@ -517,9 +520,6 @@
     .code-ability progress {
         display: inline-block;
         width: 90%;
-    
-        height: 12px;
-        transform-origin: 0% 50%;
     }
 }
 

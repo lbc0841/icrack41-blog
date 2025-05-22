@@ -1,5 +1,7 @@
 ---
 import "../styles/main_navigation.css";
+import { Image } from "astro:assets";
+import profileImg from '../assets/profile_img2.png';
 ---
 
 <div class="main-nav-container">
@@ -27,14 +29,16 @@ import "../styles/main_navigation.css";
             </label>
 
             <div class="main-nav-links-hamburger">
-                <ul>
+                <Image src={profileImg} alt="profile-img" height={110} width={110} style="border-radius: 50%; margin-right: 20px;"/>
+                <ul style="margin-top: 20px; list-style: '〉';">
                     <li><a href="/icrack41-blog/">Home</a></li>
                     <li><a href="/icrack41-blog/about">About</a></li>
                     <li><a href="/icrack41-blog/projects">Projects</a></li>
                     <li><a href="/icrack41-blog/posts">Posts</a></li>
                 </ul>
             </div>
-            
         </div>
     </nav>
 </div>
+
+

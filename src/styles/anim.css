@@ -20,6 +20,7 @@
 
 .entering-text {
     display: inline-block;
+    vertical-align: top;
     animation: none;
     visibility: hidden;
 }
@@ -27,7 +28,6 @@
 .entering-progress{
 
     animation: none;
-
 }
 
 @keyframes anim-entering-text {

@@ -99,41 +99,17 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* corner ============================================================================================================== */
-.corner-tl,
-.corner-tr,
-.corner-bl,
-.corner-br {
-    position: absolute;
-    padding: 3px;
-    border-width: 3px;
-    border-style: solid;
+.link-text {
+    max-width: 100%;
+
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #51a2ff;
+    transition: all 0.2s;
 }
 
-.corner-tl {
-    top: -3px;
-    left: -3px;
-    border-right: none;
-    border-bottom: none;
-}
-
-.corner-tr {
-    top: -3px;
-    right: -3px;
-    border-left: none;
-    border-bottom: none;
-}
-
-.corner-bl {
-    bottom: -3px;
-    left: -3px;
-    border-right: none;
-    border-top: none;
-}
-
-.corner-br {
-    bottom: -3px;
-    right: -3px;
-    border-left: none;
-    border-top: none;
+.link-text:hover {
+    color: #74d4ff;
 }

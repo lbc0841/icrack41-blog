@@ -32,7 +32,7 @@
             </div>
 
             <div class="code-ability">
-                <b>Verilog</b><progress class="entering-progress" max="100" value="63"></progress>
+                <b>Verilog</b><progress class="entering-progress" max="100" value="53"></progress>
             </div>
 
             <div class="code-ability">
@@ -44,8 +44,8 @@
     <div class="oj">
 
     
-        <div class="zj-progress">
-            <svg width="200px" height="200px" viewBox="0 0 200 200">
+        <div class="oj-progress">
+            <svg width="100%" viewBox="0 0 200 200">
                 <circle cx="100" cy="100" r="80"></circle>
                 <text style="oj-count-text" x="100" y="120">000</text>
             </svg>
@@ -53,8 +53,8 @@
             <b class="text-white" style="display: block; width: 100%; text-align: center;">Zerojudge</b>
         </div>
     
-        <div class="zj-progress">
-            <svg width="200px" height="200px" viewBox="0 0 200 200">
+        <div class="oj-progress">
+            <svg width="100%" viewBox="0 0 200 200">
                 <circle cx="100" cy="100" r="80"></circle>
                 <text style="oj-count-text" x="100" y="120">000</text>
             </svg>
@@ -62,8 +62,8 @@
             <b class="text-white" style="display: block; width: 100%; text-align: center;">Leetcode</b>
         </div>
 
-        <div class="zj-progress">
-            <svg width="200px" height="200px" viewBox="0 0 200 200">
+        <div class="oj-progress">
+            <svg width="100%" viewBox="0 0 200 200">
                 <circle cx="100" cy="100" r="80"></circle>
                 <text style="oj-count-text" x="100" y="120">000</text>
             </svg>
@@ -83,18 +83,20 @@
         
     }
 
-    .zj-progress {
+    .oj-progress {
 
         position: relative;
         width: 100%;
+        max-width: 200px;
+        margin: auto;
     }
 
-    .zj-progress svg {
+    .oj-progress svg {
         overflow: visible;
         margin: auto;
     }
 
-    .zj-progress svg circle {
+    .oj-progress svg circle {
         fill: transparent;
         stroke: #418bd4;
         stroke-width: 6;
@@ -102,11 +104,20 @@
         stroke-linecap: round;
     }
 
-    .zj-progress svg text {
+    .oj-progress b {
+        font-size: 22px;
+    }
+
+    .oj-progress svg text {
 
         fill: #418bd4;
         font-size: 60px;
         text-anchor: middle;
     }
 
+    @media screen and (max-width: 640px) {
+        .oj-progress b {
+            font-size: 14px;
+        }
+    }
 </style>
