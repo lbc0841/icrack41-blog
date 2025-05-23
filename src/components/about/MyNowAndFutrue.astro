@@ -1,42 +1,67 @@
 ---
+import { PlanIcon } from '../../assets/icons';
+
 ---
 
 <div class="about-me-item-container">
     <div class="text-white text-2xl font-bold" style="margin-bottom: 40px; margin-right: 20px;">現在 & 未來<hr></div>
 
     <h1 class="text-white">目前學歷</h1>
-    <div class="flex">
-        <svg class="route" width="300px" height="300px" viewBox="0 0 256 256">
-            <path fill="transparent" stroke="white" stroke-width="10" d="M58.157772,233.831268
-                    C58.157772,233.831268 59.945309,232.107620 62.507683,230.963837 
-                    C72.353828,226.568771 80.286438,220.021362 85.519310,210.438034 
-                    C90.611206,201.112854 91.295952,191.155823 89.430504,180.968811 
-                    C88.710632,177.037643 85.407860,174.495789 82.584183,171.994965 
-                    C76.860558,166.925720 70.894188,162.128738 64.986893,157.269333 
-                    C60.878773,153.889969 59.687878,148.658142 62.034325,143.820389 
-                    C63.664181,140.460052 69.399673,138.435593 73.885323,139.855713 
-                    C76.574272,140.706985 79.296555,141.661026 81.742432,143.034439 
-                    C90.265305,147.820221 99.195267,147.295319 108.378571,145.805695 
-                    C115.754166,144.609314 123.128471,143.708328 130.584229,146.267197 
-                    C135.201660,147.851913 138.689407,144.826920 138.796997,139.858002 
-                    C138.883484,135.863876 138.645599,131.863800 138.653000,127.866554 
-                    C138.658859,124.699295 136.733353,122.669907 134.708588,120.652641 
-                    C127.639366,113.609627 120.387711,106.731850 114.964661,98.233215 
-                    C107.783226,86.978996 108.048492,72.201210 115.682816,61.162880 
-                    C116.629387,59.794243 117.613663,58.451683 118.796921,56.807804 
-                    C123.553322,49.657074 127.637268,47.842869 135.465073,49.802044 
-                    C139.481628,50.807327 143.330978,52.473465 147.268097,53.804874 
-                    C154.933380,56.397045 160.732285,52.918709 161.572006,44.884613 
-                    C161.995529,40.832588 163.257202,37.125843 164.598236,33.362003 
-                    C166.841721,27.065403 171.788483,24.450706 177.885269,23.787725 
-                    C181.505310,23.394068 185.045761,22.161501 188.766861,22.638838 
-                    L191.142624,22.943598"/>
+    <div class="flex flex-col md:flex-row">
+        <svg class="route" viewBox="0 0 200 200">
+
+            <path class="route-path" fill="transparent" stroke="white" stroke-width="10" d="M38,233
+                    C28,203 39,202 42,200
+                    C52,196 60,190 65,180
+                    C70,171 71,161 69,150
+                    C68,147 65,144 62,141
+                    C56,136 50,132 44,127
+                    C40,123 39,118 42,113
+                    C43,110 49,108 53,109
+                    C56,110 59,111 61,113 
+                    C70,117 79,117 88,115
+                    C95,114 103,113 110,116
+                    C115,117 118,114 118,109
+                    C118,105 118,101 118,97
+                    C118,94  116,92 114,90
+                    C107,83 100,76 94,68
+                    C87,56 68,42 115,11 "/>
+
+                <path fill="white" stroke="none" d="M147,8 
+					C151,9 156,10 160,12 
+					C166,16 172,19 179,16 
+					C179,25 173,30 164,30 
+					C161,30 158,29 154,30 
+					C151,30 149,32 150,35 
+					z"/>
+
+				<line x1="152" y1="60" x2="147" y2="8" stroke="white" stroke-width="2"/>
         </svg>
 
         <div class="intro-text">
-            <ul class="list-disc" style="margin-top: 90px;">
-                <li><b class="entering-text">國中：</b></li>
-                <li><b class="entering-text">高中：</b></li>
+            <ul class="list-disc" style="margin-left: 20px;">
+
+                <li>
+                    <b class="entering-text">臺中市立爽文國民中學</b><br>
+
+                    <small class="entering-text text-gray-400">
+                        程式小白，最先接觸的語言是 C++<br>
+                        可以說是根本還沒入門<br>
+                        只會 printf/scanf, cin/cout 基本的變數、迴圈與條件判斷<br>
+                    </small>
+                </li>
+                <br>
+
+                <li>
+                    <b class="entering-text">臺中市立臺中工業高級中等學校</b><br>
+
+                    <small class="entering-text text-gray-400">
+                        接觸的語言越來越多了
+                        知道該怎麼去學習一個新工具<br>
+                        還在努力變成大佬的路上<br>
+                    </small>
+                <br>
+
             </ul>
         </div>
     </div>
@@ -44,22 +69,35 @@
 
     
 
-    <h1 class="text-white" style="margin-bottom: 20px;">未來計畫</h1>
+    <h1 class="text-white" style="margin-bottom: 20px; margin-top: 40px;">未來計畫</h1>
 
-    <div class="intro-text">
-        <ul class="list-disc" style="margin-left: 20px;">
-            <li><b class="entering-text">APCS</b></li>
-            <li><b class="entering-text">學習 STM32</b></li>
-            <li><b class="entering-text">持續優化個人網站</b></li>
-        </ul>
+    <div class="flex flex-col md:flex-row">
+        <PlanIcon color="white" height={240} width={240}/>
+
+        <div class="intro-text">
+            <ul class="list-disc" style="margin-left: 20px;">
+                <li><b class="entering-text">APCS</b></li>
+                <li><b class="entering-text">學習 STM32</b></li>
+                <li><b class="entering-text">持續優化個人網站</b></li>
+            </ul>
+        </div>
+
     </div>
+
 
 </div>
 
 <style>
+    .route {
+        overflow: visible;
+        width: 250px;
+        height: min-content;
 
-    .route path {
-        transform-origin: 50% 50%;
+        max-width: 100%;
+    }
+
+    .route .route-path {
+        transform-origin: 50% 40%;
         transform: rotate3d(1, 0, 0, 55deg);
         stroke-linecap: round;
 

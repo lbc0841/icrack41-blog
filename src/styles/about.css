@@ -275,6 +275,10 @@
 .intro-text {
     color: rgb(200,200,200);
     font-size: 20px;
+    height: min-content;
+
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .intro-text ul{
     font-size: 20px;

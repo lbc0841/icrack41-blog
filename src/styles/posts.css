@@ -61,14 +61,14 @@
 
 .post {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
     position: relative;
     color: white;
 
     width: 100%;
-    height: 300px;
-    padding: 10px;
+    height: 280px;
 
+    padding: 10px;
     margin-bottom: 40px;
 
     background-color: rgba(0, 0, 0, 0.2);
@@ -79,19 +79,23 @@
 }
 
 @media screen and (max-width: 760px) {
-    .post {
-        height: 460px;
-    }
 
     .post {
+        height: min-content;
         grid-template-columns: 1fr;
-
     }
 }
 
 .post:hover {
     color: #94dbfa;
     transform: scaleX(1.01);
+}
+
+.text-container {
+    height: min-content;
+    width: 100%;
+
+    margin-bottom: 20px;
 }
 
 .post-title {
@@ -104,49 +108,37 @@
 
 .post-description {
     display: -webkit-box;
+    height: min-content;
+
     color: rgba(255, 255, 255, 0.8);
     
     margin-left: 20px;
     margin-top: 10px;
 
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
 
     width: 90%;
-    height: 50%;
+    
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .post-img {
 
-
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    
+    object-fit: cover;
+    overflow: hidden;
     width: 100%;
     height: 100%;
 
-    color: white;
+    max-height: 280px;
 }
 
-.read-button {
-    position: absolute;
-    overflow: visible;
-    bottom: 12px;
-    right: 12px;
-}
+@media screen and (max-width: 640px) {
 
-.read-button g {
-    fill: transparent;
-    stroke: white;
-    stroke-width: 10;
-}
-
-.post:hover .read-button g {
-
-    stroke: #94dbfa;
+    .post-title {
+        height: min-content;
+        font-size: 26px;
+    }
 }
