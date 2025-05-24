@@ -9,8 +9,8 @@
 :root {
     background: black;
     overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
 }
 
 body {
@@ -32,8 +32,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     z-index: 2;
 
     transform-origin: 50% 50%;

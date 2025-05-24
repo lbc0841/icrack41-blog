@@ -1,6 +1,6 @@
 .about-me-container {
     width: 98%;
-    height: 100vh;
+    height: 100dvh;
 
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -71,7 +71,7 @@
 
 /* profile ============================================================================================================== */
 .profile-bar {
-    height: 100vh;
+    height: 100dvh;
     min-width: 180px;
     display: grid;
     grid-template-rows: 1fr 100fr;
@@ -220,7 +220,7 @@
 /* contents ============================================================================================================== */
 .contents-container {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 
     padding-right: 6px;
     padding-top: 72px;
