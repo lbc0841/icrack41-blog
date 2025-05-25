@@ -1,10 +1,12 @@
 ---
 import MainNavigation from '../components/MainNavigation.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import Profile from '../components/Profile.astro';
 import Layout from '../layouts/Layout.astro';
-import Loading from "../components/Loading.astro";
 
+import { Image } from 'astro:assets';
+import profileImg from '../assets/profile_img.webp';
+
+import "../styles/index.css";
 ---
 
 
@@ -12,7 +14,25 @@ import Loading from "../components/Loading.astro";
 	<div class="background"></div>
 
 	<MainNavigation/>
-	<Profile/>
+
+	<div class="profile-container flex-col sm:flex-row">
+    
+		<div style="margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+			<Image class="profile-img" src={profileImg} alt="img"/>
+		</div>
+		
+		<div class="text-white text-4xl font-bold text-center sm:text-left" style="margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+			
+			<b style="color: #dadcea; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">small D</b><br>
+	
+			<b class="profile-describe">
+				走一步 看一步，
+				實在不行死半路<br>
+				日常崩潰 × 生活破防
+			</b>
+		</div>
+	</div>
+
 	<SocialLinks/>
 
 	<!-- <div class="scroll-hint hidden sm:block">
