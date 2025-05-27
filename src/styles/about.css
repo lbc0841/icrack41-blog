@@ -124,11 +124,14 @@
 .profile-name {
     position: absolute;
     bottom: 22px;
-    color: #181d3c;
+    color: #6f9bcc;
     font-weight: bold;
     transition: all 0.2s;
 
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+    text-shadow: 1px 0px 1px rgba(0, 0, 0, 1),
+            -1px 0px 1px rgba(0, 0, 0, 1),
+            0px 1px 1px rgba(0, 0, 0, 1),
+            0px -1px 1px rgba(0, 0, 0, 1);
 }
 
 .profile-links{

@@ -28,17 +28,44 @@ import profileImg from '../assets/profile_img.webp';
                 <i id="close" class="fa-solid fa-xmark"></i>
             </label>
 
-            <div class="main-nav-links-hamburger">
-                <Image src={profileImg} alt="profile-img" height={110} width={110} style="border-radius: 50%; margin-right: 20px;"/>
-                <ul style="margin-top: 20px; list-style: '〉';">
-                    <li><a href="/icrack41-blog/">Home</a></li>
-                    <li><a href="/icrack41-blog/about">About</a></li>
-                    <li><a href="/icrack41-blog/projects">Projects</a></li>
-                    <li><a href="/icrack41-blog/posts">Posts</a></li>
+            <div id="main-nav-links-hamburger" class="main-nav-links-hamburger">
+                <Image src={profileImg} alt="profile-img" height={110} width={110} style="border-radius: 40%;"/>
+                <ul style="margin-top: 20px;">
+                    <li>
+                        <i class="fa-solid fa-house" style="width: 24px;"></i>
+                        <a href="/icrack41-blog/"> Home</a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-user" style="width: 24px;"></i>
+                        <a href="/icrack41-blog/about"> About</a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-file-invoice" style="width: 24px;"></i>
+                        <a href="/icrack41-blog/projects"> Projects</a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-pen-clip" style="width: 24px;"></i>
+                        <a href="/icrack41-blog/posts"> Posts</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
 
+<script>
+    const mainNavHamburger = document.getElementById("main-nav-links-hamburger");
+    const toggler = document.getElementById("toggler") as HTMLInputElement;
 
+    document.addEventListener("click", (e) => {
+
+        const target = e.target as HTMLElement;
+        if(!mainNavHamburger?.contains(target) && e.target != toggler){
+            toggler.checked = false;
+        }
+    });
+
+</script>

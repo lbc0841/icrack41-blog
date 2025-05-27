@@ -10,8 +10,140 @@ import Layout from "../../layouts/Layout.astro";
     <MainNavigation/>
 
     <div class="background"></div>
-    <div>
 
+    <div class="project-container">
+        <div id="img-slider">
+
+            <div id="img-slider-top">
+                <img src="/icrack41-blog/assets/project_img/portable_power_supply/pcb_f.png" alt="">
+            </div>
+
+            <img src="/icrack41-blog/assets/project_img/portable_power_supply/layout.png" alt="">
+        </div>
+
+        <img src="/icrack41-blog/assets/project_img/portable_power_supply/functional_test.png" alt="">
+
+        <div class="text-white">
+            <h1>隨身簡易電供</h1>
+            一個小專案<br>
+            雖然製作過程只有短短的一周<br>
+            (包含 元件選擇 Layout、等待PCB板洗好、焊接)<br>
+            不過過程還是有些值得討論&分享的內容<br>
+            <br>
+            主要是為了方便攜帶而做的<br>
+            只要隨身帶有行充<br>
+            你就可以隨時隨地使用這款簡易電供<br>
+            <br>
+            他能提供<br>
+            電壓：5~12V<br>
+            電流：200mA 左右<br>
+            可以用來為麵包板電路供電、測試小型設備...
+        </div>
+
+        <div class="text-white">
+            <h1>難點：元件的選擇</h1>
+            這可以說是這個專案唯一的難點<br>
+            基本上完成了這部分其他的便是手到擒來了<br>
+            <br>
+            元件的選擇需要考量到 成本、合適度、封裝...等 問題<br>
+            <br>
+            第一個要選擇的便是專案的核心：<br>
+            升壓元件<br>
+            <br>
+            為此我閱讀的大量的 Datasheet<br>
+            <br>
+            我的元件尋找方式是<br>
+            <br>
+            ：列出常用升壓IC型號<br>
+            Chat GPT：<br>
+            $&#^@<br>
+            以下為常用的升壓IC<br>
+            1.%*#^#<br>
+            2.@*%^ ...<br>
+            <br>
+            然後根據 Chat GPT 的答覆尋找 Datasheet<br>
+            (因為 Chat GPT 的 Datasheet 資料正確率堪憂)<br>
+
+            最後找到了 EUP2570 這顆 IC
+        </div>
     </div>
     
+
+    <style>
+        .project-container {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            padding-top: 70px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            overflow-y: auto;
+        }
+
+        #img-slider {
+            position: relative;
+            display: inline-block;
+
+            height: 300px;
+            margin: auto;
+
+            overflow: hidden;
+            user-select: none;
+
+            cursor: ew-resize;
+        }
+
+        #img-slider #img-slider-top {
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+            left: 0;
+
+            width: 30%;
+            max-width: 100%;
+
+            overflow: hidden;
+        }
+        #img-slider #img-slider-top::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            height: 100%;
+            width: 2px;
+
+            background: #707070;
+        }
+
+        img {
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0%;
+        }
+
+    </style>
+
+    <script>
+        const imgSlider = document.getElementById("img-slider");
+        const imgTop = document.getElementById("img-slider-top");
+
+        imgSlider?.addEventListener("mousemove", function(e) {
+            const rect = imgTop?.getBoundingClientRect();
+
+            if(rect && imgTop){
+                const size = e.clientX - rect.left;
+                imgTop.style.width = size + "px";
+            }
+        });
+
+    </script>
 </Layout>
