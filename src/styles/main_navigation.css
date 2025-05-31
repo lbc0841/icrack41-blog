@@ -149,6 +149,13 @@
     /* transition-delay: 0s; */
 }
 
+@media screen and (max-width: 740px){
+
+    .language-switch span {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 640px){
 
     .main-nav-links {
@@ -157,9 +164,5 @@
 
     .hamburger-menu {
         display: block;
-    }
-
-    .language-switch span {
-        display: none;
     }
 }

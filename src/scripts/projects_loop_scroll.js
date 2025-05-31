@@ -26,3 +26,13 @@ projectContainer.addEventListener("wheel", (event) => {
     },
     { passive: false },
 );
+
+const leftButton = document.getElementById("left-button");
+leftButton.onclick = function() {
+    prevProject();
+};
+
+const rightButton = document.getElementById("right-button");
+rightButton.onclick = function() {
+    nextProject();
+};
