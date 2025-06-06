@@ -2,15 +2,18 @@
 import MainNavigation from "../components/MainNavigation.astro";
 import Layout from "../layouts/Layout.astro";
 
+import "../styles/notes.css"
+
+import BS from "../blog/cpp_notes/dt_binary_search.md"
 ---
 
 <Layout>
     <div class="background"></div>
     <MainNavigation/>
 
-    <span>
-        二分搜
-        
-    </span>
+    <div class="note-container">
 
+        <BS/>
+        
+    </div>
 </Layout>
