@@ -57,11 +57,24 @@ a:hover {
 
 pre {
     padding: 0.5rem;
+
+    border: solid 1px #6e6e6e;
+    border-radius: 4px;
 }
 
-code {
+p code {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
     background-color: #24292e;
     color: white;
+
+    border: solid 1px #6e6e6e;
+    border-radius: 4px;
+
+    line-height: 2.5rem;
 }
 
 ul {
