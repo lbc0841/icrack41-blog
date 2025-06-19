@@ -1,5 +1,6 @@
 ---
 title: "數學常用計算"
+chapter: 0
 ---
 
 `#include <cmath>`

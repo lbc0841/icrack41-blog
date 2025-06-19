@@ -47,14 +47,6 @@ i {
     color: #c0c0c0;
 }
 
-a {
-    font-size: var(--font-size-base);
-    color: #51a2ff;
-}
-a:hover {
-    color: #74d4ff;
-}
-
 pre {
     padding: 0.5rem;
 

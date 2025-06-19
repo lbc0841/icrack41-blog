@@ -1,0 +1,41 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import MainNavigation from '../../components/MainNavigation.astro';
+import "../../styles/markdown.css"
+import "../../styles/notes.css"
+
+export async function getStaticPaths() {
+  const posts = await getCollection('cpp_note');
+  const headings = await Promise.all(
+    posts.map(async (post) => {
+      const data = await post.render();
+      return data.headings;
+    })
+  );
+
+  return posts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: { post, headings: headings[index] },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<'cpp_note'>;
+  headings: MarkdownHeading[];
+};
+
+const { post, headings } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout>
+  <div class="background"></div>
+  <MainNavigation/>
+
+  <div class="note-container">
+
+      <Content/>
+      
+  </div>
+</Layout>

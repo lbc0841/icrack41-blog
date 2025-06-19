@@ -1,9 +1,7 @@
 ---
 title: "二分搜 Binary Search"
-
+chapter: 0
 ---
-
-# 二分搜 Binary Search
 
 ## 概念
 
@@ -11,48 +9,41 @@ title: "二分搜 Binary Search"
 
 ### 從例子開始
 
-某天我突然發起神經：#*@&=^%@?!+(!@%<br>
-想測量我的手機到底 **最高從多高的地方摔下來螢幕不會碎**<br>
+某天我突然神經病犯了<br>
+想測量我的手機<br>
+**最高從多高的地方摔下來不會碎**<br>
 (手機能承受的最大跌落高度)<br>
 
-於是開始了逆天實驗<br>
+就開始了逆天實驗<br>
 為了實驗準確性，每次摔都要用一支新手機<br>
-並且在實驗前就知道手機從 1000cm 摔下來一定會碎 (通靈得出的)
+並且在實驗前我通靈得知手機從 1000cm 摔下來一定會碎
 
 我有幾種測試方法：
 
 - 方法一<br>
 從最低處開始摔<br>
-1cm、2cm、3cm... 直到手機螢幕碎掉<br>
+1cm、2cm、3cm... 直到手機碎掉<br>
 這樣可以找到手機能承受的最大跌落高度
 
 - 方法二<br>
 從最高處開始摔<br>
-999cm、998cm、997cm... 直到手機螢幕不會碎掉<br>
+999cm、998cm、997cm... 直到手機不會碎掉<br>
 這樣也可以找到手機能承受的最大跌落高度
-
-但是對於 方法一 & 方法二<br>
-假設手機能承受的最大跌落高度為 $h$<br>
-則需要摔手機的次數分別為 $h$ 與 $1000-h$<br>
-很顯然我沒那麼多錢可以買這麼多手機<br>
-而且一直摔也是很累的<br>
-
-其實還有一個方法
 
 - 方法三<br>
 每次取中間點摔<br>
-<br>
-第一次：$\frac{0+1000}{2} = 250$<br>
-<br>
+第一次：$\frac{0+1000}{2} = 500$<br>
 第二次：$\frac{0+500}{2} = 250$ 或 $\frac{500+1000}{2} = 750$<br>
-<br>
 第三次：...<br>
-<br>
 (根據上次的結果判斷這次從哪摔)<br>
-第一次螢幕碎了 → 往更低處試<br>
-第一次螢幕沒碎 → 往更高處試
+第一次碎了 → 往更低處試<br>
+第一次沒碎 → 往更高處試
 
-<br>
+對於 方法一 & 方法二<br>
+假設手機能承受的最大跌落高度為 $h$<br>
+則需要摔手機的次數分別為 $h$ 與 $1000-h$<br>
+很顯然我沒錢可以買這麼多手機<br>
+而 方法三 的效率很顯然遠大於 方法一 & 方法二<br>
 
 這就是二分搜的核心思想<br>
 <font color="ff0000">根據每次的結果判斷下次搜索的範圍</font>
@@ -70,31 +61,10 @@ title: "二分搜 Binary Search"
 通常在 **需要多次查詢** 或是 **查詢範圍很大** 時會很有優勢
 
 *e.g.*<br>
-對於 $10^{6}$ 筆資料的 vector 而言<br>
+對於 $10^{6}$ 筆資料的陣列而言<br>
+要找到目標值<br>
 暴力總共需要比較 $\color{Red} 10^{6}$ 次<br>
 而二分搜索則是 $\left \lceil log_{2}10^{6} \right \rceil = \color{Red} 20$ 次
-
-<br><br>
-
-## 使用條件
-
-***
-
-二分搜用在 <font color=#ff0000>排好序</font> 的陣列上
-
-<br><br>
-
-## 加法溢位
-
-***
-
-m 為 l 與 r 的中點，也就是 $\left \lfloor \frac{l+r}{2}\right \rfloor$<br>
-可以寫成<br>
-`m = (l+r)/2;`<br>
-
-但是數字過大時，l+r 會 <font color=#ff0000>溢位</font><br>
-這時可以改寫成<br>
-`m = l + (r-l)/2;`
 
 <br><br>
 
@@ -102,28 +72,33 @@ m 為 l 與 r 的中點，也就是 $\left \lfloor \frac{l+r}{2}\right \rfloor$<
 
 ***
 
-依照二分搜的概念<br>
+#### 模板
+
+依照上面的例子<br>
 代碼邏輯大概是
 
 ```cpp
-while(/* 需要搜索時執行 */){
-    int m = l + (r-l)/2;
-    if(/* 判斷條件 */) /* 縮區間 */
-    else /* 縮區間 */
+while(/* 還沒得出實驗結果 */){
+    int m = /* 計算中點 */;
+    if(/* 手機沒碎 */) /* 往高處試 */
+    else /* 往低處試 */
 }
 ```
 
-以通用情況下的方式描述
+為了在其他場景下也能用這個模板<br>
+需要稍微更改描述
 
 ```cpp
 while(/* 區間不為空時執行 */){
-    int m = l + (r-l)/2;
+    int m = /* 計算中點 */;
     if(/* 判斷條件 */) /* 縮區間 */
     else /* 縮區間 */
 }
 ```
 
-#### 區間
+~~非常好，二分搜學完了~~
+
+#### 區間模板
 
 按區間可以分成不同寫法<br>
 區間分為：
@@ -133,18 +108,6 @@ while(/* 區間不為空時執行 */){
 - 開區間 (l, r)
 
 不同區間的寫法略有不同
-
-#### 惡補數學
-
-閉區間 [l, r] 為 $\left\{ x \in \mathbb{R}, l \leq x \leq r \right\}$<br>
-開區間 (l, r) 為 $\left\{ x \in \mathbb{R}, l < x < r \right\}$<br>
-左閉右開 [l, r) 為 $\left\{ x \in \mathbb{R}, l \leq x < r \right\}$<br>
-左開右閉 (l, r] 為 $\left\{ x \in \mathbb{R}, l < x \leq r \right\}$<br>
-<br>
-而程式碼中因為索引只能是整數<br>
-所以 $ x \in \mathbb{Z} $<br>
-
-2 2 2 5 6 6 7 8 9 9 10
 
 #### 以下代碼
 
@@ -159,6 +122,28 @@ c++ algorithm 已經有 lower_bound()<br>
 - `m` 表示 middle<br>
 - `nums` 為一個由小到大排好序的 vector<br>
 - `target` 為要從中尋找的值
+
+#### 惡補數學
+
+閉區間 [l, r] 為 $\left\{ x \in \mathbb{R}, l \leq x \leq r \right\}$<br>
+開區間 (l, r) 為 $\left\{ x \in \mathbb{R}, l < x < r \right\}$<br>
+左閉右開 [l, r) 為 $\left\{ x \in \mathbb{R}, l \leq x < r \right\}$<br>
+左開右閉 (l, r] 為 $\left\{ x \in \mathbb{R}, l < x \leq r \right\}$<br>
+<br>
+程式碼中因為索引只能是整數<br>
+所以 $ x \in \mathbb{Z} $<br>
+
+// 2 2 2 5 6 6 7 8 9 9 10
+
+#### 加法溢位問題
+
+m 為 l 與 r 的中點，也就是 $\left \lfloor \frac{l+r}{2}\right \rfloor$<br>
+可以寫成<br>
+`m = (l+r)/2;`<br>
+
+但是數字過大時，l+r 會 <font color=#ff0000>溢位</font><br>
+這時可以改寫成<br>
+`m = l + (r-l)/2;`
 
 <br>
 
@@ -317,13 +302,13 @@ while(/* 區間不為空時執行 */){
 
 <br><br>
 
-### 特別注意
+### 需要注意的東西
 
 ***
 
 #### 處理找不到目標的情況
 
-找不到目標時二分搜會返回 `nums.size()`<br>
+找不到目標時二分搜會返回 `nums.size()` (如果你用的是前一種模板)<br>
 直接帶入 `nums[nums.size()]` 會發生錯誤
 
 #### 縮區間判斷
@@ -345,6 +330,12 @@ while(/* 區間不為空時執行 */){
 [744. 寻找比目标字母大的最小字母](https://leetcode.cn/problems/find-smallest-letter-greater-than-target/description/)<br>
 [1351. 统计有序矩阵中的负数](https://leetcode.cn/problems/count-negative-numbers-in-a-sorted-matrix/description/)<br>
 [852. 山脉数组的峰顶索引](https://leetcode.cn/problems/peak-index-in-a-mountain-array/description/)
+
+[153. 寻找旋转排序数组中的最小值](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/description/)
+[33. 搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/solutions/)
+
+[436. 寻找右区间](https://leetcode.cn/problems/find-right-interval/description/)
+
 
 ### Zerojudge
 

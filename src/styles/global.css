@@ -11,9 +11,9 @@
 :root {
     --font-size-base: 1rem;
     --font-size-md: 1.2rem;
-    --font-size-lg: 1.6rem;
-    --font-size-xl: 2.2rem;
-    --font-size-2xl: 3rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 2.2rem;
 
     background: black;
     overflow: hidden;
@@ -22,10 +22,16 @@
     font-size: 20px;
 }
 
+@media screen and (max-width: 640px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
 body {
     position: fixed;
     font-family: Arial, sans-serif;
-    background: linear-gradient(170deg, #11274e, #433443);
+    background: linear-gradient(170deg, #121f27, #000000);
     /* background: linear-gradient(170deg, #40c5ff, #ff5b7e, #262422); */
     /* background: #262422; */
 
@@ -98,14 +104,88 @@ body {
     transform: translateX(-50%) scaleX(1.3);
 }
 
-a {
-    font-size: var(--font-size-base);
-    color: #51a2ff;
-}
-a:hover {
-    color: #74d4ff;
+
+/* text  ============================================================================================================== */
+h1 {
+    font-size: var(--font-size-2xl);
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
+h2 {
+    font-size: var(--font-size-xl);
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: var(--font-size-md);
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+hr {
+    color: #c0c0c0;
+}
+
+p {
+    font-size: var(--font-size-base);
+    color: #c0c0c0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+b {
+    font-size: var(--font-size-base);
+    color: #c0c0c0;
+}
+
+i {
+    font-size: var(--font-size-base);
+    color: #c0c0c0;
+}
+
+pre {
+    padding: 0.5rem;
+
+    border: solid 1px #6e6e6e;
+    border-radius: 4px;
+}
+
+p code {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    background-color: #24292e;
+    color: white;
+
+    border: solid 1px #6e6e6e;
+    border-radius: 4px;
+
+    line-height: 2.5rem;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+li {
+    font-size: var(--font-size-base);
+    color: #c0c0c0;
+}
 
 /* scrollbar  ============================================================================================================== */
 ::-webkit-scrollbar {

@@ -18,3 +18,39 @@
 
     overflow-y: scroll;
 }
+
+#left-button {
+    position: absolute;
+    bottom: 20px;
+    right: 120px;
+
+    width: 90px;
+    color: white;
+}
+
+#right-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    width: 90px;
+    color: white;
+}
+
+.menu {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+
+    width: 30px;
+    color: white;
+    font-size: 60px;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+    border-right: solid 1px white;
+
+
+}

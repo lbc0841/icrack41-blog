@@ -36,42 +36,38 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 				
 				<h4 class="profile-name">small D</h4>
 	
-				<ul class="profile-links">
-					<li><a href={bilibiliLink} style="color: rgb(0,174,231);"><i class="fa-brands fa-bilibili"></i></a></li>
-					<li><a href={youtubeLink} style="color: rgb(255,0,51);"><i class="fa-brands fa-youtube"></i></a></li>
-					<li><a href={gmailLink} style="color: rgb(249,181,0);"><i class="fa-regular fa-envelope"></i></a></li>
-					<li><a href={instagramLink} style="color: rgb(99,230,190);"><i class="fa-brands fa-instagram"></i></a></li>
-				</ul>
+				<div class="profile-links">
+					<div><a href={bilibiliLink} style="color: rgb(0,174,231);"><span class="fa-brands fa-bilibili"></span></a></div>
+					<div><a href={youtubeLink} style="color: rgb(255,0,51);"><span class="fa-brands fa-youtube"></span></a></div>
+					<div><a href={gmailLink} style="color: rgb(249,181,0);"><span class="fa-regular fa-envelope"></span></a></div>
+					<div><a href={instagramLink} style="color: rgb(99,230,190);"><span class="fa-brands fa-instagram"></span></a></div>
+				</div>
 			</div>
-	
+
 			<div class="contents-table">
 				<div class="text-xl font-bold" style="color: rgba(200, 200, 200, 0.7); margin-bottom: 12px;">
 					<i class="fa-solid fa-tags"></i>
 					Tags
 				</div>
 		
-				<ul>
-					<li><button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button></li>
-					<li><button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button></li>
-					<li><button onclick="scrollToElement('contents-container', 'my-ability')">編程能力</button></li>
-					<li><button onclick="scrollToElement('contents-container', 'now-and-futrue')">現在 & 未來</button></li>
-					<li><button onclick="scrollToElement('contents-container', 'find-me')">找到我</button></li>
-				</ul>
+				<div class="contents-table-item">
+					<button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button>
+					<button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button>
+					<button onclick="scrollToElement('contents-container', 'my-ability')">編程能力</button>
+					<button onclick="scrollToElement('contents-container', 'now-and-futrue')">現在 & 未來</button>
+					<button onclick="scrollToElement('contents-container', 'find-me')">找到我</button>
+				</div>
 			</div>
 		</div>
 	
 		<div id="contents-container" class="contents-container">
-			<div class="w-full h-full">
-				<!-- <div style="height: 70px;"></div> -->
-				
 				<div id="my-self-intro"><MySelfIntro/></div>
 				<div id="my-skill-tree"><MySkillTree/></div>
 				<div id="my-ability"><MyAbility/></div>
 				<div id="now-and-futrue"><MyNowAndFutrue/></div>
 				<div id="find-me"><FindMe/></div>
-	
-			</div>
 		</div>
+
 	</div>
 
 	<script is:browser>
@@ -157,7 +153,30 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 		enteringRouteObserver.observe(enteringRoute);
 
 
+		const particleBox = document.body;
+		particleBox.addEventListener("mousemove", function(e){
+			let rect = particleBox.getBoundingClientRect();
+			let x = e.clientX - rect.left;
+			let y = e.clientY - rect.top;
+
+			creatParticles(x, y);
+		});
+
+		function creatParticles(x, y){
+			let particle = document.createElement("div");
+			particle.classList.add("particle");
+			particle.style.left = x+"px";
+			particle.style.top = y+"px";
+
+			particleBox.appendChild(particle);
+
+			setTimeout(() => {
+				particle.remove();
+			}, 200);
+		}
 	</script>
+
+	
 </Layout>
 
 

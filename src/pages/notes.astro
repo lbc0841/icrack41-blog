@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/notes.css"
 import "../styles/markdown.css"
 
-import BS from "../content/cpp_notes/dt_binary_search.md"
+import BS from "../content/cpp_note/dt_binary_search.md"
 ---
 
 <Layout>
@@ -17,4 +17,17 @@ import BS from "../content/cpp_notes/dt_binary_search.md"
         <BS/>
         
     </div>
+
+    <div class="menu">
+        <h4 class="fa-solid fa-angles-right"></h4>
+    </div>
+
+    <button id="left-button">
+		<h1 class="fa-solid fa-chevron-left"></h1>
+	</button>
+
+	<button id="right-button">
+		<h1 class="fa-solid fa-chevron-right"></h1>
+	</button>
+
 </Layout>
