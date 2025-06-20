@@ -1,19 +1,40 @@
 ---
-import "../styles/social_links.css";
 ---
 
-<div class="social-links-container">
-    <ul class="social-links">
-        <li>
-            <a href="https://www.threads.com/@lbc0841" target="_blank"><span class="fa-brands fa-threads"></span></a>
-        </li>
-    
-        <li>
-            <a href="https://github.com/lbc0841" target="_blank"><span class="fa-brands fa-github"></span></a>
-        </li>
-    
-        <li>
-            <a href="https://discord.gg/eTHuNe3H" target="_blank"><span class="fa-brands fa-discord"></span></a>
-        </li>
-    </ul>
+<div class="absolute bottom-10 w-full flex justify-center sm:justify-end gap-6 pl-8 pr-8">
+
+    <button class="social-link" onclick="location.href='https://www.threads.com/@lbc0841'">
+        <span class="text-white text-2xl fa-brands fa-threads"></span>
+    </button>
+
+    <button class="social-link" onclick="location.href='https://github.com/lbc0841'">
+        <span class="text-white text-2xl fa-brands fa-github"></span>
+    </button>
+
+    <button class="social-link" onclick="location.href='https://discord.gg/GWEmUwaSFG'">
+        <span class="text-white text-2xl fa-brands fa-discord"></span>
+    </button>
 </div>
+
+<style>
+    .social-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 70px;
+        width: 70px;
+        border-radius: 10%;
+
+        list-style: none;
+
+        box-shadow:
+            inset 5px 5px 10px rgba(255, 255, 255, 0.3),
+            2px 2px 2px rgba(255, 255, 255, 0.3);
+
+        transition: transform 0.2s;
+    }
+    .social-link:hover{
+        transform: translate3d(0, -8px, 0);
+    }
+</style>

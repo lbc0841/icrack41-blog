@@ -40,17 +40,14 @@
 .menu {
     position: absolute;
     bottom: 20px;
-    left: 0;
+    left: 0px;
 
-    width: 30px;
+    width: 240px;
+    max-width: 80%;
     color: white;
+    background-color: #141715;
     font-size: 60px;
 
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top: solid 1px white;
-    border-bottom: solid 1px white;
-    border-right: solid 1px white;
-
-
+    border-radius: 20px;
+    border: solid 1px white;
 }
