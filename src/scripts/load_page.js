@@ -9,11 +9,17 @@ window.addEventListener("load", function () {
 		if(loading) loading.style.display = "none";
 
         if(pageContent){
-			pageContent.style.animation = "page-content-appear 0.2s ease-out";
+			pageContent.style.animation = "anim-entering-page 0.2s ease-out";
 			pageContent.style.opacity = "1";
 		} 
 
-	}, 600);
+	}, 10);
+
+	// this.setTimeout(function(){
+
+		
+		
+	// }, 2000);
 });
 
 

@@ -1,0 +1,57 @@
+const enteringPath = document.querySelectorAll('.entering-path');
+const enteringProgress = document.querySelectorAll('.entering-progress');
+const enteringText = document.querySelectorAll('.entering-text');
+
+const enteringTextObserver = new IntersectionObserver((entrise) => {
+    entrise.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = "anim-entering-text 0.3s ease-out";
+            entry.target.style.visibility = "visible";
+        }
+        else {
+            entry.target.style.animation = "none";
+            entry.target.style.visibility = "hidden";
+        }
+    });
+    }, {threshold: 0.15}
+);
+
+const enteringPathObserver = new IntersectionObserver((entrise) => {
+    entrise.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = "anim-entering-path 1s ease-out";
+            entry.target.style.visibility = "visible";
+        }
+        else {
+            entry.target.style.animation = "none";
+            entry.target.style.visibility = "hidden";
+        }
+    });
+    }, {threshold: 0.4}
+);
+
+const enteringProgressObserver = new IntersectionObserver((entrise) => {
+    entrise.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = "anim-entering-progress 0.3s ease-out";
+            entry.target.style.visibility = "visible";
+        }
+        else {
+            entry.target.style.animation = "none";
+            entry.target.style.visibility = "hidden";
+        }
+    });
+    }, {threshold: 0.4}
+);
+
+enteringText.forEach(item => {
+    enteringTextObserver.observe(item);
+});
+
+enteringProgress.forEach(item => {
+    enteringProgressObserver.observe(item);
+});
+
+enteringPath.forEach(item => {
+    enteringPathObserver.observe(item);
+});

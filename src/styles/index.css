@@ -11,15 +11,6 @@
     padding-bottom: 20px;
 }
 
-.profile-describe {
-    line-height: 1.4;
-    padding-top: 10px;
-    font-size: 26px;
-    color: #b6b8c6;
-
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
 .profile-img {
     width: 180px;
     height: 180px;
@@ -27,15 +18,6 @@
     object-fit: cover;
     border: 3px solid #dadcea;
     background-color: #2581a9;
-}
-
-@media screen and (max-width: 640px) {
-
-    .profile-describe {
-        padding-top: 10px;
-        font-size: 16px;
-        color: #b6b8c6;
-    }
 }
 
 @media screen and (max-width: 340px) {

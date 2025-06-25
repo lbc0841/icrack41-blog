@@ -10,8 +10,8 @@
 
     padding-top: 80px;
     padding-bottom: 20px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
 
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(20px);
@@ -35,19 +35,4 @@
 
     width: 90px;
     color: white;
-}
-
-.menu {
-    position: absolute;
-    bottom: 20px;
-    left: 0px;
-
-    width: 240px;
-    max-width: 80%;
-    color: white;
-    background-color: #141715;
-    font-size: 60px;
-
-    border-radius: 20px;
-    border: solid 1px white;
 }

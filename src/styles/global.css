@@ -15,6 +15,8 @@
 
     --spacing: 0.25rem;
 
+    --content-color: #f1f5f9;
+
     background: black;
     overflow: hidden;
     height: 100dvh;
@@ -35,6 +37,7 @@ body {
     /* background: linear-gradient(170deg, #40c5ff, #ff5b7e, #262422); */
     /* background: #262422; */
 
+    color: var(--content-color);
     height: 100vh;
     width: 100vw;
     
@@ -72,19 +75,6 @@ body {
     opacity: 0.7;
 }
 
-@keyframes page-content-appear {
-    
-    0%{
-        /* opacity: 0; */
-        transform: scale(1.05);
-    }
-    100%{
-        /* opacity: 1; */
-        transform: scale(1);
-    }
-
-}
-
 .scroll-hint {
     position: absolute;
     bottom: 26%;
@@ -108,51 +98,44 @@ body {
 /* text  ============================================================================================================== */
 h1 {
     font-size: var(--font-size-2xl);
-    color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 h2 {
     font-size: var(--font-size-xl);
-    color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 h3 {
     font-size: var(--font-size-lg);
-    color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 h4 {
     font-size: var(--font-size-md);
-    color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 hr {
-    color: #c0c0c0;
+    color: var(--content-color);
 }
 
 p {
     font-size: var(--font-size-base);
-    color: #c0c0c0;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 b {
     font-size: var(--font-size-base);
-    color: #c0c0c0;
 }
 
 i {
     font-size: var(--font-size-base);
-    color: #c0c0c0;
 }
 
 pre {
@@ -165,26 +148,50 @@ pre {
 p code {
     padding-left: 4px;
     padding-right: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 
     background-color: #24292e;
     color: white;
 
     border: solid 1px #6e6e6e;
     border-radius: 4px;
+}
 
-    line-height: 2.5rem;
+p a {
+    color: #51a2ff;
 }
 
 ul {
     list-style: disc;
     padding-left: 1.5rem;
+
+    color: var(--content-color);
 }
 
 li {
     font-size: var(--font-size-base);
-    color: #c0c0c0;
+}
+
+th {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.6rem;
+
+    text-decoration: underline;
+}
+
+td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+table {
+    white-space: nowrap;
+    overflow: auto;
 }
 
 /* scrollbar  ============================================================================================================== */

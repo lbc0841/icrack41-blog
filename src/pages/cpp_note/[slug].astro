@@ -2,7 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import MainNavigation from '../../components/MainNavigation.astro';
-import "../../styles/markdown.css"
+import CppNoteMenu from '../../components/CppNoteMenu.astro';
 import "../../styles/notes.css"
 
 export async function getStaticPaths() {
@@ -38,4 +38,6 @@ const { Content } = await post.render();
       <Content/>
       
   </div>
+
+  <CppNoteMenu/>
 </Layout>

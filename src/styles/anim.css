@@ -18,16 +18,24 @@
     }
 }
 
+/* entering-page  ------------------------------------------------------------------------------- */
+@keyframes anim-entering-page {
+    0%{
+        opacity: 0;
+        transform: scale(1.02);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* entering-text  ------------------------------------------------------------------------------- */
 .entering-text {
     display: inline-block;
     vertical-align: top;
     animation: none;
     visibility: hidden;
-}
-
-.entering-progress{
-
-    animation: none;
 }
 
 @keyframes anim-entering-text {
@@ -41,7 +49,8 @@
     }
 }
 
-@keyframes anim-entering-route {
+/* entering-path  ------------------------------------------------------------------------------- */
+@keyframes anim-entering-path {
     0% {
         stroke-dashoffset: 400;
         transform: rotate3d(1, 0, 0, 50deg);
@@ -52,11 +61,45 @@
     }
 }
 
+/* entering-progress ------------------------------------------------------------------------------- */
+.entering-progress{
+
+    animation: none;
+}
+
 @keyframes anim-entering-progress {
     0% {
         transform: scaleX(0);
     }
     100% {
         transform: scaleX(1);
+    }
+}
+
+/* cursor-particle ------------------------------------------------------------------------------- */
+.cursor-particle {
+    position: absolute;
+
+    
+    /* background: white; */
+
+    /* border-radius: 50%; */
+    animation: anim-cursor-particle 0.3s ease-in;
+
+    z-index: 999;
+    pointer-events: none;
+}
+
+@keyframes anim-cursor-particle {
+    0%{
+        transform: scale(1) translateY(0);
+        opacity: 0.8;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        transform: scale(2) translateY(20px);
+        opacity: 0;
     }
 }
