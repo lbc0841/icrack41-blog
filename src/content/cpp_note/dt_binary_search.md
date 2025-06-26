@@ -127,8 +127,6 @@ int my_lower_bound(vector<int>& nums, int target){
 
 ```
 
-<br>
-
 ### 開區間 (l, r)
 
 ```cpp
@@ -151,7 +149,15 @@ int my_lower_bound(vector<int>& nums, int target){
             r = m; // 縮區間 -> (r, m)
     }
 
-    return 
+    return l+1; // 注意 +1
+
+    /*
+    l 要 +1 的原因是當 nums[m] == target 時
+    縮的是右區間
+    但結束時 l 在 r 左邊 1 格
+
+    (也可以把 if 的條件改成 nums[m] <= target，避免最後 +1)
+    */
 }
 ```
 
@@ -171,6 +177,8 @@ int my_lower_bound(vector<int>& nums, int target){
 `nums[m] == target` 時 `r = m;`<br>
 下一次就會在 [l, m) 中進行搜索
 </details>
+
+### 提前縮右區間
 
 <br>
 
