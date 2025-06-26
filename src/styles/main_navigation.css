@@ -1,5 +1,9 @@
 .main-nav-container {
-    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100dvw;
     display: flex;
     justify-content: center;
 

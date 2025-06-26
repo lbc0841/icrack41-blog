@@ -17,6 +17,7 @@
     backdrop-filter: blur(20px);
 
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #left-button {

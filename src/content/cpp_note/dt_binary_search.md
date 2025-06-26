@@ -42,29 +42,13 @@ while(/* 區間不為空時執行 */){
 ### 區間模板
 
 按區間可以分成不同寫法(模板)<br>
-區間分為：
 
 - 左閉右開 [l, r)
 - 閉區間 [l, r]
 - 開區間 (l, r)
 
-不同區間的寫法略有不同
-
-#### 以下代碼
-
-二分搜以 lower_bound 舉例<br>
-(lower_bound：找到第一個 ≥ 目標的數)
-
-c++ algorithm 已經有 lower_bound()<br>
-因此以下代碼的函數以 my_lower_bound 命名
-
-- `l` 表示 left<br>
-- `r` 表示 right<br>
-- `m` 表示 middle<br>
-- `nums` 為一個由小到大排好序的 vector<br>
-- `target` 為要從中尋找的值
-
-#### 惡補數學
+<details>
+<summary>惡補數學 (不至於把區間忘了吧)</summary>
 
 閉區間 [l, r] 為 $\left\{ x \in \mathbb{R}, l \leq x \leq r \right\}$<br>
 開區間 (l, r) 為 $\left\{ x \in \mathbb{R}, l < x < r \right\}$<br>
@@ -72,18 +56,31 @@ c++ algorithm 已經有 lower_bound()<br>
 左開右閉 (l, r] 為 $\left\{ x \in \mathbb{R}, l < x \leq r \right\}$<br>
 <br>
 程式碼中因為索引只能是整數<br>
-所以 $ x \in \mathbb{Z} $<br>
+所以 $x \in \mathbb{Z}$
+</details>
+
+<details>
+<summary>代碼解釋</summary>
+
+以下二分搜模板以 lower_bound 示範<br>
+(lower_bound：找到第一個 ≥ 目標的數)
+
+- `l` 表示 left<br>
+- `r` 表示 right<br>
+- `m` 表示 middle<br>
+- `nums` 為一個由小到大排好序的 vector<br>
+- `target` 為要從中尋找的值
+</details>
 
 <br>
 
 ### 左閉右開 [l, r)
 
-包含 `l`：`nums[l]` 是有效的<br>
-不包含 `r`：`nums[r]` 是無效的，不會被取到
-
-`l == r` 時，[l, r) 區間是空的，所以跳出迴圈
-
 ```cpp
+// 包含 l (nums[l] 有效)
+// 不包含 r (nums[r] 無效，不會被取到)
+// l==r 時，[l, r) 區間是空的，跳出迴圈
+
 int my_lower_bound(vector<int>& nums, int target){
 
     // 左閉右開區間 [l, r)
@@ -103,25 +100,13 @@ int my_lower_bound(vector<int>& nums, int target){
 }
 ```
 
-#### 誤解<br>
-當 `nums[m] == target` 時，執行的是 `r = m;`<br>
-但 r 是右開區間的邊界<br>
-區間 [l, r) 更新成 [l, m)<br>
-nums[m] 不就在區間外了嗎？<br>
-
-所謂 **左閉右開** 指的是 <font color="#ff0000">搜索區間</font><br>
-不是目標值存在的區間<br>
-`nums[m] == target` 時 `r = m;`<br>
-下一次就會在 [l, m) 中進行搜索
-
-<br>
-
 ### 閉區間 [l, r]
 
-包含 `l`：`nums[l]` 有效<br>
-包含 `r`：`nums[r]` 有效
-
 ```cpp
+// 包含 l (nums[l] 有效)
+// 包含 r (nums[r] 有效)
+// l>r 時，[l, r] 區間是空的，跳出迴圈
+
 int my_lower_bound(vector<int>& nums, int target){
 
     // 閉區間 [l, r]
@@ -146,10 +131,11 @@ int my_lower_bound(vector<int>& nums, int target){
 
 ### 開區間 (l, r)
 
-不包含 `l`：`nums[l]` 不會被取到<br>
-不包含 `r`：`nums[r]` 不會被取到
-
 ```cpp
+// 包含 l (nums[l] 無效)
+// 包含 r (nums[r] 無效)
+// l+1==r 時，(l, r) 區間是空的，跳出迴圈
+
 int my_lower_bound(vector<int>& nums, int target){
 
     // 開區間 (l, r)
@@ -170,6 +156,23 @@ int my_lower_bound(vector<int>& nums, int target){
 ```
 
 #### 閉 → m±1，開 → m
+
+<details>
+<summary>可能有的誤解 (以左閉右開舉例)</summary>
+
+當 `nums[m] == target` 時，執行的是 `r = m;`<br>
+但 r 是右<font color="#ff0000">開區間</font>的邊界<br>
+區間 [l, r) 更新成 [l, m)<br>
+要找的目標值 nums[m]<br>
+不就在區間外了嗎？
+
+所謂「左閉右開」指的是 <font color="#ff0000">搜索區間</font><br>
+不是目標值存在的區間<br>
+`nums[m] == target` 時 `r = m;`<br>
+下一次就會在 [l, m) 中進行搜索
+</details>
+
+<br>
 
 <br><br>
 
