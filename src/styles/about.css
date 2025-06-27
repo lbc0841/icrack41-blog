@@ -232,11 +232,6 @@
     transform: scale(1.005);
 }
 
-.contents-container::-webkit-scrollbar-track {
-    margin-top: 70px;
-    margin-bottom: 10px;
-}
-
 @media screen and (max-width: 480px){
 
     .contents-container {
