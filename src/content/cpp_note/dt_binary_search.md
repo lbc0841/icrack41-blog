@@ -4,7 +4,7 @@ chapter: 0
 ---
 
 二分搜索是在有序序列中透過每次折半縮小搜尋範圍<br>
-高效率(對數時間複雜度)找到目標值
+高效(對數時間複雜度)找到目標值
 
 <br><br>
 
@@ -41,7 +41,7 @@ while(/* 區間不為空時執行 */){
 
 ### 區間模板
 
-按區間可以分成不同寫法(模板)<br>
+按區間分成不同寫法(模板)<br>
 
 - 左閉右開 [l, r)
 - 閉區間 [l, r]
@@ -70,11 +70,13 @@ while(/* 區間不為空時執行 */){
 - `m` 表示 middle<br>
 - `nums` 為一個由小到大排好序的 vector<br>
 - `target` 為要從中尋找的值
+
+找不到值時會 `return -1`
 </details>
 
 <br>
 
-### 左閉右開 [l, r)
+#### 左閉右開 [l, r)
 
 ```cpp
 // 包含 l (nums[l] 有效)
@@ -96,11 +98,21 @@ int my_lower_bound(vector<int>& nums, int target){
             r = m; // 縮區間 -> [l, m)
     }
 
-    return l; // 或 r 也可以
+    return l<nums.size() ? l : -1; // 或 r 也可以
+
+    /*
+    如果不要 lower_bound
+    只要找 == target 的值(的下標)
+
+    if(l >= nums.size() || nums[l] != target)
+        return -1;
+    else
+        return l;
+    */
 }
 ```
 
-### 閉區間 [l, r]
+#### 閉區間 [l, r]
 
 ```cpp
 // 包含 l (nums[l] 有效)
@@ -122,12 +134,21 @@ int my_lower_bound(vector<int>& nums, int target){
             r = m - 1;  // 縮區間 -> [l, m-1]
     }
 
-    return l;
-}
+    return l<nums.size() ? l : -1;
 
+    /*
+    如果不要 lower_bound
+    只要找 == target 的值(的下標)
+
+    if(l >= nums.size() || nums[l] != target)
+        return -1;
+    else
+        return l;
+    */
+}
 ```
 
-### 開區間 (l, r)
+#### 開區間 (l, r)
 
 ```cpp
 // 包含 l (nums[l] 無效)
@@ -149,7 +170,17 @@ int my_lower_bound(vector<int>& nums, int target){
             r = m; // 縮區間 -> (r, m)
     }
 
-    return l+1; // 注意 +1
+    return l+1<nums.size() ? l+1 : -1; // 注意 +1
+
+    /*
+    如果不要 lower_bound
+    只要找 == target 的值(的下標)
+
+    if(l+1 >= nums.size() || nums[l+1] != target)
+        return -1;
+    else
+        return l+1;
+    */
 
     /*
     l 要 +1 的原因是當 nums[m] == target 時
@@ -160,8 +191,6 @@ int my_lower_bound(vector<int>& nums, int target){
     */
 }
 ```
-
-#### 閉 → m±1，開 → m
 
 <details>
 <summary>可能有的誤解 (以左閉右開舉例)</summary>
@@ -178,9 +207,59 @@ int my_lower_bound(vector<int>& nums, int target){
 下一次就會在 [l, m) 中進行搜索
 </details>
 
-### 提前縮右區間
+◇ 閉 → m±1，開 → m
 
 <br>
+
+### 提前縮右區間
+
+提前縮右區間一格<br>
+避免之後用 `nums[l]`<br>
+還要判斷 `l` 有沒有 < `nums.size()`<br>
+
+這種方法很方便<br>
+尤其是在要查 `nums[l]` 值時
+
+#### 左閉右開 [l, r)
+
+```cpp
+int my_lower_bound(vector<int>& nums, int target){
+
+    // 左閉右開區間 [l, r)
+    int l = 0;
+    int r = nums.size()-1; // 提前縮一格
+
+    while(l < r){ // 區間不為空
+        int m = l + (r-l)/2;
+
+        if(nums[m] < target) 
+            l = m + 1; // 縮區間 -> [m+1, r)
+        else  
+            r = m; // 縮區間 -> [l, m)
+    }
+
+    return nums[l]>=target ? l : -1; // 判斷返回值
+
+    /*
+    如果不要 lower_bound
+    只要找 == target 的值(的下標)
+
+    return nums[l]==target ? l : -1;
+    */
+}
+```
+
+#### 閉區間 [l, r]
+
+```cpp
+// 略...
+```
+
+#### 開區間 (l, r)
+
+```cpp
+// 略...
+```
 
 <br><br>
 
@@ -189,12 +268,80 @@ int my_lower_bound(vector<int>& nums, int target){
 ***
 
 要尋找的目標不一定是 **第一個 ≥ 目標的數**<br>
-也有可能是<br>
-**第一個 > 目標的數**<br>
-`...`
+也有可能是其他
 
-upper_bound：找到第一個 > 目標的值<br>
-lower_bound：找到第一個 ≥ 目標的值
+<br>
+
+### 第一個 > 目標的數 (upper_bound)<br>
+
+```cpp
+int my_upper_bound(vector<int>& nums, int target){
+
+    // 左閉右開區間 [l, r)
+    int l = 0;
+    int r = nums.size()-1; // 提前縮一格
+
+    while(l < r){ // 區間不為空
+        int m = l + (r-l)/2;
+
+        if(nums[m] <= target) // nums[m] == target 時也縮左區間
+            l = m + 1; // 縮區間 -> [m+1, r)
+        else  
+            r = m; // 縮區間 -> [l, m)
+    }
+
+    return nums[l]>target ? l : -1; // 判斷返回值
+}
+```
+
+<br>
+
+### 第一個 < 目標的數
+
+```cpp
+// 左閉右開後 l-1
+// 因為先前找到的是 第一個≥target的數 的下標
+// 所以 nums[l-1] 一定是 第一個<target的數
+int my_binary_search(vector<int>& nums, int target){
+
+    // 左閉右開區間 [l, r)
+    int l = 0;
+    int r = nums.size();
+
+    while(l < r){ // 區間不為空
+        int m = l + (r-l)/2;
+
+        if(nums[m] < target) 
+            l = m + 1; // 縮區間 -> [m+1, r)
+        else  
+            r = m; // 縮區間 -> [l, m)
+    }
+
+    return l-1>=0 ? l-1 : -1; // 判斷返回值
+}
+```
+
+```cpp
+// 也可以用開區間 (l, r)
+// 直接返回 l
+int my_binary_search(vector<int>& nums, int target){
+
+    // 開區間 (l, r)
+    int l = -1;
+    int r = nums.size();
+
+    while(l+1 < r){ // 區間不為空
+        int m = l + (r-l)/2;
+
+        if(nums[m] < target)
+            l = m; // 縮區間 -> (m, r)
+        else
+            r = m; // 縮區間 -> (r, m)
+    }
+
+    return l;
+}
+```
 
 <br><br>
 
@@ -233,29 +380,33 @@ while(/* 區間不為空時執行 */){
 
 ***
 
-### 處理找不到目標的情況
+<details>
+<summary>找不到目標時</summary>
 
 注意處理找不到目標的情況<br>
 小心被卡 WA
+</details>
 
-<br>
-
-### 縮區間判斷
+<details>
+<summary>縮區間判斷</summary>
 
 判斷條件 `f()` 比較複雜時<br>
-仔細判斷你寫的判斷是<br>
-**upper_bound** 或是 **lower_bound**
+仔細判斷你寫的是<br>
+**upper_bound** 還是 **lower_bound**<br>
+(又或者其他東西)
+</details>
 
-<br>
+<details>
+<summary>加法溢位問題</summary>
 
-### 加法溢位問題
-
-l, r 過大時，運算過程會 <font color=#ff0000>Overflow</font><br>
-解決方法<br>
+`l`, `r` 過大時，運算過程會 <font color=#ff0000>Overflow</font>
 
 ```cpp
+// 解決方法
 int m = l + (r-l)/2;
 ```
+
+</details>
 
 <br><br>
 

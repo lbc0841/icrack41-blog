@@ -53,24 +53,24 @@ signed main(){
 
 ***
 
-### overflow
+<details>
+<summary>overflow</summary>
 
 由於已經 `#define int long long` 了<br>
 比較不會有 overflow 的問題
+</details>
 
-<br>
-
-### 字串
-
-這是錯的
+<details>
+<summary>字串</summary>
 
 ```cpp
+// 這是錯的
 string s = "ABC" + "DEF";
 ```
 
 "ABC" 型別是 `const char[4]` ("ABC\0")<br>
 `"ABC" + "DEF"` 就相當於 `const char* + const char*`<br>
-肯定炸 (UB)
+肯定炸 (就算成功加出來也會 UB)
 
 這時通常需要把其中一個轉成 `std::string`<br>
 有 3 種轉換方式
@@ -81,9 +81,11 @@ string s = (string)"ABC" + "DEF";
 string s = string("ABC") + "DEF";
 ```
 
-<br>
+(字元+字串也同理)
+</details>
 
-### 浮點數
+<details>
+<summary>浮點數</summary>
 
 這是一個經典的例子
 
@@ -99,32 +101,33 @@ else cout << "0.2+0.1 != 0.3";
 浮點數在電腦是以二進制近似值儲存的<br>
 二進制也是會有無限循環小數，有誤差<br>
 所以 `b` 會是 `false`
-$0.2 + 0.1 = 0.30000000000000004$<br>
-$0.3 = 0.29999999999999999$<br>
 
-解決的方法是使用「容差」比較<br>
-避免直接使用 `==`
+$0.2 + 0.1 = 0.30000000000000004$<br>
+$0.3 = 0.29999999999999999$
 
 ```cpp
+// 解決的方法是使用「容差」比較
+// 避免直接使用 ==
 double x = 0.1, y = 0.2;
 bool eq = fabs(0.3 - (x+y)) < 1e-9;
 ```
 
 相差 $< 10^{-9}$ 就將倆浮點數視為相等
 
-也可以封裝成函數
-
 ```cpp
+// 也可以封裝成函數
 bool equal(double a, double b) {
     return fabs(a - b) < 1e-9;
 }
+
+// 然後 equal(x+y, 0.3);
 ```
 
-然後 `equal(x+y, 0.3);`
-
 建議浮點數用 `double`<br>
-如果用 `float` 需要改 `1e-6`<br>
+如果用 `float` 需要改 Epsilon = 1e-6<br>
 (float 精度較低)
+
+</details>
 
 <br><br>
 
@@ -132,51 +135,43 @@ bool equal(double a, double b) {
 
 ***
 
-### 除以2
+<details>
+<summary>除以2</summary>
 
-有時候要記算 /2 時使用右移<br>
-例如找中點
-
-慢
+要記算 ÷2 時使用右移<br>
+(例如找中點)
 
 ```cpp
+// 慢
 int m = (l+r)/2;
 
-```
-
-快
-
-```cpp
+// 快
 int m = (l+r)>>1;
-
 ```
 
 ×÷ 2 的倍數都可以用左右移
+</details>
 
-<br>
-
-### 取2餘數
-
-慢
+<details>
+<summary>取2餘數</summary>
 
 ```cpp
+// 慢
 int r = x%2;
-```
 
-快
-
-```cpp
+// 快
 int r = x&1;
 ```
 
 ( `x&1` 只會保留二進制最後一位元就相當於 `x%2` )
+</details>
 
-<br>
+<details>
+<summary>善用 `&`</summary>
 
-### 善用 `&`
+### 優化代碼速度
 
 多使用 `&`，避免不必要的複製<br>
-(優化代碼速度)
 
 ```cpp
 for(int& num : nums){
@@ -195,19 +190,18 @@ for(const int& num : nums){
 
 <br>
 
-簡化陣列輸入代碼
+### 簡化代碼
 
 ```cpp
 vector<int> nums(10);
 for(int& i : nums) cin >> i;
 
 /*
-否則你的 code 可能長成這樣：
-for(int i=0; i<10; i++){
-    int temp;
-    cin >> temp;
-    nums[i] = temp;
+否則你的 code 可能長成這樣
+for(int i=0; i<nums.size(); i++){
+    cin >> nums[i];
 }
 */
 ```
 
+</details>

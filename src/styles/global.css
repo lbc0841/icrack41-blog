@@ -16,6 +16,8 @@
     --spacing: 0.25rem;
 
     --content-color: #f1f5f9;
+    --title-color: #a2f4fd;
+    --title-color2: #a2d6fd;
 
     background: black;
     overflow: hidden;
@@ -98,26 +100,37 @@ body {
 /* text  ============================================================================================================== */
 h1 {
     font-size: var(--font-size-2xl);
+    color: var(--content-color);
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 0.6rem;
 }
 
 h2 {
     font-size: var(--font-size-xl);
+    color: var(--content-color);
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 0.6rem;
 }
 
 h3 {
     font-size: var(--font-size-lg);
+    color: var(--content-color);
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 0.6rem;   
+}
+h3::before {
+    content: "》";
 }
 
 h4 {
     font-size: var(--font-size-md);
+    color: var(--content-color);
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 0.6rem;
 }
 
 hr {
@@ -141,6 +154,7 @@ i {
 }
 
 pre {
+    margin: 0.6rem;
     padding: 0.5rem;
 
     border: solid 1px #6e6e6e;
