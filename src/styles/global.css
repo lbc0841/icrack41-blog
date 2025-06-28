@@ -104,6 +104,7 @@ h1 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 0.6rem;
+    margin-right: 0.6rem;
 }
 
 h2 {
@@ -112,6 +113,7 @@ h2 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 0.6rem;
+    margin-right: 0.6rem;
 }
 
 h3 {
@@ -119,7 +121,8 @@ h3 {
     color: var(--content-color);
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 0.6rem;   
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
 }
 h3::before {
     content: "》";
@@ -131,6 +134,7 @@ h4 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 0.6rem;
+    margin-right: 0.6rem;
 }
 
 hr {

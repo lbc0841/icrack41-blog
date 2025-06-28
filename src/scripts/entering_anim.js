@@ -1,11 +1,11 @@
 const enteringPath = document.querySelectorAll('.entering-path');
 const enteringProgress = document.querySelectorAll('.entering-progress');
-const enteringText = document.querySelectorAll('.entering-text');
+const etZoomIn = document.querySelectorAll('.et-zoom-in');
 
-const enteringTextObserver = new IntersectionObserver((entrise) => {
+const etZoomInObserver = new IntersectionObserver((entrise) => {
     entrise.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = "anim-entering-text 0.3s ease-out";
+            entry.target.style.animation = "anim-et-zoom-in 0.3s ease-out";
             entry.target.style.visibility = "visible";
         }
         else {
@@ -44,8 +44,8 @@ const enteringProgressObserver = new IntersectionObserver((entrise) => {
     }, {threshold: 0.4}
 );
 
-enteringText.forEach(item => {
-    enteringTextObserver.observe(item);
+etZoomIn.forEach(item => {
+    etZoomInObserver.observe(item);
 });
 
 enteringProgress.forEach(item => {

@@ -170,7 +170,7 @@ int my_lower_bound(vector<int>& nums, int target){
             r = m; // 縮區間 -> (r, m)
     }
 
-    return l+1<nums.size() ? l+1 : -1; // 注意 +1
+    return l+1<nums.size() ? l+1 : -1; // 注意 l+1 (或者直接用 r)
 
     /*
     如果不要 lower_bound
