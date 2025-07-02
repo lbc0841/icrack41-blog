@@ -196,24 +196,33 @@ li {
 }
 
 th {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
     padding-top: 0.1rem;
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.1rem;
 
-    text-decoration: underline;
+    font-weight: bolder;
+    border: solid 1px white;
 }
 
 td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
+
+    border-left: solid 1px white;
+    border-right: solid 1px white;
 }
 
 table {
     white-space: nowrap;
     overflow: auto;
+    margin-bottom: 1rem;
+
+    border: solid 1px white;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 summary {

@@ -4,15 +4,15 @@
 
     display: grid;
     grid-template-columns: 1fr 6fr;
-    column-gap: 30px;
+    column-gap: 10px;
 
     position: absolute;
     left: 50%;
     top: 0px;
     transform: translateX(-50%);
 
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
     
     border-radius: 2px;
     border-left: solid 2px rgba(255, 255, 255, 0.4) ;
@@ -47,12 +47,13 @@
 }
 
 .about-me-item-container {
-
     margin-bottom: 40px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 14px;
+
+    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
 }
 
 @keyframes content-appear {
@@ -65,12 +66,12 @@
 }
 
 /* profile ============================================================================================================== */
-.profile-bar {
+.side-bar {
     height: 100dvh;
     min-width: 180px;
     display: grid;
 
-    grid-template-rows: 1fr 2fr 4fr;
+    grid-template-rows: 1fr 1fr 10fr;
     padding-top: 4.2rem;
     padding-bottom: 1rem;
 
@@ -99,6 +100,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     transition: all 0.2s;
+    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
 }
 
 .profile-img {
@@ -165,15 +167,89 @@
     }
 }
 
-
 .good-music{
+    height: 70px;
     border-bottom: solid 2px rgba(255, 255, 255, 0.4);
     border-top: solid 2px rgba(255, 255, 255, 0.4);
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     margin-bottom: 1rem;
     padding: 0.6rem;
+    overflow: hidden;
+
+    transition: all 0.2s;
+    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
 }
+
+.good-music:hover{
+    height: 160px;
+}
+
+.music-container {
+    display: flex;
+    overflow: hidden;
+    max-height: 80px;
+
+    /* background: linear-gradient(90deg, #f1f5f9 49%, rgba(0, 0, 0, 0) 50%); */
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    border: solid 1px white;
+    background-size: 300% 100%;
+}
+
+.music-container a{
+    animation: next 10s infinite;
+}
+
+@keyframes next {
+    0%{
+        transform: translateX(0%);
+    }
+    10%{
+        transform: translateX(-100%);
+    }
+
+    25%{
+        transform: translateX(-100%);
+    }
+    35%{
+        transform: translate(-200%);
+    }
+
+    50%{
+        transform: translateX(-200%);
+    }
+    60%{
+        transform: translateX(-300%);
+    }
+
+    75%{
+        transform: translateX(-300%);
+    }
+    85%{
+        transform: translateX(-400%);
+    }
+
+    100%{
+        transform: translateX(-400%);
+    }
+}
+
+@keyframes next-music{
+    0%{
+        background-position: 160% center;
+    }
+    25%{
+        background-position: 0% center;   
+    }
+    50%{
+        background-position: -200% center;   
+    }
+    100%{
+        background-position: -200% center;   
+    }
+}
+
 
 /* contents-table ============================================================================================================== */
 
@@ -189,8 +265,8 @@
     backdrop-filter: blur(10px);
 
     overflow-y: scroll;
+    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
 }
-
 
 .contents-table-item button {
     display: inline-block;
@@ -221,17 +297,14 @@
     width: 100%;
     height: 100dvh;
 
-    padding-right: 6px;
-    padding-top: 72px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 80px;
     padding-bottom: 16px;
 
     transition: all 0.2s;
+    overflow-x: visible;
     overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.contents-container:hover {
-    transform: scale(1.005);
 }
 
 @media screen and (max-width: 480px){
@@ -465,16 +538,18 @@
 }
 
 /* ability ============================================================================================================== */
-.ability-progress-container {
-
-    width: 56%;
-    height: auto;
-}
-
 .code-ability {
     position: relative;
-    padding-bottom: 0.6rem;
-    padding-top: 0.6rem;
+    padding: 0.8rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    border-radius: 10px;
+
+    transition: all 0.6s;
+}
+
+.code-ability:hover{
+    box-shadow: 1px 1px 10px #509de1;
 }
 
 .code-ability progress {
@@ -485,10 +560,14 @@
     transform-origin: 0% 50%;
 }
 
+.code-ability:hover progress::-webkit-progress-value{
+    background: #eeeeee;
+}
+
 .code-ability b {
     position: absolute;
     top: 10%;
-    left: 4px;
+    left: 1rem;
 
     font-size: 24px;
 
@@ -496,6 +575,13 @@
             1px -1px rgba(81, 162, 255, 0.8),
             -1px 1px rgba(81, 162, 255, 0.8),
             -1px -1px rgba(81, 162, 255, 0.8);
+}
+
+.code-ability:hover b{
+    text-shadow: 1px 1px #eeeeee,
+            1px -1px #eeeeee,
+            -1px 1px #eeeeee,
+            -1px -1px #eeeeee;
 }
 
 .code-ability progress::-webkit-progress-bar {

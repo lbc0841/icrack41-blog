@@ -9,47 +9,10 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
 	
-    <canvas>
+    <canvas class="text-canvas">
 
     </canvas>
 
-    <script>
-        const canvas = document.querySelector("canvas");
-        const ctx = canvas?.getContext("2d");
-
-        function initCanvas(){
-            if(canvas){
-                canvas.height = window.innerHeight;
-                canvas.width = window.innerWidth;
-            }
-        }
-
-        initCanvas();
-
-        function getRandom(min, max){
-            return Math.floor(min + Math.random()*(max-min+1));
-        }
-
-        class particle{
-            constructor(){
-                this.x = canvas?.width/2;
-                this.y = canvas?.height/2;
-                this.size = getRandom(10, 20);
-            }
-
-            draw(){
-                if(ctx){
-                    ctx.beginPath();
-                    ctx.fillStyle = "#fff";
-                    ctx.rect(this.x, this.y, this.size, this.size);
-                    ctx.fill();
-                }
-            }
-        }
-
-        const p = new particle;
-        p.draw();
-
-    </script>
+    <script src="../scripts/text_particle.js"></script>
 </Layout>
 
