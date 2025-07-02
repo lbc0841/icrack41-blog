@@ -43,7 +43,7 @@
     <div class="oj mb-16">
 
         <div class="oj-progress">
-            <svg width="100%" viewBox="0 0 200 200">
+            <svg class="et-path" width="100%" viewBox="0 0 200 200">
                 <circle cx="100" cy="100" r="80"></circle>
                 <text style="oj-count-text" x="100" y="120">176</text>
             </svg>
@@ -52,7 +52,7 @@
         </div>
     
         <div class="oj-progress">
-            <svg width="100%" viewBox="0 0 200 200">
+            <svg class="et-path" width="100%" viewBox="0 0 200 200">
                 <circle cx="100" cy="100" r="80"></circle>
                 <text style="oj-count-text" x="100" y="120">136</text>
             </svg>
@@ -61,7 +61,7 @@
         </div>
 
         <div class="oj-progress">
-            <svg width="100%" viewBox="0 0 200 200">
+            <svg class="et-path" width="100%" viewBox="0 0 200 200">
                 <circle cx="100" cy="100" r="80"></circle>
                 <text style="oj-count-text" x="100" y="120">000</text>
             </svg>
@@ -116,6 +116,8 @@
         stroke-width: 6;
         stroke-dasharray: 500;
         stroke-linecap: round;
+        transform-origin: 50% 50%;
+        transform: rotateZ(-90deg);
     }
 
     .oj-progress b {

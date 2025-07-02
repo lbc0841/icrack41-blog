@@ -51,19 +51,17 @@
 }
 
 /* entering-path  ------------------------------------------------------------------------------- */
-@keyframes anim-entering-path {
+@keyframes anim-et-path {
     0% {
         stroke-dashoffset: 400;
-        transform: rotate3d(1, 0, 0, 50deg);
     }
     100% {
         stroke-dashoffset: 0;
-        transform: rotate3d(1, 0, 0, 55deg);
     }
 }
 
 /* entering-progress ------------------------------------------------------------------------------- */
-.entering-progress{
+.et-progress{
 
     animation: none;
 }

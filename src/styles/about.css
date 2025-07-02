@@ -162,7 +162,7 @@
 
 @media screen and (max-width: 800px){
 
-    .profile-bar {
+    .side-bar {
         display: none;
     }
 }
@@ -182,7 +182,7 @@
 }
 
 .good-music:hover{
-    height: 160px;
+    height: 180px;
 }
 
 .music-container {
@@ -549,7 +549,7 @@
 }
 
 .code-ability:hover{
-    box-shadow: 1px 1px 10px #509de1;
+    box-shadow: 1px 1px 10px black;
 }
 
 .code-ability progress {
