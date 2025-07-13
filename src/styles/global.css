@@ -66,13 +66,12 @@ body {
     width: 100%;
     z-index: -1;
 
-    /* background: url("../assets/grid.svg"); */
-    background: url("../assets/bg.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url("../assets/grid.svg");
+    /* background: url("../assets/bg.webp"); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
     background-position: bottom;
     background-position: 60%;
-    opacity: 0.7;
 }
 
 .scroll-hint {

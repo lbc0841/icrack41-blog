@@ -50,10 +50,10 @@
     margin-bottom: 40px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     border-radius: 14px;
 
-    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
+    box-shadow: 1px 1px 10px rgba(32, 48, 69, 0.7);
 }
 
 @keyframes content-appear {
@@ -98,9 +98,9 @@
     border-top: solid 2px rgba(255, 255, 255, 0.4);
 
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     transition: all 0.2s;
-    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
+    box-shadow: 1px 1px 10px rgba(32, 48, 69, 0.7);
 }
 
 .profile-img {
@@ -119,7 +119,7 @@
 
 .profile-name {
     position: absolute;
-    top: 2rem;
+    top: 7rem;
     color: #6f9bcc;
     font-weight: bold;
     transition: all 0.3s;
@@ -132,7 +132,7 @@
 
 .profile-links{
     position: absolute;
-    bottom: 10px;
+    top: 14rem;
     list-style: none;
     display: flex;
     gap: 10px;
@@ -147,7 +147,7 @@
 }
 
 .profile-container:hover .profile-name {
-    top: 6.4rem;
+    top: 10rem;
 }
 
 .profile-container:hover .profile-img {
@@ -172,13 +172,13 @@
     border-bottom: solid 2px rgba(255, 255, 255, 0.4);
     border-top: solid 2px rgba(255, 255, 255, 0.4);
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     margin-bottom: 1rem;
     padding: 0.6rem;
     overflow: hidden;
 
     transition: all 0.2s;
-    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
+    box-shadow: 1px 1px 10px rgba(32, 48, 69, 0.7);
 }
 
 .good-music:hover{
@@ -261,11 +261,11 @@
     border-bottom: solid 2px rgba(255, 255, 255, 0.4);
     border-top: solid 2px rgba(255, 255, 255, 0.4);
 
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    /* backdrop-filter: blur(10px); */
 
     overflow-y: scroll;
-    box-shadow: 1px 1px 10px rgba(0, 255, 255, 0.4);
+    box-shadow: 1px 1px 10px rgba(32, 48, 69, 0.7);
 }
 
 .contents-table-item button {
