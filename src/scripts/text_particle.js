@@ -47,25 +47,22 @@ class Particle {
     }
 
     // move particle
-    moveTo(tx, ty) {
-        const duration = 500; // 500ms
-        const speedX = (tx - this.x) / duration;
+    moveTo(tx, ty, duration) {
+        const speedX = (tx - this.x) /duration;
         const speedY = (ty - this.y) / duration;
+        const speedZoom = (this.size - 1) / duration;
 
         const startTime = Date.now();
         const startX = this.x;
         const startY = this.y;
+
         const _move = () => {
             const t = Date.now() - startTime;
-            this.x = startX + speedX * t;
-            this.y = startY + speedY * t;
 
-            if(t < duration/2){
-                this.tempSize -= 0.4;
-            }
-            else{
-                this.tempSize += 0.4;
-            }
+            this.y = startY + speedY*t;
+            this.x = startX + speedX*t;
+
+            // this.tempSize = speedZoom*duration;
 
             if (t > duration) {
                 this.x = tx;
@@ -99,7 +96,7 @@ function clearCanvas() {
 const texts = ["C++", "HTML", "CSS", "JavaScript", "Python", "Verilog", "Markdown"];
 let lastUpdate = Date.now();
 let currentTextIndex = 0;
-const textDuration = 4000; // 3s
+const textDuration = 3000; // 3s
 
 function getText() {
     if(Date.now() - lastUpdate >= textDuration){
@@ -130,19 +127,30 @@ function updateCanvas() {
         clearCanvas();
 
         let i = 0;
+        // if(points.length < particles.length){
+        //     particles.splice(points.length);
+        // }
+
         for (; i < points.length; i++) {
             let p = particles[i];
             if (!p) {
                 p = new Particle();
                 particles.push(p);
             }
-            p.moveTo(points[i][0], points[i][1]);
+
+            const x = points[i][0];
+            const y = points[i][1];
+            p.moveTo(x, y, (x+y)/2);
         }
-        for(; i < particles.length; i++){
-            let p = particles[i];
-            let k = getRandom(0, points.length-1);
-            p.moveTo(points[k][0], points[k][1]);
+        for(; i<particles.length; i++){
+            const p = particles[i];
+            const k = getRandom(0, points.length-1);
+
+            const x = points[k][0];
+            const y = points[k][1];
+            p.moveTo(x, y, (x+y)/2)
         }
+        
     }
 }
 
@@ -172,13 +180,57 @@ function getPoints() {
     return points;
 }
 
-function showDescribe(){
+function showDescribe_cpp(){
     ctx.fillStyle = "#fff";
     ctx.font = `50px 'ari', sans-serif`;
-    ctx.fillText("C++ 是我第一個接觸的語言\n其實我也不知道為什麼我第一個\n當初其實只是對程式有些興趣", 0, 60);
+    ctx.fillText("C++ 是我第一個接觸的語言", 0, 80);
+    ctx.fillText("它陪伴我走過學習程式的基礎", 0, 160);
+    ctx.fillText("—— 變數、迴圈、if else...", 0, 240);
+    ctx.fillText("而現在，C++ 是我解題主要使用的語言", 0, 400);
 }
 
+function showDescribe_html(){
+    ctx.fillStyle = "#fff";
+    ctx.font = `50px 'ari', sans-serif`;
+    ctx.fillText("作者在混", 0, 80);
+    ctx.fillText("還沒寫好", 0, 160);
+}
+
+function showDescribe_css(){
+    ctx.fillStyle = "#fff";
+    ctx.font = `50px 'ari', sans-serif`;
+    ctx.fillText("作者在混", 0, 80);
+    ctx.fillText("還沒寫好", 0, 160);
+}
+
+function showDescribe_javascript(){
+    ctx.fillStyle = "#fff";
+    ctx.font = `50px 'ari', sans-serif`;
+    ctx.fillText("作者在混", 0, 80);
+    ctx.fillText("還沒寫好", 0, 160);
+}
+
+function showDescribe_python(){
+    ctx.fillStyle = "#fff";
+    ctx.font = `50px 'ari', sans-serif`;
+    ctx.fillText("作者在混", 0, 80);
+    ctx.fillText("還沒寫好", 0, 160);
+}
+
+function showDescribe_verilog(){
+    ctx.fillStyle = "#fff";
+    ctx.font = `50px 'ari', sans-serif`;
+    ctx.fillText("作者在混", 0, 80);
+    ctx.fillText("還沒寫好", 0, 160);
+}
+
+function showDescribe_markdown(){
+    ctx.fillStyle = "#fff";
+    ctx.font = `50px 'ari', sans-serif`;
+    ctx.fillText("作者在混", 0, 80);
+    ctx.fillText("還沒寫好", 0, 160);
+}
 
 drawParticles();
 
-// showDescribe();
+// showDescribe_cpp();

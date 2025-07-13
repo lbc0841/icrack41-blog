@@ -26,6 +26,8 @@ const favicon = "/icrack41-blog/favicon.svg";
 			crossorigin="anonymous" referrerpolicy="no-referrer" />
 			
 		<meta name="generator" content={Astro.generator} />
+
+		<script src="../scripts/lottie.js"></script>
 		<title>ICRACK 個人部落格</title>
 	</head>
 
@@ -38,10 +40,15 @@ const favicon = "/icrack41-blog/favicon.svg";
             <slot />
         </div>
 
+		
 		<script src="../scripts/smoothscroll.js"></script>
 		<script src="../scripts/load_page.js"></script>
 		<script src="../scripts/cursor_particle.js"></script>
 		<script src="../scripts/entering_anim.js"></script>
 		
+		
+
 	</body>
+
+	
 </html>

@@ -11,32 +11,44 @@ import "../styles/index.css";
 
 
 <Layout> 
-	<div class="background"></div>
+	<!-- <div class="background"></div> -->
 
-	<MainNavigation/>
-
-	<div class="profile-container flex-col sm:flex-row mt-12">
-    
-		<div class="ml-4 mr-4 mt-4">
-			<Image class="profile-img" src={profileImg} alt="img"/>
+	<!-- <MainNavigation/> -->
+	<div class="w-full flex flex-row justify-between items-center px-8 py-2">
+		<div class="flex flex-row font-bold text-white">
+			<h4 class="text-xl">ICRACK's Blog</h4>
 		</div>
-		
-		<div class="text-white text-4xl font-bold text-center sm:text-left m-2">
-			
-			<b style="font-size: 2rem; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">small D</b><br>
-	
-			<b class="et-zoom-in text-lg sm:text-xl text-slate-400 pt-2" style="text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
-				走一步 看一步，
-				實在不行死半路<br>
-				日常崩潰 × 生活破防
-			</b>
+
+		<div class="flex flex-row gap-6 text-white text-xl">
+            <a href="/icrack41-blog/about">About</a>
+            <a href="/icrack41-blog/cpp_note/dt_preface">Notes</a>
+            <a href="/icrack41-blog/projects">Projects</a>
+            <a href="/icrack41-blog/posts">Posts</a>
 		</div>
 	</div>
 
-	<b class="absolute bottom-1 left-2">BG #AI圖</b>
+	<div class="m-auto">
+		<div id="logo-anim" class="h-[500px]" style="margin: auto;"></div>
+	</div>
+
+	<div class="absolute bottom-2 left-8">
+		<p>2025 July</p>
+	</div>
 
 	<SocialLinks/>
 
+	
+	<script>
+		window.addEventListener('load', function () {
+			lottie.loadAnimation({
+				container: document.getElementById('logo-anim'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: true,
+				path: '/icrack41-blog/lottie/icrack.json'
+			});
+		});
+	</script>
 	<!-- <div class="scroll-hint hidden sm:block">
 		&lt;
 		<i class="fa-solid fa-computer-mouse"></i>

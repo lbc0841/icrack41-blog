@@ -8,7 +8,7 @@
 
 :root {
     --font-size-base: 1rem;
-    --font-size-md: 1.2rem;
+    --font-size-md: 1.3rem;
     --font-size-lg: 1.5rem;
     --font-size-xl: 2rem;
     --font-size-2xl: 2.2rem;
@@ -35,9 +35,7 @@
 body {
     position: fixed;
     font-family: Arial, sans-serif;
-    background: linear-gradient(170deg, #121f27, #000000);
-    /* background: linear-gradient(170deg, #40c5ff, #ff5b7e, #262422); */
-    /* background: #262422; */
+    background: #0b1119;
 
     color: var(--content-color);
     height: 100vh;
