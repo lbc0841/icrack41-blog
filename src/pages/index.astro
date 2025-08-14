@@ -11,7 +11,7 @@ import "../styles/index.css";
 
 
 <Layout> 
-	<div class="background opacity-40"></div>
+	<div class="background opacity-80"></div>
 
 	<!-- <MainNavigation/> -->
 	<div class="absolute top-0 w-full flex flex-row justify-between items-center px-4 py-2 z-999">
@@ -32,15 +32,32 @@ import "../styles/index.css";
 	</div>
 
 	<div class="absolute top-0 left-0 h-[90%] w-full flex">
-		<div id="logo-anim" class="h-[500px] m-auto"></div>
+		<div id="logo-anim" class="h-[500px] max-h-full m-auto"></div>
 	</div>
 
 	<div class="absolute bottom-2 left-[50%] md:left-8 translate-x-[-50%] md:translate-x-0">
 		<p>2025 July</p>
 	</div>
 
+	<div class="et-float-in absolute bottom-[26%] left-[50%] translate-x-[-50%] w-full flex justify-center z-999">
+
+		<div class="p-2 border-2 border-slate-500 border-r-0">
+			<b class="h-full text-slate-500">去看看</b>
+		</div>
+		
+		<button class="p-2 border-2 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900" onclick="location.href='/icrack41-blog/about'">
+			<b>更多內容 <i class="fa-solid fa-arrow-right"></i></b>
+		</button>
+		
+	</div>
+
 	<SocialLinks/>
 
+	<!-- <div class="scroll-hint hidden sm:block">
+		&lt;
+		<i class="fa-solid fa-computer-mouse"></i>
+		滾動滾輪 &gt;
+	</div> -->
 	
 	<script>
 		window.addEventListener('load', function () {
@@ -53,11 +70,7 @@ import "../styles/index.css";
 			});
 		});
 	</script>
-	<!-- <div class="scroll-hint hidden sm:block">
-		&lt;
-		<i class="fa-solid fa-computer-mouse"></i>
-		滾動滾輪 &gt;
-	</div> -->
+	
 
 </Layout>
 

@@ -96,7 +96,7 @@ function clearCanvas() {
 const texts = ["C++", "HTML", "CSS", "JavaScript", "Python", "Verilog", "Markdown"];
 let lastUpdate = Date.now();
 let currentTextIndex = 0;
-const textDuration = 3000; // 3s
+const textDuration = 2500; // 2.5s
 
 function getText() {
     if(Date.now() - lastUpdate >= textDuration){
@@ -127,9 +127,6 @@ function updateCanvas() {
         clearCanvas();
 
         let i = 0;
-        // if(points.length < particles.length){
-        //     particles.splice(points.length);
-        // }
 
         for (; i < points.length; i++) {
             let p = particles[i];

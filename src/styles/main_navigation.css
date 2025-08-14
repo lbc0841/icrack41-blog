@@ -4,70 +4,27 @@
     top: 0;
 
     width: 100dvw;
-    display: flex;
-    justify-content: center;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-
-    z-index: 999;
-}
-
-.main-nav .logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    margin-left: 40px;
-
-    user-select: none;
-}
-
-.main-nav {
-    width: 100%;
-    height: 56px;
-
-    background-color: rgba(0, 0, 0, 0.16);
-    backdrop-filter: blur(10px);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    height: 60px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 999;
-}
-
-/* main-nav-links normal */
-.main-nav-links {
-    display: flex;
-}
-
-.main-nav-links li {
-    margin: 10px;
-    margin-left: 20px;
-
-    display: flex;
-}
-
-.main-nav-links a {
-    display: inline-block;
-    flex: 0 0 auto;
-    user-select: none;
-
-    padding: 8px 6px;
-    border-radius: 4px;
-
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.5);
     
-    transform: scale(1);
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 2px 20px rgba(46, 68, 96, 0.5);
 
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+
+    /* backdrop-filter: blur(10px); */
 }
-.main-nav-links a:hover {
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
     color: rgb(255, 255, 255);
-    transform: scale(1.1);
+    margin-left: 1.4rem;
+
+    user-select: none;
 }
 
 .language-switch {
@@ -81,16 +38,13 @@
     transform: scale(1.06);
 }
 
-/* main-nav-links hamburger-menu */
+/* hamburger-menu */
 #toggler {
     display: none;
 }
 
 .hamburger-menu {
     color: rgb(255, 255, 255);
-    margin-right: 16px;
-
-    display: none;
 }
 
 .hamburger-menu #hamburger {
@@ -122,8 +76,7 @@
     overflow: hidden;
 
     padding-top: 40px;
-    border-top-right-radius: 10px;
-    background-color: rgba(4, 11, 30, 0.85);
+    background-color: rgba(38, 42, 53, 0.85);
 
     color: white;
 
@@ -153,22 +106,4 @@
     /* transition: all 0.5s; */
     transform: translateX(0);
     /* transition-delay: 0s; */
-}
-
-@media screen and (max-width: 740px){
-
-    .language-switch span {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 640px){
-
-    .main-nav-links {
-        display: none;
-    }
-
-    .hamburger-menu {
-        display: block;
-    }
 }

@@ -18,7 +18,7 @@
     }
 }
 
-/* entering-page  ------------------------------------------------------------------------------- */
+/* entering-page */
 @keyframes anim-entering-page {
     0%{
         opacity: 0;
@@ -30,9 +30,8 @@
     }
 }
 
-/* entering-text  ------------------------------------------------------------------------------- */
+/* zoom-in */
 .et-zoom-in {
-    display: inline-block;
     vertical-align: top;
     animation: none;
     visibility: hidden;
@@ -42,7 +41,7 @@
 @keyframes anim-et-zoom-in {
     0%{
         opacity: 0;
-        transform: scale(0.1, 0);
+        transform: scale(0.6, 0);
     }
     100%{
         opacity: 1;
@@ -50,7 +49,30 @@
     }
 }
 
-/* entering-path  ------------------------------------------------------------------------------- */
+/* float-in */
+.et-float-in {
+    vertical-align: top;
+    animation: none;
+    visibility: hidden;
+    transform-origin: 50% 50%;
+}
+
+@keyframes anim-et-float-in {
+    0%{
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* entering-path */
 @keyframes anim-et-path {
     0% {
         stroke-dashoffset: 400;
@@ -60,7 +82,7 @@
     }
 }
 
-/* entering-progress ------------------------------------------------------------------------------- */
+/* entering-progress */
 .et-progress{
 
     animation: none;
@@ -75,14 +97,9 @@
     }
 }
 
-/* cursor-particle ------------------------------------------------------------------------------- */
+/* cursor-particle */
 .cursor-particle {
     position: absolute;
-
-    
-    /* background: white; */
-
-    /* border-radius: 50%; */
     animation: anim-cursor-particle 0.3s ease-in;
 
     z-index: 999;

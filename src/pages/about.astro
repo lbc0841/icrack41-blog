@@ -11,7 +11,7 @@ import profileImg from '../assets/profile_img.webp';
 import MySelfIntro from "../components/about/MySelfIntro.astro";
 import MySkillTree from "../components/about/MySkillTree.astro";
 import MyAbility from "../components/about/MyAbility.astro";
-import MyNowAndFutrue from "../components/about/MyNowAndFutrue.astro";
+import MyNowAndFuture from "../components/about/MyNowAndFuture.astro";
 import FindMe from "../components/about/FindMe.astro";
 
 const youtubeLink = "https://youtube.com/@lbc0841?si=0sn28TYgzdA0UpWU";
@@ -22,19 +22,19 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 
 
 <Layout>
-	<div class="background opacity-70"></div>
+	<div class="background"></div>
 	
 	<MainNavigation/>
 	
 	<div class="about-me-container">
 		<div class="side-bar">
-			<div class="profile-container">
+			<div class="group profile-container">
 		
 				<div class="profile-img">
 					<Image class="profile-img" src={profileImg} alt="profile-img" style="border: solid 2px #7f91b1;"/>
 				</div>
 				
-				<h4 class="profile-name">small D</h4>
+				<span class="relative top-12 group-hover:translate-y-14 text-slate-700 text-xl font-bold duration-320">small D</span>
 	
 				<div class="profile-links">
 					<div><a href={bilibiliLink} style="color: rgb(0,174,231);"><span class="fa-brands fa-bilibili"></span></a></div>
@@ -89,8 +89,8 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 					<button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button>
 					<button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button>
 					<button onclick="scrollToElement('contents-container', 'my-ability')">能力</button>
-					<button onclick="scrollToElement('contents-container', 'now-and-futrue')">現在 & 未來</button>
-					<button onclick="scrollToElement('contents-container', 'find-me')">找到我</button>
+					<button onclick="scrollToElement('contents-container', 'now-and-future')">現在 & 未來</button>
+					<button onclick="scrollToElement('contents-container', 'find-me')">來找我</button>
 				</div>
 			</div>
 
@@ -100,7 +100,7 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 				<div id="my-self-intro"><MySelfIntro/></div>
 				<div id="my-skill-tree"><MySkillTree/></div>
 				<div id="my-ability"><MyAbility/></div>
-				<div id="now-and-futrue"><MyNowAndFutrue/></div>
+				<div id="now-and-future"><MyNowAndFuture/></div>
 				<div id="find-me"><FindMe/></div>
 		</div>
 
@@ -125,6 +125,7 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 				// container.scrollTop = element.offsetTop - container.offsetTop;
 			}
 		}
+		
 	</script>
 
 	

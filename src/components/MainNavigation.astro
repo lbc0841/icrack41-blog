@@ -5,62 +5,46 @@ import profileImg from '../assets/profile_img.webp';
 ---
 
 <div class="main-nav-container">
-    <nav class="main-nav">
+
         <div class="logo">ICRACK</div>
 
-        <ul class="main-nav-links">
-            <li><a href="/icrack41-blog/">Home</a></li>
-            <li><a href="/icrack41-blog/about">About</a></li>
-            <li><a href="/icrack41-blog/cpp_note/dt_preface">Notes</a></li>
-            <li><a href="/icrack41-blog/projects">Projects</a></li>
-            <li><a href="/icrack41-blog/posts">Posts</a></li>
-        </ul>
+        <div class="hidden gap-6 mr-6 xs:flex">
+            <a class="scale-100 hover:scale-110" href="/icrack41-blog/">Home</a>
+            <a href="/icrack41-blog/about">About</a>
+            <!-- <a href="/icrack41-blog/cpp_note/dt_preface">Notes</a> -->
+            <a href="/icrack41-blog/projects">Projects</a>
+            <a href="/icrack41-blog/posts">Posts</a>
+        </div>
 
-        <div class="flex" style="margin-right: 24px;">
-            <div class="language-switch">
+        <div class="hamburger-menu mr-6 block xs:hidden">
+            <!-- <div class="language-switch">
                 <i class="fa-solid fa-globe"></i>
                 <span>English</span>
-            </div>
+            </div> -->
 
             <input type="checkbox" id="toggler" />
 
-            <label for="toggler" class="hamburger-menu">
+            <label for="toggler">
                 <i id="hamburger" class="fa-solid fa-bars"></i>
                 <i id="close" class="fa-solid fa-xmark"></i>
             </label>
 
             <div id="main-nav-links-hamburger" class="main-nav-links-hamburger">
-                <Image src={profileImg} alt="profile-img" height={110} width={110} style="border-radius: 40%;"/>
-                <ul style="margin-top: 20px;">
-                    <li>
-                        <i class="fa-solid fa-house" style="width: 24px;"></i>
-                        <a href="/icrack41-blog/"> Home</a>
-                    </li>
+                <Image src={profileImg} alt="profile-img" height={110} width={110} style="border-radius: 20%;"/>
+                <div class="mt-4">
 
-                    <li>
-                        <i class="fa-solid fa-user" style="width: 24px;"></i>
-                        <a href="/icrack41-blog/about"> About</a>
-                    </li>
+                    <a class="block" href="/icrack41-blog/"><i class="fa-solid fa-house" style="width: 24px;"></i> Home</a>
+                    <a class="block" href="/icrack41-blog/about"><i class="fa-solid fa-user" style="width: 24px;"></i> About</a>
+                    <a class="block" href="/icrack41-blog/projects"><i class="fa-solid fa-file-invoice" style="width: 24px;"></i> Projects</a>
+                    <a class="block" href="/icrack41-blog/posts"><i class="fa-solid fa-pen-clip" style="width: 24px;"></i> Posts</a>
 
-                    <li>
-                        <i class="fa-solid fa-code" style="width: 24px;"></i>
-                        <a href="/icrack41-blog/cpp_note/dt_preface"> Notes</a>
-                    </li>
+                    <!-- <i class="fa-solid fa-code" style="width: 24px;"></i>
+                    <a href="/icrack41-blog/cpp_note/dt_preface"> Notes</a> -->
 
-                    <li>
-                        <i class="fa-solid fa-file-invoice" style="width: 24px;"></i>
-                        <a href="/icrack41-blog/projects"> Projects</a>
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-pen-clip" style="width: 24px;"></i>
-                        <a href="/icrack41-blog/posts"> Posts</a>
-                    </li>
-
-                </ul>
+                </div>
             </div>
         </div>
-    </nav>
+
 </div>
 
 <script>
