@@ -100,7 +100,7 @@
 /* cursor-particle */
 .cursor-particle {
     position: absolute;
-    animation: anim-cursor-particle 0.3s ease-in;
+    animation: anim-cursor-particle 1s ease-out;
 
     z-index: 999;
     pointer-events: none;
@@ -108,14 +108,14 @@
 
 @keyframes anim-cursor-particle {
     0%{
-        transform: scale(1) translateY(0);
-        opacity: 0.8;
-    }
-    80%{
+        transform: translateY(0);
         opacity: 0;
     }
+    50%{
+        opacity: 0.8;
+    }
     100%{
-        transform: scale(2) translateY(20px);
+        transform: translateY(-30px);
         opacity: 0;
     }
 }

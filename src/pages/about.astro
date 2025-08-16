@@ -10,7 +10,7 @@ import profileImg from '../assets/profile_img.webp';
 
 import MySelfIntro from "../components/about/MySelfIntro.astro";
 import MySkillTree from "../components/about/MySkillTree.astro";
-import MyAbility from "../components/about/MyAbility.astro";
+import MyExperience from "../components/about/MyExperience.astro";
 import MyNowAndFuture from "../components/about/MyNowAndFuture.astro";
 import FindMe from "../components/about/FindMe.astro";
 
@@ -88,7 +88,7 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 				<div class="contents-table-item">
 					<button onclick="scrollToElement('contents-container', 'my-self-intro')">關於我</button>
 					<button onclick="scrollToElement('contents-container', 'my-skill-tree')">技能樹</button>
-					<button onclick="scrollToElement('contents-container', 'my-ability')">能力</button>
+					<button onclick="scrollToElement('contents-container', 'my-ability')">經驗</button>
 					<button onclick="scrollToElement('contents-container', 'now-and-future')">現在 & 未來</button>
 					<button onclick="scrollToElement('contents-container', 'find-me')">來找我</button>
 				</div>
@@ -99,7 +99,7 @@ const instagramLink = "https://www.instagram.com/lbc0841/";
 		<div id="contents-container" class="contents-container">
 				<div id="my-self-intro"><MySelfIntro/></div>
 				<div id="my-skill-tree"><MySkillTree/></div>
-				<div id="my-ability"><MyAbility/></div>
+				<div id="my-ability"><MyExperience/></div>
 				<div id="now-and-future"><MyNowAndFuture/></div>
 				<div id="find-me"><FindMe/></div>
 		</div>

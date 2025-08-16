@@ -10,12 +10,10 @@
     justify-content: space-between;
     align-items: center;
     
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 2px 20px rgba(46, 68, 96, 0.5);
 
     z-index: 999;
-
-    /* backdrop-filter: blur(10px); */
 }
 
 .logo {
