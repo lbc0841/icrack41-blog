@@ -1,8 +1,8 @@
 // cursor particle
 const body = document.body;
 let rect = body.getBoundingClientRect();;
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
+let mouseX = window.innerWidth;
+let mouseY = window.innerHeight;
 
 body.addEventListener("mousemove", function (e) {
     mouseX = e.clientX - rect.left;

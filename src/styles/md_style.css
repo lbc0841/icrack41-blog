@@ -1,0 +1,68 @@
+h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.8rem;
+}
+h2::before{
+    content: "📌";
+    padding-right: 0.6rem;
+    color: #adceff;
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+pre {
+    margin: 0.6rem;
+    /* padding: 0.5rem; */
+    border: solid 1px #6e6e6e;
+    border-radius: 6px;
+    counter-reset: line;
+}
+
+pre::before{
+    content: "cpp";
+    display: block;
+    width: 100%;
+
+    padding-left: 1.2rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.6rem;
+
+    margin-bottom: 0.6rem;
+    background-color: #171a1c;
+}
+
+pre code > span:before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 2.4em;
+    margin-right: 2em;
+    color: gray;
+    text-align: right;
+}
+
+p code ,li code{
+    display: block;
+    
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    background-color: #24292e;
+    color: white;
+
+    border: solid 1px #6e6e6e;
+    border-radius: 4px;
+}
+
+p{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+

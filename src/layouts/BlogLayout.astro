@@ -6,7 +6,7 @@ import MainNavigation from "../components/MainNavigation.astro";
 import ContentsTable from "../components/ContentsTable.astro"
 
 import "../styles/global.css"
-import "../styles/blog.css"
+import "../styles/md_style.css"
 
 type Props = CollectionEntry<"blog">["data"] & { headings: MarkdownHeading[] };
 
@@ -34,29 +34,26 @@ const favicon = "/icrack41-blog/favicon.svg";
 			crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <meta name="generator" content={Astro.generator} />
-        <title>ICRACK's Web</title>
+        <title>ICRACK - ZJ題解</title>
     </head>
 
     <body>
-        
-        <MainNavigation/>
-        
-        <div class="blog-container">
-            <div class="background"></div>
+        <div class="w-full h-full">
+            <!-- <div class="background"></div> -->
 
-            <div class="title">
-                <b>{title}</b>
-                <small>{new Date(date).toLocaleDateString()}</small>
-                <hr>
+            <div class="p-2 bg-zinc-950 border-b-1">
+                <span class="text-2xl mx-4 fa-solid fa-list"></span>
+                <span class="text-2xl mr-2">{title}</span>
+                <span class="text-md text-gray-500">{new Date(date).toLocaleDateString()}</span>
             </div>
 
-            <div class="flex" style="padding: 10px; height:90%">
-                <nav class="contents-table" style="padding-top: 16px;">
+            <div class="grid overflow-y-auto h-[90%] px-4 py-2">
+                <!-- <nav class="contents-table" style="padding-top: 16px;">
                     目錄
                     <ContentsTable headings={headings} />
-                </nav>
+                </nav> -->
     
-                <article class="blog-context-container">
+                <article>
                     <Content />
                 </article>
             </div>
@@ -64,10 +61,10 @@ const favicon = "/icrack41-blog/favicon.svg";
             <button class="back-button" onclick="location.href='/icrack41-blog/posts'">
                 <i class="fa-solid fa-arrow-left"></i>
             </button>
-            
         </div>
 
         <script src="../scripts/smoothscroll.js"></script>
+        <!-- <script src="../scripts/prism.js"></script> -->
     </body>
 
 </html>

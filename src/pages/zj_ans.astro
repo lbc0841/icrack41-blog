@@ -1,0 +1,51 @@
+---
+import MainNavigation from '../components/MainNavigation.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Layout from '../layouts/Layout.astro';
+
+import { Image } from 'astro:assets';
+import profileImg from '../assets/profile_img.webp';
+
+import "../styles/index.css";
+---
+
+
+<Layout> 
+	<div class="background opacity-80"></div>
+
+	
+    <MainNavigation/>
+	
+    <div class="mt-10 p-6">
+        <a href="/icrack41-blog/blog/a001">a001</a>
+        <a href="/icrack41-blog/blog/a002">a002</a>
+        <a href="/icrack41-blog/blog/a003">a003</a>
+        <a href="/icrack41-blog/blog/a004">a004</a>
+        <a href="/icrack41-blog/blog/a005">a005</a>
+
+        <a href="/icrack41-blog/blog/a006">a006</a>
+        <a href="/icrack41-blog/blog/a009">a009</a>
+        <a href="/icrack41-blog/blog/a010">a010</a>
+        <a href="/icrack41-blog/blog/a013">a013</a>
+        <a href="/icrack41-blog/blog/a015">a015</a>
+        
+        <a href="/icrack41-blog/blog/a017">a017</a>
+
+
+    </div>
+    
+</Layout>
+
+<style>
+    a {
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+
+    a:hover{
+        color: #51a2ff;
+    }
+</style>
+
