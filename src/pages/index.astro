@@ -11,19 +11,22 @@ import "../styles/index.css";
 
 
 <Layout> 
-	<div class="background opacity-80"></div>
+	<div class="background"></div>
+	<div class="background-grid opacity-40"></div>
+	
+	<!-- <canvas class="w-full h-full opacity-10" id="glcanvas"></canvas> -->
 
 	<!-- <MainNavigation/> -->
 	<div class="absolute top-0 w-full flex flex-row justify-between items-center px-4 py-2 z-999">
 		<div class="flex flex-row font-bold text-white">
-			<h4 class="text-xl select-none">ICRACK's Blog</h4>
+			<h4 class="text-xl select-none m-4">ICRACK's Blog</h4>
 		</div>
 
 		<div class="hidden md:flex flex-row gap-6 text-white text-xl px-4">
-            <a class="scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/about">About</a>
-            <a class="scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/zj_ans">Notes</a>
-            <a class="scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/projects">Projects</a>
-            <a class="scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/posts">Posts</a>
+            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/about">About</a>
+            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/zj_ans">Notes</a>
+            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/projects">Projects</a>
+            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/posts">Posts</a>
 		</div>
 
 		<div class="block md:hidden px-2">
@@ -53,12 +56,9 @@ import "../styles/index.css";
 
 	<SocialLinks/>
 
-	<!-- <div class="scroll-hint hidden sm:block">
-		&lt;
-		<i class="fa-solid fa-computer-mouse"></i>
-		滾動滾輪 &gt;
-	</div> -->
-	
+
+	<script src="../scripts/fractal_noise.js"></script>
+
 	<script>
 		window.addEventListener('load', function () {
 			lottie.loadAnimation({

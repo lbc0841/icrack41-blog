@@ -43,8 +43,7 @@
 body {
     position: fixed;
     font-family: Arial, sans-serif;
-    background: #0b1119;
-    /* background: #fff; */
+    background: #000;
 
     color: var(--content-color);
     height: 100vh;
@@ -75,14 +74,11 @@ body {
     width: 100%;
     z-index: -1;
 
-    background: url("../assets/grid.svg");
-    
     background-image:
         radial-gradient(closest-side, rgba(12, 93, 99, 0.4), rgba(12, 93, 99, 0)),
         radial-gradient(closest-side, rgba(9, 61, 75, 0.4), rgba(9, 61, 75, 0)),
-        radial-gradient(closest-side, rgba(4, 19, 42, 0.4), rgba(4, 19, 42, 0)),
-        url("../assets/grid.svg");
-    
+        radial-gradient(closest-side, rgba(4, 19, 42, 0.4), rgba(4, 19, 42, 0));
+
     /* background-image:
         radial-gradient(closest-side, rgba(0, 255, 0, 1), rgba(0, 255, 0, 0)),
         radial-gradient(closest-side, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0)),
@@ -91,17 +87,26 @@ body {
     background-size:
         140vmax 140vmax,
         120vmax 120vmax,
-        110vmax 110vmax,
-        16vmax 16vmax;
+        110vmax 110vmax;
 
     background-repeat:
         no-repeat,
         no-repeat,
-        no-repeat,
-        repeat;
+        no-repeat;
     
-    animation: 14s anim_bg linear infinite;
-    /* background-position: 60%; */
+    animation: 16s anim_bg linear infinite;
+}
+
+.background-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    background: url("../assets/grid.svg");
+    background-size: 16vmax;
 }
 
 @keyframes anim_bg {
@@ -109,36 +114,31 @@ body {
         background-position:
             calc(0vw - 70vmax) calc(20vh - 70vmax),
             calc(70vw - 60vmax) calc(10vh - 60vmax),
-            calc(50vw - 55vmax) calc(60vh - 55vmax),
-            0 0;
+            calc(50vw - 55vmax) calc(60vh - 55vmax);
     }
     20%{
         background-position:
             calc(30vw - 70vmax) calc(40vh - 70vmax),
             calc(90vw - 60vmax) calc(0vh - 60vmax),
-            calc(60vw - 55vmax) calc(80vh - 55vmax),
-            0 0;
+            calc(60vw - 55vmax) calc(80vh - 55vmax);
     }
     40%{
         background-position:
             calc(10vw - 70vmax) calc(60vh - 70vmax),
             calc(80vw - 60vmax) calc(30vh - 60vmax),
-            calc(10vw - 55vmax) calc(40vh - 55vmax),
-            0 0;
+            calc(10vw - 55vmax) calc(40vh - 55vmax);
     }
     60%{
         background-position:
             calc(40vw - 70vmax) calc(80vh - 70vmax),
             calc(50vw - 60vmax) calc(0vh - 60vmax),
-            calc(80vw - 55vmax) calc(20vh - 55vmax),
-            0 0;
+            calc(80vw - 55vmax) calc(20vh - 55vmax);
     }
     70%{
         background-position:
             calc(75vw - 70vmax) calc(90vh - 70vmax),
             calc(30vw - 60vmax) calc(50vh - 60vmax),
-            calc(100vw - 55vmax) calc(50vh - 55vmax),
-            0 0;
+            calc(100vw - 55vmax) calc(50vh - 55vmax);
     } 
 }
 
