@@ -1,5 +1,5 @@
 ---
-title: "a009. 解碼器"
+title: ""
 description: ""
 date: 2025-05-16
 tags: ["cpp"]
@@ -9,7 +9,7 @@ tags: ["cpp"]
 
 ### ✅ 完整代碼
 
-評分結果(參考) ： **<font color="#00bb00">AC</font> (2ms, 352KB)**
+評分結果(參考) ： **<font color="#00bb00">AC</font> **
 
 ```cpp
 #include <bits/stdc++.h>
@@ -18,16 +18,7 @@ using namespace std;
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int k= '*'-'1';
-
-    string s;
-    cin >> s;
-
-    for(char c : s){
-        cout << (char)(c+k);
-    } 
-
+    
     return 0;
 }
 ```

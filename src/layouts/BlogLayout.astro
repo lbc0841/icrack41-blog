@@ -2,9 +2,6 @@
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownHeading } from "astro";
 
-import MainNavigation from "../components/MainNavigation.astro";
-import ContentsTable from "../components/ContentsTable.astro"
-
 import "../styles/global.css"
 import "../styles/md_style.css"
 
@@ -33,6 +30,8 @@ const favicon = "/icrack41-blog/favicon.svg";
 			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
 			crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
+
         <meta name="generator" content={Astro.generator} />
         <title>ICRACK - ZJ題解</title>
     </head>
@@ -47,12 +46,7 @@ const favicon = "/icrack41-blog/favicon.svg";
                 <span class="text-md text-gray-500">{new Date(date).toLocaleDateString()}</span>
             </div>
 
-            <div class="grid overflow-y-auto h-[90%] px-4 py-2">
-                <!-- <nav class="contents-table" style="padding-top: 16px;">
-                    目錄
-                    <ContentsTable headings={headings} />
-                </nav> -->
-    
+            <div class="grid overflow-y-auto h-[90%] px-4 pt-2 pb-6">
                 <article>
                     <Content />
                 </article>

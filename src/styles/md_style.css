@@ -71,7 +71,12 @@ p code ,li code{
 
 p{
     margin: 1rem;
+    line-height: 1.8rem;
     color: #94a1b2;
+}
+
+strong{
+    color: #bfc6d0;
 }
 
 ul{

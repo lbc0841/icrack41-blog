@@ -1,10 +1,6 @@
 ---
 import MainNavigation from '../components/MainNavigation.astro';
-import SocialLinks from '../components/SocialLinks.astro';
 import Layout from '../layouts/Layout.astro';
-
-import { Image } from 'astro:assets';
-import profileImg from '../assets/profile_img.webp';
 
 import "../styles/index.css";
 ---
@@ -16,8 +12,9 @@ import "../styles/index.css";
 	
     <MainNavigation/>
 
-    <div class="mt-10 p-6">
+    <div class="w-full mt-10 p-6 justify-center items-center">
         <h1 class="text-2xl mb-4">Zerojudge 題解</h1>
+        <h2 class="text-xl text-zinc-400 mb-4"># 基礎題庫</h2>
 
         <a href="/icrack41-blog/blog/a001">a001</a>
         <a href="/icrack41-blog/blog/a002">a002</a>
@@ -33,33 +30,33 @@ import "../styles/index.css";
         
         <a href="/icrack41-blog/blog/a017">a017</a>
         <a href="/icrack41-blog/blog/a020">a020</a>
-        <a href="/icrack41-blog/blog/a021">a021</a>
+        <a class="text-red-500"  href="/icrack41-blog/blog/a021">a021</a>
         <a href="/icrack41-blog/blog/a022">a022</a>
         <a href="/icrack41-blog/blog/a024">a024</a>
 
-        <a class="text-red-500" href="/icrack41-blog/blog/a034">a034</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a038">a038</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a040">a040</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a042">a042</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a044">a044</a>
+        <a href="/icrack41-blog/blog/a034">a034</a>
+        <a href="/icrack41-blog/blog/a038">a038</a>
+        <a href="/icrack41-blog/blog/a040">a040</a>
+        <a href="/icrack41-blog/blog/a042">a042</a>
+        <a href="/icrack41-blog/blog/a044">a044</a>
 
-        <a class="text-red-500" href="/icrack41-blog/blog/a053">a053</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a054">a054</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a058">a058</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a059">a059</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a065">a065</a>
+        <a href="/icrack41-blog/blog/a053">a053</a>
+        <a href="/icrack41-blog/blog/a054">a054</a>
+        <a href="/icrack41-blog/blog/a058">a058</a>
+        <a href="/icrack41-blog/blog/a059">a059</a>
+        <a href="/icrack41-blog/blog/a065">a065</a>
 
-        <a class="text-red-500" href="/icrack41-blog/blog/a095">a095</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a104">a104</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a121">a121</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a147">a147</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a148">a148</a>
+        <a href="/icrack41-blog/blog/a095">a095</a>
+        <a href="/icrack41-blog/blog/a104">a104</a>
+        <a href="/icrack41-blog/blog/a121">a121</a>
+        <a href="/icrack41-blog/blog/a147">a147</a>
+        <a href="/icrack41-blog/blog/a148">a148</a>
 
-        <a class="text-red-500" href="/icrack41-blog/blog/a149">a149</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a215">a215</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a216">a216</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a224">a224</a>
-        <a class="text-red-500" href="/icrack41-blog/blog/a225">a225</a>
+        <a href="/icrack41-blog/blog/a149">a149</a>
+        <a href="/icrack41-blog/blog/a215">a215</a>
+        <a href="/icrack41-blog/blog/a216">a216</a>
+        <a href="/icrack41-blog/blog/a224">a224</a>
+        <a href="/icrack41-blog/blog/a225">a225</a>
 
         <a class="text-red-500" href="/icrack41-blog/blog/a229">a229</a>
         <a class="text-red-500" href="/icrack41-blog/blog/a244">a244</a>
@@ -93,16 +90,21 @@ import "../styles/index.css";
         <a class="text-red-500" href="/icrack41-blog/blog/b367">b367</a>
         <a class="text-red-500" href="/icrack41-blog/blog/b373">b373</a>
         <a class="text-red-500" href="/icrack41-blog/blog/b374">b374</a>
+
+
+
+
+        <a href="/icrack41-blog/blog/b510">b510</a>
+        <a href="/icrack41-blog/blog/b511">b511</a>
     </div>
     
 </Layout>
 
 <style>
     a {
+        display: inline-block;
         padding-left: 0.4rem;
         padding-right: 0.4rem;
-        padding-top: 0.8rem;
-        padding-bottom: 0.8rem;
     }
 
     a:hover{
