@@ -60,7 +60,7 @@
 
 .main-nav-links-hamburger {
     position: absolute;
-    top: 56px;
+    top: 70px;
     left: 0;
 
     width: 100dvw;
@@ -73,8 +73,9 @@
     align-items: center;
     overflow: hidden;
 
-    padding-top: 40px;
-    background-color: rgba(38, 42, 53, 0.85);
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 2px -8px 10px rgba(0, 0, 0, 0.6);
 
     color: white;
 

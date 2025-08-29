@@ -25,8 +25,11 @@ hr {
 }
 
 pre {
-    margin: 0.6rem;
-    padding-bottom: 0.6rem;
+    width: 100%;
+
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.2rem;
 
     border: solid 1px #6e6e6e;
     border-radius: 6px;
@@ -36,7 +39,6 @@ pre {
 pre::before{
     content: "cpp";
     display: block;
-    width: 100%;
 
     padding-left: 1.2rem;
     padding-top: 0.4rem;
@@ -54,6 +56,17 @@ pre code > span:before {
     margin-right: 2em;
     color: gray;
     text-align: right;
+}
+
+pre code > .line {
+    margin-right: 1.2rem;
+}
+
+pre code {
+    display: block;
+    max-width: 100%;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
 }
 
 p code ,li code{
