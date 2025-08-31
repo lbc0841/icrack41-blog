@@ -120,8 +120,7 @@ td {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
 
-    border-left: solid 1px #94a1b2;
-    border-right: solid 1px #94a1b2;
+    border: solid 1px #94a1b2;
 }
 
 ul{
