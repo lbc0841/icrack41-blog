@@ -6,3 +6,8 @@ orange
 
 blue
 <font color="#51a2ff"></font>
+
+🔹
+🔸
+✅
+
