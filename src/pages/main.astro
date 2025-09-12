@@ -8,11 +8,90 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	
-    <canvas class="text-canvas">
 
-    </canvas>
+    <div class="flex flex-col justify-center items-center">
+        <div class="flex mt-10">
+            <span class="text-3xl">學業</span>
+            <input type="checkbox" id="switch1" onclick="sw1Click(this);"/>
+            <label for="switch1"/>
+        </div>
+
+        <div class="flex mt-10">
+            <span class="text-3xl">健康</span>
+            <input type="checkbox" id="switch2" onclick="sw2Click(this);"/>
+            <label for="switch2"/>
+        </div>
+
+        <div class="flex mt-10">
+            <span class="text-3xl">開心</span>
+            <input type="checkbox" id="switch3" onclick="sw2Click(this);"/>
+            <label for="switch3"/>
+        </div>
+    </div>
+    
+    
 
     <script src="../scripts/text_particle.js"></script>
 </Layout>
 
+<style>
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	width: 100px;
+	height: 50px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+    margin-left: 20px;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+    background: #00aa00;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+</style>
+
+<script is:inline>
+    const switch1 = document.getElementById("switch1");
+    const switch2 = document.getElementById("switch2");
+    const switch3 = document.getElementById("switch3");
+
+    function sw1Click(cb) {
+        if(cb.checked){
+            switch2.checked = false;
+            switch3.checked = false;
+        }
+    }
+
+    function sw2Click(cb) {
+        if(cb.checked){
+            switch1.checked = false;
+        }
+    }
+
+</script>
