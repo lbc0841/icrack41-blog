@@ -12,19 +12,19 @@ import Layout from "../layouts/Layout.astro";
     <div class="flex flex-col justify-center items-center">
         <div class="flex mt-10">
             <span class="text-3xl">學業</span>
-            <input type="checkbox" id="switch1" onclick="sw1Click(this);"/>
+            <input type="checkbox" id="switch1" onclick="swClick(this);"/>
             <label for="switch1"/>
         </div>
 
         <div class="flex mt-10">
             <span class="text-3xl">健康</span>
-            <input type="checkbox" id="switch2" onclick="sw2Click(this);"/>
+            <input type="checkbox" id="switch2" onclick="swClick(this);"/>
             <label for="switch2"/>
         </div>
 
         <div class="flex mt-10">
             <span class="text-3xl">開心</span>
-            <input type="checkbox" id="switch3" onclick="sw2Click(this);"/>
+            <input type="checkbox" id="switch3" onclick="swClick(this);"/>
             <label for="switch3"/>
         </div>
     </div>
@@ -77,21 +77,26 @@ input:checked + label:after {
 </style>
 
 <script is:inline>
-    const switch1 = document.getElementById("switch1");
-    const switch2 = document.getElementById("switch2");
-    const switch3 = document.getElementById("switch3");
 
-    function sw1Click(cb) {
-        if(cb.checked){
-            switch2.checked = false;
-            switch3.checked = false;
-        }
-    }
+    let cnt = 0;
 
-    function sw2Click(cb) {
-        if(cb.checked){
-            switch1.checked = false;
+    const sw1 = document.getElementById("switch1");
+    const sw2 = document.getElementById("switch2");
+    const sw3 = document.getElementById("switch3");
+
+    const sw = [sw1, sw2, sw3];
+
+    function swClick(cb) {
+        if(cb.checked) cnt++;
+        else cnt--;
+
+        if(cnt > 2){
+            let idx = Math.round(Math.random()*2);
+            while(sw[idx] == cb) idx = Math.round(Math.random()*2);
+            sw[idx].checked = false;
+            cnt--;
         }
+        console.log(cnt);
     }
 
 </script>
