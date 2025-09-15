@@ -2,11 +2,11 @@
 import "../styles/main_navigation.css";
 import { Image } from "astro:assets";
 import profileImg from '../assets/profile_img.webp';
+import HamburgerMenu from "./HamburgerMenu.astro";
 ---
 
-<div class="main-nav-container">
-
-        <div class="logo">ICRACK</div>
+<div class="main-nav-container px-4">
+        <div class="font-bold">ICRACK</div>
 
         <div class="hidden gap-6 mr-6 xs:flex">
             <a href="/icrack41-blog/about">About</a>
@@ -15,36 +15,7 @@ import profileImg from '../assets/profile_img.webp';
             <a href="/icrack41-blog/posts">Posts</a>
         </div>
 
-        <div class="hamburger-menu mr-6 block xs:hidden">
-            <!-- <div class="language-switch">
-                <i class="fa-solid fa-globe"></i>
-                <span>English</span>
-            </div> -->
-
-            <input type="checkbox" id="toggler" />
-
-            <label for="toggler">
-                <i id="hamburger" class="fa-solid fa-bars"></i>
-                <i id="close" class="fa-solid fa-xmark"></i>
-            </label>
-
-            <div id="main-nav-links-hamburger" class="main-nav-links-hamburger">
-                <Image src={profileImg} alt="profile-img" height={110} width={110} style="border-radius: 20%;"/>
-                <div class="mt-4">
-
-                    <a class="block" href="/icrack41-blog/"><i class="fa-solid fa-house" style="width: 24px;"></i> Home</a>
-                    <a class="block" href="/icrack41-blog/about"><i class="fa-solid fa-user" style="width: 24px;"></i> About</a>
-                    <a class="block" href="/icrack41-blog/zj_ans"><i class="fa-solid fa-code" style="width: 24px;"></i> Note</a>
-                    <a class="block" href="/icrack41-blog/-"><i class="fa-solid fa-file-invoice" style="width: 24px;"></i> Projects</a>
-                    <a class="block" href="/icrack41-blog/posts"><i class="fa-solid fa-pen-clip" style="width: 24px;"></i> Posts</a>
-
-                    <!-- <i class="fa-solid fa-code" style="width: 24px;"></i>
-                    <a href="/icrack41-blog/cpp_note/dt_preface"> Notes</a> -->
-
-                </div>
-            </div>
-        </div>
-
+        <HamburgerMenu/>
 </div>
 
 <script>

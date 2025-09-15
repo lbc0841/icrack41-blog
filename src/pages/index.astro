@@ -3,6 +3,8 @@ import MainNavigation from '../components/MainNavigation.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import Layout from '../layouts/Layout.astro';
 
+import HamburgerMenu from '../components/HamburgerMenu.astro';
+
 import { Image } from 'astro:assets';
 import profileImg from '../assets/profile_img.webp';
 
@@ -29,9 +31,7 @@ import "../styles/index.css";
             <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/posts">Posts</a>
 		</div>
 
-		<div class="block md:hidden px-2">
-			<i class="fa-solid fa-bars"></i>
-		</div>
+		<HamburgerMenu/>
 	</div>
 
 	<div class="absolute top-10 sm:top-[12%] left-[-20%] h-[68%] w-[140%] flex">
@@ -55,9 +55,6 @@ import "../styles/index.css";
 	</div>
 
 	<SocialLinks/>
-
-
-	<script src="../scripts/fractal_noise.js"></script>
 
 	<script>
 		window.addEventListener('load', function () {
