@@ -11,4 +11,4 @@
 
 Blog Url:<br>
 ~~<http://localhost:4321/>~~<br>
-<https://lbc0841.github.io/>
+<https://lbc0841.github.io/icrack41-blog/>

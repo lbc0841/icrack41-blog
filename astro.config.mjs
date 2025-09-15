@@ -22,7 +22,8 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
   },
 
-  site: 'https://lbc0841.github.io',
+  site: 'https://lbc0841.github.io/icrack41-blog',
+  base: '/icrack41-blog', 
 
   server: {
     host: '0.0.0.0',
