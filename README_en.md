@@ -9,7 +9,6 @@
 - Smooth animations (not done yet)
 - Rich content (still writing)
 
-
 Blog Url:<br>
-　~~<http://localhost:4321/icrack41-blog/>~~<br>
-　<https://lbc0841.github.io/icrack41-blog/>
+~~<http://localhost:4321/>~~<br>
+<https://lbc0841.github.io/>
