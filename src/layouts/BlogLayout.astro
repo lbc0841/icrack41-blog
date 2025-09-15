@@ -11,7 +11,7 @@ const { title, description, date, headings } = Astro.props;
 const { Content } = await Astro.props.content;
 
 const themeColor = "#0b171d"; 
-const favicon = "/icrack41-blog/favicon.svg";
+const favicon = "/favicon.svg";
 ---
 
 <!doctype html>
@@ -41,7 +41,7 @@ const favicon = "/icrack41-blog/favicon.svg";
             <!-- <div class="background"></div> -->
 
             <div class="max-h-12 p-2 border-b-1 border-zinc-600 overflow-x-hidden">
-                <a class="text-2xl mx-4 fa-solid fa-list hover:text-blue-400" href="/icrack41-blog/zj_ans"></a>
+                <a class="text-2xl mx-4 fa-solid fa-list hover:text-blue-400" href="/zj_ans"></a>
                 <span class="text-2xl mr-2">{title}</span>
                 <span class="text-md text-gray-500">{new Date(date).toLocaleDateString()}</span>
             </div>

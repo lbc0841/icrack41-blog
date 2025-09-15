@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 
+import sitemap from '@astrojs/sitemap';
+
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
@@ -13,7 +15,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [react()],
+  integrations: [react(), sitemap()],
   
   markdown: {
     remarkPlugins: [remarkMath],
@@ -21,7 +23,6 @@ export default defineConfig({
   },
 
   site: 'https://lbc0841.github.io',
-  base: 'icrack41-blog', 
 
   server: {
     host: '0.0.0.0',

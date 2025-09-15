@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://lbc0841.github.io/sitemap-index.xml
