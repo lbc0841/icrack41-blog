@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lbc0841.github.io/sitemap-index.xml
+Sitemap: https://lbc0841.github.io/icrack41-blog/sitemap.xml
