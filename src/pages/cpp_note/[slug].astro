@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import MainNavigation from '../../components/MainNavigation.astro';
 import CppNoteMenu from '../../components/CppNoteMenu.astro';
-import "../../styles/notes.css"
+import "../../styles/md_style.css"
 
 export async function getStaticPaths() {
   const posts = await getCollection('cpp_note');
