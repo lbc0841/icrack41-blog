@@ -13,8 +13,8 @@ import "../styles/index.css";
 
 
 <Layout> 
-	<div class="background"></div>
-	<div class="background-grid opacity-40"></div>
+	<!-- <div class="background"></div> -->
+	<!-- <div class="background-grid opacity-40"></div> -->
 	
 	<!-- <canvas class="w-full h-full opacity-10" id="glcanvas"></canvas> -->
 
@@ -26,7 +26,7 @@ import "../styles/index.css";
 
 		<div class="hidden md:flex flex-row gap-6 text-white text-xl px-4">
             <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/about">About</a>
-            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/zj_ans">Notes</a>
+            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/notes">Notes</a>
             <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/projects">Projects</a>
             <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/posts">Posts</a>
 		</div>
@@ -34,18 +34,17 @@ import "../styles/index.css";
 		<HamburgerMenu/>
 	</div>
 
-	<div class="absolute top-10 sm:top-[12%] left-[-20%] h-[68%] w-[140%] flex">
+	<div class="absolute top-10 sm:top-[10%] left-[-20%] h-[68%] w-[140%] flex">
 		<div id="logo-anim" class="h-[500px] max-h-full m-auto"></div>
 	</div>
 
-	<div class="et-float-in absolute bottom-[30%] sm:bottom-[26%] left-[50%] translate-x-[-50%] w-full flex justify-center z-999">
+	<div class="et-float-in absolute bottom-[36%] sm:bottom-[34%] left-[50%] translate-x-[-50%] w-full flex justify-center z-999">
+		<button class="mx-2 px-4 py-2 border-1 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900  rounded-3xl" onclick="location.href='/icrack41-blog/about'">
+			<b>關於</b>
+		</button>
 
-		<div class="p-2 border-2 border-slate-500 border-r-0">
-			<b class="h-full text-slate-500">去看看</b>
-		</div>
-		
-		<button class="p-2 border-2 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900" onclick="location.href='/icrack41-blog/about'">
-			<b>更多內容 <i class="fa-solid fa-arrow-right"></i></b>
+		<button class="mx-2 px-4 py-2 border-1 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900  rounded-3xl" onclick="location.href='/icrack41-blog/about'">
+			<b>更多內容<i class="fa-solid fa-arrow-right"></i></b>
 		</button>
 		
 	</div>
@@ -55,19 +54,18 @@ import "../styles/index.css";
 	</div>
 
 	<SocialLinks/>
-
-	<script>
-		window.addEventListener('load', function () {
-			lottie.loadAnimation({
-				container: document.getElementById('logo-anim'),
-				renderer: 'svg',
-				loop: false,
-				autoplay: true,
-				path: '/icrack41-blog/lottie/icrack.json'
-			});
-		});
-	</script>
-	
-
 </Layout>
 
+<script src="../scripts/main_anim"></script>
+
+<script>
+	window.addEventListener('load', function () {
+		lottie.loadAnimation({
+			container: document.getElementById('logo-anim'),
+			renderer: 'svg',
+			loop: false,
+			autoplay: true,
+			path: '/icrack41-blog/lottie/icrack.json'
+		});
+	});
+</script>

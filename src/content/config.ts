@@ -10,6 +10,15 @@ const blogCollection = defineCollection({
     }),
 });
 
+const zjAnsCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        date: z.date(),
+    }),
+});
+
 const cppNoteCollection = defineCollection({
     type: "content",
     schema: z.object({
@@ -20,6 +29,7 @@ const cppNoteCollection = defineCollection({
 
 export const collections = {
     blog: blogCollection,
+    zj_ans: zjAnsCollection,
     cpp_note: cppNoteCollection,
 };
 

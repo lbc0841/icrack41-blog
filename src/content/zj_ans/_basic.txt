@@ -1,0 +1,24 @@
+---
+title: ""
+description: ""
+date: 2025-05-16
+tags: ["cpp"]
+---
+
+## 解法一
+
+### ✅ 完整代碼
+
+評分結果(參考) ： **<font color="#00bb00">AC</font> **
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    return 0;
+}
+```

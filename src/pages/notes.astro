@@ -1,26 +1,16 @@
 ---
 import MainNavigation from "../components/MainNavigation.astro";
 import Layout from "../layouts/Layout.astro";
-
-import "../styles/notes.css"
-
-import BS from "../content/cpp_note/dt_binary_search.md"
 ---
 
 <Layout>
-    <div class="background"></div>
+    <div class="background opacity-40"></div>
+	<div class="background-grid opacity-40"></div>
     <MainNavigation/>
 
-    <div class="note-container">
-        <BS/>
+    <div class="mt-20 px-2">
+        <a class="block my-4 text-center text-2xl text-white hover:text-cyan-300" href="/icrack41-blog/note/zj_ans">Zerojudge 題解</a>
+        <a class="block my-4 text-center text-2xl text-white hover:text-cyan-300" href="/icrack41-blog/blog/digital_electronic_b">數位電子乙級</a>
     </div>
-
-    <button id="left-button">
-		<h1 class="fa-solid fa-chevron-left"></h1>
-	</button>
-
-	<button id="right-button">
-		<h1 class="fa-solid fa-chevron-right"></h1>
-	</button>
 
 </Layout>
