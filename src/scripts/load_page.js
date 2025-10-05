@@ -5,7 +5,6 @@ window.addEventListener("load", function () {
     const pageContent = this.document.getElementById("page-content");
 
 	this.setTimeout(function(){
-
 		if(loading) loading.style.display = "none";
 
         if(pageContent){

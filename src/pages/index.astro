@@ -15,8 +15,6 @@ import "../styles/index.css";
 <Layout> 
 	<!-- <div class="background"></div> -->
 	<!-- <div class="background-grid opacity-40"></div> -->
-	
-	<!-- <canvas class="w-full h-full opacity-10" id="glcanvas"></canvas> -->
 
 	<!-- <MainNavigation/> -->
 	<div class="absolute top-0 w-full flex flex-row justify-between items-center px-4 py-2 z-999">
@@ -34,19 +32,33 @@ import "../styles/index.css";
 		<HamburgerMenu/>
 	</div>
 
-	<div class="absolute top-10 sm:top-[10%] left-[-20%] h-[68%] w-[140%] flex">
+	
+
+	<div id="pg1" class="absolute top-10 sm:top-[10%] left-[-20%] h-[68%] w-[140%] flex">
 		<div id="logo-anim" class="h-[500px] max-h-full m-auto"></div>
+
+		<div class="et-float-in absolute bottom-[20%] left-[50%] translate-x-[-50%] w-full flex justify-center z-999">
+			<button class="mx-2 px-4 py-2 border-1 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900  rounded-3xl" onclick="location.href='/icrack41-blog/about'">
+				<b>關於</b>
+			</button>
+	
+			<button id="moreContent" class="mx-2 px-4 py-2 border-1 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900  rounded-3xl">
+				<b>更多內容 <i class="fa-solid fa-arrow-right"></i></b>
+			</button>
+		</div>
 	</div>
 
-	<div class="et-float-in absolute bottom-[36%] sm:bottom-[34%] left-[50%] translate-x-[-50%] w-full flex justify-center z-999">
-		<button class="mx-2 px-4 py-2 border-1 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900  rounded-3xl" onclick="location.href='/icrack41-blog/about'">
-			<b>關於</b>
-		</button>
+	<div id="pg2" class="absolute top-[24%] right-[6%] md:right-[16%]">
+		<h1 class="text-2xl md:text-3xl font-bold mb-4">3D - Modeling</h1>
+		<span class="text-xl px-2">Blender</span>
 
-		<button class="mx-2 px-4 py-2 border-1 border-slate-200 text-slate-200 duration-200 hover:bg-slate-200 hover:text-slate-900  rounded-3xl" onclick="location.href='/icrack41-blog/about'">
-			<b>更多內容<i class="fa-solid fa-arrow-right"></i></b>
-		</button>
-		
+		<div class="grid grid-cols-3 gap-2 mt-2">
+			<div class="border-1 rounded-xl w-12 md:w-20 h-12 md:h-20">我想不到</div>
+			<div class="border-1 rounded-xl w-12 md:w-20 h-12 md:h-20">這裡要</div>
+			<div class="border-1 rounded-xl w-12 md:w-20 h-12 md:h-20">放甚麼</div>
+		</div>
+
+		<button id="back" class="text-2xl mt-16 ml-24 hover:text-gray-400"><i class="fa-solid fa-reply"></i> Go Back</button>
 	</div>
 
 	<div class="absolute bottom-0 sm:bottom-2 left-[50%] sm:left-8 translate-x-[-50%] sm:translate-x-0">
@@ -69,3 +81,5 @@ import "../styles/index.css";
 		});
 	});
 </script>
+
+
