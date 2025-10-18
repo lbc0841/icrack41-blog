@@ -155,13 +155,15 @@ strong {
 table {
     white-space: nowrap;
     overflow: auto;
-    margin-bottom: 1.2rem;
+    
 
     color: #bfcbd9;
 
     border: solid 1px #bfcbd9;
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 th {

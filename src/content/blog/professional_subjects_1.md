@@ -293,13 +293,123 @@ $\underset{\color{Teal} \text{熱電壓}}{V_{T}} = \frac{K}{11600}$<br>
 | $V_{r(rms)}$ | $0.385V_{m}$ | $0.308V_{m}$ | $0.308V_{m}$ |
 | $r\%$ | $121\%$ | $48.4\%$ | $48.4\%$ |
 
+</div>
+
 $\underset{\color{Teal} \text{漣波有效值}}{V_{r(rms)}} = \sqrt{V_{rms}^{2} - V_{dc}^{2}}$
 
 $\underset{\color{Teal} \text{漣波因數}}{r\%} = \frac{V_{r(rms)}}{V_{dc}}$
 
+### 🔸 濾波電路
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | 半波整流 | 中間抽頭 | 橋式整流 |
+|---|:-:|:-:|:-:|
+| 輸出波形 | - | - | - |
+| $PIV$ | $2V_{s(m)}$ | $2V_{s(m)}$ | $V_{s(m)}$ |
+| $V_{r(p-p)}$ | $\frac{V_{o(m)}}{R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{R_{L} \times C \times f_{o}}$ |
+| $V_{r(rms)}$ | $\frac{V_{o(m)}}{2 \sqrt{3} \times R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{4 \sqrt{3} \times R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{4 \sqrt{3} \times R_{L} \times C \times f_{o}}$ |
+
 </div>
 
-### 🔸 濾波電路
+### 🔸 BJT
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| 極性 | 描述 |
+|---|---|
+| E | 發射載子 |
+| C | 控制載子流 |
+| B | 收集載子 |
+
+</div>
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| 模式 | 偏壓 | 功能 | 電流/電壓 |
+|---|---|---|---|
+| 順向主動區 | - | 放大器 | $I_{C} = \beta I_{B}$ |
+| 逆向主動區 | - | 邏輯交換電路 | |
+| 飽和區 | - | 開關-ON | $I_{C} \leq \beta I_{B}, \; V_{CE} = 0.2V$ |
+| 截止區 | - | 開關-OFF | $I_{C} = I_{B} = 0$ |
+
+</div>
+
+#### 組態腳位
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| 組態 | 共接腳 | 輸入腳 | 輸出腳 | 電流增益 $\frac{I_{o}}{I_{i}}$ |
+|---|:-:|:-:|:-:|:-:|
+| CE | E | B | C | $\beta$ |
+| CC | C | B | E | $\gamma$ |
+| CB | B | E | C | $\alpha$ |
+
+</div>
+
+🔹 C 極不當輸入端、B 極不當輸出端
+
+#### 組態比較
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | CE | CC | CB |
+|---|:-:|:-:|:-:|
+| 別稱 | | $\underset{\color{Teal} V_{o} \approx V_{i}}{\text{電壓緩衝器}}$ | $\underset{\color{Teal} I_{o} \approx I_{i}}{\text{電流緩衝器}}$ |
+| | | | |
+| $R_{i}$ | $\text{中}$ | $\text{大}$ | $\text{小}$ |
+| $R_{o}$ | $\text{中}$ | $\text{小}$ | $\text{大}$ |
+| | | | |
+| $A_{v}$ | $\underset{\color{Teal} A_{v} > 1}{\text{中}}$ | $\underset{\color{Teal} A_{v} \approx 1}{\text{小}}$ | $\underset{\color{Teal} A_{v} > 1}{\text{大}}$ |
+| $A_{i}$ | $\underset{\color{Teal} A_{i} > 1}{\text{中}}$ | $\underset{\color{Teal} A_{i} > 1}{\text{大}}$ | $\underset{\color{Teal} A_{i} \approx 1}{\text{小}}$ |
+| $A_{p}$ | $\underset{\color{Teal} A_{v} > 1, \; A_{i} > 1}{\text{大}}$ | $\text{小}$ | $\text{中}$ |
+| | | | |
+| 頻寬 | $\text{小}$ | $\text{中}$ | $\text{大}$ |
+| 相位 | 反 | 同 | 同 |
+
+</div>
+
+#### $R_{i}, \; R_{o}$
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| 放大器 | $R_{i}$ | $R_{o}$ |
+|---|---|---|
+| 電壓放大器 | 越大越好 | 越小越好 |
+| 電流放大器 | 越小越好 | 越大越好 |
+
+</div>
+
+#### $\alpha , \; \beta$
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| 增益 | 公式 | 範圍 |
+|---|---|---|
+| $\alpha$ | $\alpha = \frac{I_{C}}{I_{E}} = \frac{\beta}{1 + \beta}$ | $\alpha \leq 1$ |
+| $\beta$ | $\beta = \frac{I_{C}}{I_{B}} = \frac{\alpha}{1 - \alpha}$ | |
+| $\gamma$ | $\gamma  = \beta + 1$ | |
+
+</div>
+
+$I_{E} = I_{C} + I_{B}$
+
+#### 增益
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| 增益 | 公式 |
+|---|---|
+| 電壓增益 | $A_{v} = \frac{V_{o}}{V_{i}}$ |
+| 電流增益 | $A_{i} = \frac{I_{o}}{I_{i}} = A_{v} \times \frac{R_{i}}{R_{o}}$ |
+| 功率增益 | $A_{p} = A_{v} \times A_{i}$ |
+
+</div>
+
+
+
+
+
 
 ***
 
