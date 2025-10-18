@@ -119,11 +119,11 @@ h3 code {
 p {
     margin: 1rem;
     line-height: 1.8rem;
-    color: #94a1b2;
+    color: #bfcbd9;
 }
 
 strong {
-    color: #bfc6d0;
+    color: #bfcbd9;
 }
 
 .eg {
@@ -157,9 +157,9 @@ table {
     overflow: auto;
     margin-bottom: 1.2rem;
 
-    color: #94a1b2;
+    color: #bfcbd9;
 
-    border: solid 1px #94a1b2;
+    border: solid 1px #bfcbd9;
     margin-left: 1rem;
     margin-right: 1rem;
 }
@@ -171,7 +171,7 @@ th {
     padding-bottom: 0.1rem;
 
     font-weight: bolder;
-    border: solid 1px #94a1b2;
+    border: solid 1px #bfcbd9;
 }
 
 td {
@@ -180,7 +180,7 @@ td {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
 
-    border: solid 1px #94a1b2;
+    border: solid 1px #bfcbd9;
 }
 
 ul {

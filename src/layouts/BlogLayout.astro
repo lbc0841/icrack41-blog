@@ -33,7 +33,7 @@ const favicon = "/icrack41-blog/favicon.svg";
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
 
         <meta name="generator" content={Astro.generator} />
-        <title>Zerojudge 題解</title>
+        <title>Notes</title>
     </head>
 
     <body>
@@ -41,12 +41,12 @@ const favicon = "/icrack41-blog/favicon.svg";
             <!-- <div class="background"></div> -->
 
             <div class="max-h-12 p-2 border-b-1 border-zinc-600 overflow-x-hidden">
-                <button class="text-2xl mx-4 fa-solid fa-list hover:text-blue-400" onclick="location.href='/icrack41-blog/notes';"></button>
-                <span class="text-2xl mr-2">{title}</span>
-                <span class="text-md text-gray-500">{new Date(date).toLocaleDateString()}</span>
+                <button class="text-xl md:text-2xl mx-2 fa-solid fa-list hover:text-blue-400" onclick="location.href='/icrack41-blog/notes';"></button>
+                <span class="text-xl md:text-2xl">{title}</span>
+                <!-- <span class="text-sm md:text-md text-gray-500">{new Date(date).toLocaleDateString()}</span> -->
             </div>
 
-            <article class="w-[100vw] h-[90%] overflow-y-auto pb-6 px-4 md:px-8">
+            <article class="w-[100vw] h-[90%] overflow-y-auto pb-6 px-2 md:px-8">
                 <Content />
             </article>
         </div>
