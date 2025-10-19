@@ -7,7 +7,7 @@ tags: [""]
 
 <br>
 
-<details>
+<details close>
 <summary>前言 (廢話)</summary>
 
 本筆記目標為<br>
@@ -19,7 +19,14 @@ tags: [""]
 
 ***
 
-<details>
+<details close>
+<summary>歷屆考題</summary>
+
+</details>
+
+***
+
+<details open>
 <summary>工廠安全 & 衛生</summary>
 
 ## 工廠安全 & 衛生
@@ -117,6 +124,9 @@ tags: [""]
 
 ***
 
+<details open>
+<summary>電子學</summary>
+
 ## 電子學
 
 ### 🔸 電子學發展史
@@ -139,7 +149,17 @@ tags: [""]
 
 ### 🔸 波形
 
+#### 弦波
+
+$v(t) = V_{m}sin(2 \pi ft \pm \theta)$
+
+![Vm, Vpp, T](../../assets/notes/professional_subjects_1/wave_1.png)
+
 🔹 所有波形皆可以用弦波組成 ([wiki-傅立葉轉換](https://zh.wikipedia.org/zh-tw/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2))
+
+#### 工作週期 D%
+
+$\underset{\color{Teal} Duty Cycle}{D\%} = \frac{T_{H}}{T_{H}+T_{L}}$
 
 #### 有效值、平均值
 
@@ -157,10 +177,6 @@ tags: [""]
 
 $\underset{\color{Teal} Crest Factor}{CF} = \frac{V_{m}}{V_{rms}}$<br><br>
 $\underset{\color{Teal} Form Factor}{FF} = \frac{V_{rms}}{V_{av}}$
-
-#### 工作週期 D%
-
-$\underset{\color{Teal} Duty Cycle}{D\%} = \frac{T_{H}}{T_{H}+T_{L}}$
 
 ### 🔸 原子
 
@@ -223,6 +239,10 @@ $\underset{\color{Teal} Drift}{\;\; \text{飄移}}$: 外加電壓引起
 
 </div>
 
+![Diode](../../assets/notes/professional_subjects_1/diode_1.png)
+
+![Diode](../../assets/notes/professional_subjects_1/diode_2.png)
+
 #### 外加偏壓
 
 順向偏壓⬆ => 障壁電壓⬇、空乏區寬度⬇
@@ -246,8 +266,10 @@ $$
 
 #### 溫度效應
 
-溫度每上升 1℃，$\underset{\color{Teal} \text{切入電壓}}{V_{t}}$ 下降 $1mV \sim 2.5mV$<br>
-溫度每上升 10℃，$\underset{\color{Teal} \text{漏電流}}{I_{s}}$ 增加 1 倍
+| | 描述 | 公式 |
+|---|---|---|
+| $\underset{\color{Teal} \text{切入電壓}}{V_{on}}$ | 溫度上升 1℃，下降 $\underset{\color{Teal} \text{鍺}}{1mV} / \underset{\color{Teal} \text{矽}}{2.5mV}$ | $V_{on2} = V_{on1} - \underset{\color{Teal} \text{or 1mV}}{2.5mV} \times \Delta T$ |
+| $\underset{\color{Teal} \text{漏電流}}{I_{s}}$ | 溫度上升 10℃，增加 $1$ 倍 | $I_{s2} = I_{s1} \times 2^{\frac{\Delta T}{10}}$ |
 
 #### 電阻效應
 
@@ -284,8 +306,8 @@ $\underset{\color{Teal} \text{熱電壓}}{V_{T}} = \frac{K}{11600}$<br>
 <div class="max-w-[100dvw] overflow-auto">
 
 | | 半波整流 | 中間抽頭 | 橋式整流 |
-|---|---|---|---|
-| 輸出波形 | - | - | - |
+|---|:-:|:-:|:-:|
+| 輸出波形 | ![Rectifier](../../assets/notes/professional_subjects_1/rectifier_1.png) | ![Rectifier](../../assets/notes/professional_subjects_1/rectifier_2.png) | ![Rectifier](../../assets/notes/professional_subjects_1/rectifier_2.png) |
 | 頻率 | $f$ | $2f$ | $2f$ |
 | $PIV$ | $V_{m}$ | $2V_{m}$ | $V_{m}$ |
 | $V_{dc}$ | $0.318V_{m}$ | $0.636V_{m}$ | $0.636V_{m}$ |
@@ -314,6 +336,8 @@ $\underset{\color{Teal} \text{漣波因數}}{r\%} = \frac{V_{r(rms)}}{V_{dc}}$
 
 ### 🔸 BJT
 
+![BJT](../../assets/notes/professional_subjects_1/bjt_5.png)
+
 <div class="max-w-[100dvw] overflow-auto">
 
 | 極性 | 描述 |
@@ -326,14 +350,16 @@ $\underset{\color{Teal} \text{漣波因數}}{r\%} = \frac{V_{r(rms)}}{V_{dc}}$
 
 <div class="max-w-[100dvw] overflow-auto">
 
-| 模式 | 偏壓 | 功能 | 電流/電壓 |
+| 模式 | BE&CB 接面偏壓 | 功能 | 電流/電壓 |
 |---|---|---|---|
-| 順向主動區 | - | 放大器 | $I_{C} = \beta I_{B}$ |
-| 逆向主動區 | - | 邏輯交換電路 | |
-| 飽和區 | - | 開關-ON | $I_{C} \leq \beta I_{B}, \; V_{CE} = 0.2V$ |
-| 截止區 | - | 開關-OFF | $I_{C} = I_{B} = 0$ |
+| 順向主動區 | ![BJT](../../assets/notes/professional_subjects_1/bjt_1.png) | 放大器 | $I_{C} = \beta I_{B}$ |
+| 逆向主動區 | ![BJT](../../assets/notes/professional_subjects_1/bjt_2.png) | 邏輯交換電路 | |
+| 飽和區 | ![BJT](../../assets/notes/professional_subjects_1/bjt_3.png) | 開關-ON | $I_{C} \leq \beta I_{B}, \; V_{CE} = 0.2V$ |
+| 截止區 | ![BJT](../../assets/notes/professional_subjects_1/bjt_4.png) | 開關-OFF | $I_{C} = I_{B} = 0$ |
 
 </div>
+
+### 🔸 BJT 放大器
 
 #### 組態腳位
 
@@ -369,14 +395,18 @@ $\underset{\color{Teal} \text{漣波因數}}{r\%} = \frac{V_{r(rms)}}{V_{dc}}$
 
 </div>
 
+#### 輸入曲線 / 輸出曲線
+
+
+
 #### $R_{i}, \; R_{o}$
 
 <div class="max-w-[100dvw] overflow-auto">
 
 | 放大器 | $R_{i}$ | $R_{o}$ |
-|---|---|---|
-| 電壓放大器 | 越大越好 | 越小越好 |
-| 電流放大器 | 越小越好 | 越大越好 |
+|---|:-:|:-:|
+| 電壓放大器 | $\underset{\color{Teal} R_{i} >> R_{s}, \; R_{i} \text{上的分壓越大}}{\text{越大越好}}$ | $\underset{\color{Teal} R_{o} << R_{L}, \; R_{L} \text{上的分壓越大}}{\text{越小越好}}$ |
+| 電流放大器 | $\underset{\color{Teal} R_{i} << R_{s}, \; R_{i} \text{上的分流越大}}{\text{越小越好}}$ | $\underset{\color{Teal} R_{o} >> R_{L}, \; R_{L} \text{上的分流越大}}{\text{越大越好}}$ |
 
 </div>
 
@@ -406,12 +436,53 @@ $I_{E} = I_{C} + I_{B}$
 
 </div>
 
+$A_{v} = \frac{ \overset{\color{Teal} \alpha , \; \beta , \; \gamma}{\text{輸出對輸入電流比}} \; \times \; \text{輸出端看出去的等效電阻}}{\text{BJT輸入端看進去的等效電阻}}$
 
+#### 米勒定理
 
+### 🔸 BJT 串極放大
 
+$A_{vT} = A_{v1} \times A_{v2} \times ... \times A_{vn}$
 
+$A_{iT} = A_{i1} \times A_{i2} \times ... \times A_{in}$
+
+$A_{pT} = A_{p1} \times A_{p2} \times ... \times A_{pn}$
+
+#### 分貝增益 (dB)
+
+$A_{v}(dB) = 20 \; logA_{v}$
+
+$A_{i}(dB) = 20 \; logA_{i}$
+
+$A_{p}(dB) = 10 \; logA_{p}$
+
+$A_{vT}(dB) = A_{v1}(dB) + A_{v2}(dB) + ... + A_{vn}(dB)$
+
+$A_{iT}(dB) = A_{i1}(dB) + A_{i2}(dB) + ... + A_{in}(dB)$
+
+$A_{pT}(dB) = A_{p1}(dB) + A_{p2}(dB) + ... + A_{pn}(dB)$
+
+#### 直接耦合
+
+#### 疊接
+
+#### 達靈頓
+
+### 🔸 BJT 頻率響應
+
+### 🔸 MOSFET
+
+| | $\underset{\color{Teal} \text{增強型}}{E-MOSFET}$ | $\underset{\color{Teal} \text{空乏型}}{D-MOSFET}$ |
+|---|:-:|:-:|
+| $I_{D}$ | $k \times (V_{GS}-V_{GSt})^{2}$ | $I_{DSS} \times (1-\frac{V_{GS}}{V_GSp})^{2} \\ k \times (V_{GS}-V_{GSp})^{2} \\ k = \frac{I_{DSS}}{{V_{GSp}}^{2}}$ |
+| 電流 | $I_{G} = 0, \; I_{S} = I_{D}$ | $I_{G} = 0, \; I_{S} = I_{D}$ |
+
+</details>
 
 ***
+
+<details open>
+<summary>基本電學</summary>
 
 ## 基本電學
 
@@ -436,3 +507,5 @@ $I_{E} = I_{C} + I_{B}$
 | <div class="inline-block h-3 w-3 rounded-full border border-white bg-gray-300"></div> 銀 | | $10^{-2}$ | $\pm 10 \%$ |
 
 </div>
+
+</details>
