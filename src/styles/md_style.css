@@ -208,3 +208,8 @@ a {
 a:hover {
     color: #74d5e4;
 }
+
+img {
+    transform: scale(0.9);
+}
+

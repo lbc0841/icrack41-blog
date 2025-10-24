@@ -22,6 +22,10 @@ tags: [""]
 <details close>
 <summary>歷屆考題</summary>
 
+- [110~113 模擬考 電機電子群 專一](/icrack41-blog/assets/notes/professional_subjects_1/電機電子群_專一.zip)
+- ~~統測 電機電子群 專一~~
+
+
 </details>
 
 ***
@@ -241,8 +245,6 @@ $\underset{\color{Teal} Drift}{\;\; \text{飄移}}$: 外加電壓引起
 
 ![Diode](../../assets/notes/professional_subjects_1/diode_1.png)
 
-![Diode](../../assets/notes/professional_subjects_1/diode_2.png)
-
 #### 外加偏壓
 
 順向偏壓⬆ => 障壁電壓⬇、空乏區寬度⬇
@@ -301,6 +303,18 @@ $\underset{\color{Teal} \text{熱電壓}}{V_{T}} = \frac{K}{11600}$<br>
 
 </div>
 
+<div class="max-w-[100dvw] overflow-auto">
+
+| | 稽納崩潰 | 累增崩潰 |
+|---|:-:|:-:|
+| 崩潰原因 | 穿隧效應 | 撞擊游離 |
+| 電壓 | $<6V$ | $>6V$ |
+| 溫度係數 | $-$ | $+$ |
+
+</div>
+
+![Diode](../../assets/notes/professional_subjects_1/diode_2.png)
+
 ### 🔸 整流電路
 
 <div class="max-w-[100dvw] overflow-auto">
@@ -317,9 +331,7 @@ $\underset{\color{Teal} \text{熱電壓}}{V_{T}} = \frac{K}{11600}$<br>
 
 </div>
 
-$\underset{\color{Teal} \text{漣波有效值}}{V_{r(rms)}} = \sqrt{V_{rms}^{2} - V_{dc}^{2}}$
-
-$\underset{\color{Teal} \text{漣波因數}}{r\%} = \frac{V_{r(rms)}}{V_{dc}}$
+![Rectifier](../../assets/notes/professional_subjects_1/rectifier_3.png)
 
 ### 🔸 濾波電路
 
@@ -327,12 +339,22 @@ $\underset{\color{Teal} \text{漣波因數}}{r\%} = \frac{V_{r(rms)}}{V_{dc}}$
 
 | | 半波整流 | 中間抽頭 | 橋式整流 |
 |---|:-:|:-:|:-:|
-| 輸出波形 | - | - | - |
-| $PIV$ | $2V_{s(m)}$ | $2V_{s(m)}$ | $V_{s(m)}$ |
-| $V_{r(p-p)}$ | $\frac{V_{o(m)}}{R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{R_{L} \times C \times f_{o}}$ |
-| $V_{r(rms)}$ | $\frac{V_{o(m)}}{2 \sqrt{3} \times R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{4 \sqrt{3} \times R_{L} \times C \times f_{o}}$ | $\frac{V_{o(m)}}{4 \sqrt{3} \times R_{L} \times C \times f_{o}}$ |
+| $PIV$ | $2V_{i(m)}$ | $2V_{i(m)}$ | $V_{i(m)}$ |
+| $f_{o}$ | $f_{i}$ | $2f_{i}$ | $2f_{i}$ |
+| $V_{r(p-p)}$ | $\frac{V_{o(dc)}}{R_{L} \times C \times f_{o}}$ | $\frac{V_{o(dc)}}{R_{L} \times C \times f_{o}}$ | $\frac{V_{o(dc)}}{R_{L} \times C \times f_{o}}$ |
+| $V_{r(rms)}$ | $\frac{V_{o(dc)}}{2 \sqrt{3} \times R_{L} \times C \times f_{o}}$ | $\frac{V_{o(dc)}}{2 \sqrt{3} \times R_{L} \times C \times f_{o}}$ | $\frac{V_{o(dc)}}{2 \sqrt{3} \times R_{L} \times C \times f_{o}}$ |
 
 </div>
+
+$\underset{\color{Teal} \text{漣波有效值}}{V_{r(rms)}} = \sqrt{V_{rms}^{2} - V_{dc}^{2}}$
+
+$\underset{\color{Teal} \text{漣波因數}}{r\%} = \frac{V_{r(rms)}}{V_{dc}} \;\; {\color{Teal} \text{(越小越好)}}$
+
+$V_{o(dc)} = V_{o(m)} - V_{r(m)}$
+
+$V_{r(m)} = \frac{V_{r(p-p)}}{2}$
+
+![Filter](../../assets/notes/professional_subjects_1/filter_1.png)
 
 ### 🔸 BJT
 
