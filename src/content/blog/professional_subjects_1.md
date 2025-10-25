@@ -8,23 +8,10 @@ tags: [""]
 <br>
 
 <details close>
-<summary>前言 (廢話)</summary>
-
-本筆記目標為<br>
-以最少的文字盡可能的呈現詳細的全部章節<br>
-=> 內容使勁用圖表以減少描述
-
-內容有誤 用 Discord/Thread 聯絡我
-</details>
-
-***
-
-<details close>
 <summary>歷屆考題</summary>
 
 - [110~113 模擬考 電機電子群 專一](/icrack41-blog/assets/notes/professional_subjects_1/電機電子群_專一.zip)
 - ~~統測 電機電子群 專一~~
-
 
 </details>
 
@@ -268,10 +255,14 @@ $$
 
 #### 溫度效應
 
+<div class="max-w-[100dvw] overflow-auto">
+
 | | 描述 | 公式 |
 |---|---|---|
 | $\underset{\color{Teal} \text{切入電壓}}{V_{on}}$ | 溫度上升 1℃，下降 $\underset{\color{Teal} \text{鍺}}{1mV} / \underset{\color{Teal} \text{矽}}{2.5mV}$ | $V_{on2} = V_{on1} - \underset{\color{Teal} \text{or 1mV}}{2.5mV} \times \Delta T$ |
 | $\underset{\color{Teal} \text{漏電流}}{I_{s}}$ | 溫度上升 10℃，增加 $1$ 倍 | $I_{s2} = I_{s1} \times 2^{\frac{\Delta T}{10}}$ |
+
+</div>
 
 #### 電阻效應
 
@@ -381,6 +372,10 @@ $V_{r(m)} = \frac{V_{r(p-p)}}{2}$
 
 </div>
 
+#### BJT 飽和條件
+
+![BJT](../../assets/notes/professional_subjects_1/bjt_6.png)
+
 ### 🔸 BJT 放大器
 
 #### 組態腳位
@@ -419,7 +414,7 @@ $V_{r(m)} = \frac{V_{r(p-p)}}{2}$
 
 #### 輸入曲線 / 輸出曲線
 
-
+![BJT](../../assets/notes/professional_subjects_1/bjt_7.png)
 
 #### $R_{i}, \; R_{o}$
 
@@ -431,6 +426,12 @@ $V_{r(m)} = \frac{V_{r(p-p)}}{2}$
 | 電流放大器 | $\underset{\color{Teal} R_{i} << R_{s}, \; R_{i} \text{上的分流越大}}{\text{越小越好}}$ | $\underset{\color{Teal} R_{o} >> R_{L}, \; R_{L} \text{上的分流越大}}{\text{越大越好}}$ |
 
 </div>
+
+#### 工作點
+
+![BJT](../../assets/notes/professional_subjects_1/bjt_8.png)
+
+![BJT](../../assets/notes/professional_subjects_1/bjt_9.png)
 
 #### $\alpha , \; \beta$
 
@@ -494,10 +495,14 @@ $A_{pT}(dB) = A_{p1}(dB) + A_{p2}(dB) + ... + A_{pn}(dB)$
 
 ### 🔸 MOSFET
 
+<div class="max-w-[100dvw] overflow-auto">
+
 | | $\underset{\color{Teal} \text{增強型}}{E-MOSFET}$ | $\underset{\color{Teal} \text{空乏型}}{D-MOSFET}$ |
 |---|:-:|:-:|
 | $I_{D}$ | $k \times (V_{GS}-V_{GSt})^{2}$ | $I_{DSS} \times (1-\frac{V_{GS}}{V_GSp})^{2} \\ k \times (V_{GS}-V_{GSp})^{2} \\ k = \frac{I_{DSS}}{{V_{GSp}}^{2}}$ |
 | 電流 | $I_{G} = 0, \; I_{S} = I_{D}$ | $I_{G} = 0, \; I_{S} = I_{D}$ |
+
+</div>
 
 </details>
 
