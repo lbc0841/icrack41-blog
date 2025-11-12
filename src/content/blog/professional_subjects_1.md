@@ -234,10 +234,6 @@ $\underset{\color{Teal} Drift}{\;\; \text{飄移}}$: 外加電壓引起
 
 #### 外加偏壓
 
-順向偏壓⬆ => 障壁電壓⬇、空乏區寬度⬇
-
-逆向偏壓⬆ => 障壁電壓⬆、空乏區寬度⬆
-
 <div class="w-0">
 
 $$
@@ -248,6 +244,10 @@ $$
 $$
 
 </div>
+
+順向偏壓⬆ => 障壁電壓⬇、空乏區寬度⬇
+
+逆向偏壓⬆ => 障壁電壓⬆、空乏區寬度⬆
 
 #### 參雜濃度
 
@@ -269,8 +269,10 @@ $$
 $\underset{\color{Teal} \text{靜態電阻} \; R_{DC}}{R_{D}} = \frac{V_{D}}{I_{D}}$<br>
 $\underset{\color{Teal} \text{動態電阻} \; r_{ac}}{r_{d}} = \frac{\eta V_{T}}{I_{D}}$<br>
 
+<br>
+
 $\;\; K = ^\circ\text{C} + 273$<br>
-$\underset{\color{Teal} \text{熱電壓}}{V_{T}} = \frac{K}{11600}$<br>
+$\underset{\color{Teal} \text{熱電壓}}{V_{T}} = \frac{K}{11600} \; {\color{Teal} ( V_{T(20^\circ\text{C})} \approx 25mV)}$<br>
 
 #### 電容效應
 
@@ -353,13 +355,45 @@ $V_{r(m)} = \frac{V_{r(p-p)}}{2}$
 
 <div class="max-w-[100dvw] overflow-auto">
 
-| 極性 | 描述 |
-|---|---|
-| E | 發射載子 |
-| C | 控制載子流 |
-| B | 收集載子 |
+| | E | C | B |
+|---|:-:|:-:|:-:|
+| 描述 | 發射載子 | 收集載子 | 控制載子流 |
+| 寬度 | 中 | 大 | 小 |
+| 參雜濃度 | 高 | 低 | 中 |
 
 </div>
+
+#### 命名
+
+🔹 美系
+
+接面數 N XXXX
+
+ex.
+
+- 1N4007: 二極體
+- 2N3569: 電晶體 (NPN)
+
+🔹 日系
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | 格式 | 描述 |
+|---|---|---|
+| 1 | 數字 | 0:光二極體(電晶體)、1:二極體<br>2:電晶體、3:四極體 |
+| 2 | 字母 | S:半導體(Semiconductor) |
+| 3 | 字母 | A:高頻PNP、B:低頻PNP<br>C:高頻NPN、D:低頻NPN<br>F:SCR、G:PUT<br>J:PMOS、K:NMOS<br>H:UJT、M:TRIAC |
+| 4 | 數字 | 廠商登記序號 |
+| 5 | 字母 | 改良品問世順序 |
+
+</div>
+
+🔹 其他
+
+- CS9012: PNP
+- CS9013: NPN
+
+#### 工作模式
 
 <div class="max-w-[100dvw] overflow-auto">
 
@@ -373,6 +407,10 @@ $V_{r(m)} = \frac{V_{r(p-p)}}{2}$
 </div>
 
 #### BJT 飽和條件
+
+🔹 $\beta I_{B} \geq I_{C(sat)}$
+
+🔹 $\beta R_{C} \geq R_{B} \; {\color{Teal} (if \; V_{CC} = V_{BB})}$
 
 ![BJT](../../assets/notes/professional_subjects_1/bjt_6.png)
 
@@ -463,48 +501,111 @@ $A_{v} = \frac{ \overset{\color{Teal} \alpha , \; \beta , \; \gamma}{\text{輸�
 
 #### 米勒定理
 
+![Amp](../../assets/notes/professional_subjects_1/amp_1.png)
+
 ### 🔸 BJT 串極放大
 
-$A_{vT} = A_{v1} \times A_{v2} \times ... \times A_{vn}$
-
-$A_{iT} = A_{i1} \times A_{i2} \times ... \times A_{in}$
-
-$A_{pT} = A_{p1} \times A_{p2} \times ... \times A_{pn}$
+$A_{vT} = A_{v1} \times A_{v2} \times ... \times A_{vn} \\
+A_{iT} = A_{i1} \times A_{i2} \times ... \times A_{in} \\
+A_{pT} = A_{p1} \times A_{p2} \times ... \times A_{pn}$
 
 #### 分貝增益 (dB)
 
-$A_{v}(dB) = 20 \; logA_{v}$
+$A_{v}(dB) = 20 \; logA_{v} \\ A_{i}(dB) = 20 \; logA_{i} \\ A_{p}(dB) = 10 \; logA_{p}$
 
-$A_{i}(dB) = 20 \; logA_{i}$
+$A_{vT}(dB) = A_{v1}(dB) + A_{v2}(dB) + ... + A_{vn} \\
+A_{iT}(dB) = A_{i1}(dB) + A_{i2}(dB) + ... + A_{in} \\
+A_{pT}(dB) = A_{p1}(dB) + A_{p2}(dB) + ... + A_{pn}$
 
-$A_{p}(dB) = 10 \; logA_{p}$
+#### BJT 串接電路
 
-$A_{vT}(dB) = A_{v1}(dB) + A_{v2}(dB) + ... + A_{vn}(dB)$
+<div class="max-w-[100dvw] overflow-auto">
 
-$A_{iT}(dB) = A_{i1}(dB) + A_{i2}(dB) + ... + A_{in}(dB)$
+| | 直接耦合 | 疊接 | 達靈頓 |
+|---|:-:|:-:|:-:|
+| 圖 | | | |
+| 功能 |  | 提高 CB 組態的 $R_{i}$<br>高頻放大 | 高 $R_{i}$<br>低 $R_{o}$<br>高 $A_{i}$ |
+| $A_{v}$ | $A_{v1} \times A_{v1}$ | $A_{v1} \times A_{v1}$ | $\approx 1$ |
+| $A_{i}$ | $A_{i1} \times A_{i1}$ | $A_{i1} \times A_{i1}$ | $(\beta_{1}+1)(\beta_{2}+1)$ |
 
-$A_{pT}(dB) = A_{p1}(dB) + A_{p2}(dB) + ... + A_{pn}(dB)$
-
-#### 直接耦合
-
-#### 疊接
-
-#### 達靈頓
+</div>
 
 ### 🔸 BJT 頻率響應
 
+#### 頻率響應不佳
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | 原因 |
+|---|:-:|
+| 低頻 | 耦合電容 |
+| 高頻 | 極際電容 |
+
+</div>
+
+#### 頻寬
+
+相同放大器串接成 n 級時
+
+$f_{L} = \frac{f_{L}}{\sqrt{2^{\frac{1}{n}}-1}}$
+
+$f_{H} = f_{H} \sqrt{2^{\frac{1}{n}}-1}$
+
+$(\sqrt{2^{\frac{1}{n}}-1} < 1)$
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | 變化 |
+|---|:-:|
+| $f_{L}$ | 變大 |
+| $f_{H}$ | 變小 |
+| 頻寬 | 縮短 |
+
+</div>
+
 ### 🔸 MOSFET
+
+#### BJT / MOSFET
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | BJT | MOSFET |
+|---|:-:|:-:|
+| 圖 | | |
+| 載子 | $\underset{\color{Teal} \text{多數載子 + 少數載子}}{\text{雙載子}}$ | $\underset{\color{Teal} \text{多數載子}}{\text{單載子}}$ |
+| 溫度效應 穩定度 | 差 | 佳 |
+| 體積 | 大 | 小 |
+| 控制方式 | 電流 | 電壓 |
+
+</div>
+
+#### E-MOS / D-MOS
 
 <div class="max-w-[100dvw] overflow-auto">
 
 | | $\underset{\color{Teal} \text{增強型}}{E-MOSFET}$ | $\underset{\color{Teal} \text{空乏型}}{D-MOSFET}$ |
 |---|:-:|:-:|
-| $I_{D}$ | $k \times (V_{GS}-V_{GSt})^{2}$ | $I_{DSS} \times (1-\frac{V_{GS}}{V_GSp})^{2} \\ k \times (V_{GS}-V_{GSp})^{2} \\ k = \frac{I_{DSS}}{{V_{GSp}}^{2}}$ |
-| 電流 | $I_{G} = 0, \; I_{S} = I_{D}$ | $I_{G} = 0, \; I_{S} = I_{D}$ |
+| 圖 |  | |
+| 預置通道 | ✖ | ✔ |
+| $I_{G}$ | $0$ | $0$ |
+| $I_{D}$ | $k \times (V_{GS}-V_{GSt})^{2}$ | $I_{DSS} \times (1-\frac{V_{GS}}{V_GSp})^{2} \\ k \times (V_{GS}-V_{GSp})^{2}$ |
+| $k$ | $ --- \frac{\underset{\color{Teal} \text{通道寬度}}{W}}{\underset{\color{Teal} \text{通道長度}}{L}}$ | $\frac{I_{DSS}}{{V_{GSp}}^{2}}$ |
+
+</div>
+
+#### 工作區
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | 歐姆區 | 截止區 | 飽和區 |
+|---|:-:|:-:|:-:|
+| 功能 | 電阻、開關ON | 開關OFF | 放大器 |
 
 </div>
 
 </details>
+
+#### 特性曲線
 
 ***
 
@@ -513,7 +614,15 @@ $A_{pT}(dB) = A_{p1}(dB) + A_{p2}(dB) + ... + A_{pn}(dB)$
 
 ## 基本電學
 
-### 🔸 色碼電阻
+### 🔸 功率
+
+$P = \frac{W}{t} = IV = I^{2}R = \frac{V^{2}}{R}$
+
+$1 HP = 746W$
+
+$1 \text{度電} = 1kWh$
+
+### 🔸 電阻
 
 <div class="max-w-[100dvw] overflow-auto">
 
@@ -532,6 +641,33 @@ $A_{pT}(dB) = A_{p1}(dB) + A_{p2}(dB) + ... + A_{pn}(dB)$
 | | | | |
 | <div class="inline-block h-3 w-3 rounded-full border border-white bg-yellow-200"></div> 金 | | $10^{-1}$ | $\pm 5 \%$ |
 | <div class="inline-block h-3 w-3 rounded-full border border-white bg-gray-300"></div> 銀 | | $10^{-2}$ | $\pm 10 \%$ |
+
+</div>
+
+### 🔸 電場 / 磁場
+
+$E
+= \frac{\underset{\color{Teal} \text{作用力(N)}}{F}}{\underset{\color{Teal} \text{電荷量(C)}}{Q_{2}}}
+= k\frac{\underset{\color{Teal} \text{電荷量(C)}}{Q_1}}{\underset{\color{Teal} \text{距離(m)}}{d^{2}}}
+= \frac{\underset{\color{Teal} \text{電位(V)}}{V}}{\underset{\color{Teal} \text{距離(m)}}{d}}
+= \frac{\underset{\color{Teal} \text{電通密度}}{D}}{\underset{\color{Teal} \text{介電係數}}{\epsilon}}$
+
+$H
+= \frac{\underset{\color{Teal} \text{作用力(N)}}{F}}{\underset{\color{Teal} \text{磁通量(Wb)}}{M_{2}}}
+= k\frac{\underset{\color{Teal} \text{磁通量(Wb)}}{M_1}}{\underset{\color{Teal} \text{距離(m)}}{d^{2}}}
+= \frac{\underset{\color{Teal} \text{磁動勢}}{F}}{\underset{\color{Teal} \text{磁路長度(m)}}{l}}
+= \frac{\underset{\color{Teal} \text{匝數(T) \; 電流(A)}}{NI}}{\underset{\color{Teal} \text{磁路長度(m)}}{l}}
+= \frac{\underset{\color{Teal} \text{磁通量 \; 磁阻}}{\phi R}}{\underset{\color{Teal} \text{磁路長度(m)}}{l}}
+= \frac{\underset{\color{Teal} \text{磁通密度}}{B}}{\underset{\color{Teal} \text{導磁係數}}{\mu}}$
+
+<div class="max-w-[100dvw] overflow-auto">
+
+| | 電場 | 磁場 |
+|---|---|---|
+| k (空氣中) | $\frac{1}{4\pi\epsilon_{0}} = 9 \times 10^{9}$ | $\frac{1}{4\pi\mu_{0}} = 6.33 \times 10^{4}$ |
+| 係數 (空氣中) | 介電係數<br>$\epsilon_{0} = 8.85 \times 10^{-12}$ | 導磁係數<br>$\mu_{0} = 4\pi \times 10^{-7}$ |
+| 密度 | 電通密度<br>$D = \frac{\psi}{A}$ | 磁通密度<br>$B = \frac{\phi}{A}$ |
+| 強度 | 電場強度<br>$E = \frac{F}{Q}$ | 磁場強度<br>$H = \frac{F}{M}$ |
 
 </div>
 

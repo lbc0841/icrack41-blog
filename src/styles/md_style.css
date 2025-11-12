@@ -198,7 +198,7 @@ ol {
 }
 
 li {
-    color: #94a1b2;
+    color: #bfcbd9;
 }
 
 a {
@@ -211,5 +211,6 @@ a:hover {
 
 img {
     transform: scale(0.9);
+    border-radius: 10px;
 }
 
