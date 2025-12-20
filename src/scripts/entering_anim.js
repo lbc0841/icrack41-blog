@@ -20,7 +20,7 @@ const etZoomInObserver = new IntersectionObserver((entries) => {
 const etFloatInObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
-            entry.target.style.animation = "anim-et-float-in 1.2s ease-out";
+            entry.target.style.animation = "anim-et-float-in 1s ease-out";
             entry.target.style.visibility = "visible";
         }
         else{

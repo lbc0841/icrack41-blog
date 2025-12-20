@@ -571,7 +571,7 @@ $(\sqrt{2^{\frac{1}{n}}-1} < 1)$
 
 | | BJT | MOSFET |
 |---|:-:|:-:|
-| 圖 | | |
+| 圖 |  | |
 | 載子 | $\underset{\color{Teal} \text{多數載子 + 少數載子}}{\text{雙載子}}$ | $\underset{\color{Teal} \text{多數載子}}{\text{單載子}}$ |
 | 溫度效應 穩定度 | 差 | 佳 |
 | 體積 | 大 | 小 |
@@ -589,7 +589,7 @@ $(\sqrt{2^{\frac{1}{n}}-1} < 1)$
 | 預置通道 | ✖ | ✔ |
 | $I_{G}$ | $0$ | $0$ |
 | $I_{D}$ | $k \times (V_{GS}-V_{GSt})^{2}$ | $I_{DSS} \times (1-\frac{V_{GS}}{V_GSp})^{2} \\ k \times (V_{GS}-V_{GSp})^{2}$ |
-| $k$ | $ --- \frac{\underset{\color{Teal} \text{通道寬度}}{W}}{\underset{\color{Teal} \text{通道長度}}{L}}$ | $\frac{I_{DSS}}{{V_{GSp}}^{2}}$ |
+| $k$ | $ \propto \frac{\underset{\color{Teal} \text{通道寬度}}{W}}{\underset{\color{Teal} \text{通道長度}}{L}}$ | $\frac{I_{DSS}}{{V_{GSp}}^{2}}$ |
 
 </div>
 

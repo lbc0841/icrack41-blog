@@ -106,7 +106,7 @@ const pg2 = document.getElementById('pg2');
 pg1.style.display = "block";
 pg2.style.display = "none";
 
-document.getElementById('moreContent').addEventListener('click', () => {
+document.getElementById('logo').addEventListener('click', () => {
     pg1.style.display = "none";
     pg2.style.display = "block";
     
