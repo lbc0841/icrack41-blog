@@ -1,17 +1,60 @@
 ---
 import MainNavigation from "../components/MainNavigation.astro";
 import Layout from "../layouts/Layout.astro";
+
+import { Border1 } from "../assets/borders.tsx"
+import "../styles/posts.css"
 ---
 
 <Layout>
-    <div class="background opacity-40"></div>
-	<div class="background-grid opacity-40"></div>
+    <div class="scanlines"></div>
+    <div class="background"></div>
+	<div class="background-grid"></div>
     <MainNavigation/>
 
-    <div class="mt-20 px-2">
-        <a class="block my-4 text-center text-2xl text-white hover:text-cyan-300" href="/icrack41-blog/note/zj_ans">Zerojudge 題解</a>
-        <a class="block my-4 text-center text-2xl text-white hover:text-cyan-300" href="/icrack41-blog/blog/digital_electronic">數位電子乙級</a>
-        <a class="block my-4 text-center text-2xl text-white hover:text-cyan-300" href="/icrack41-blog/blog/professional_subjects_1">電機電子群-資電類-專一</a>
-    </div>
+    <div class="post-container">
+	
+		<div class="post" onclick="location.href='/icrack41-blog/note/zj_ans'">
+			<Border1/>
+
+			<div class="text-container">
+				<b class="post-title">Zerojudge 題解</b>
+
+				<small class="post-description">
+					目前進度：<br>
+                    - 基礎題庫 ( 106 / 718 )<br>
+                    - 競賽題庫 ( 0 / 498 )<br>
+                    - IOI/APCS ( 0 / 650 )<br>
+                    - UVa 題庫 ( 3 / 621 )<br>
+				</small>
+			</div>
+		</div>
+
+		<div class="post" onclick="location.href='/icrack41-blog/blog/digital_electronic'">
+			<Border1/>
+
+			<div class="text-container">
+				<b class="post-title">數位電子乙級</b>
+
+				<small class="post-description">
+					數位電子乙級證照<br>
+					Layout / Quartus / 建議 / 注意事項
+				</small>
+			</div>
+		</div>
+
+        <div class="post" onclick="location.href='/icrack41-blog/blog/professional_subjects_1'">
+			<Border1/>
+
+			<div class="text-container">
+				<b class="post-title">電機電子群-資電類-專一</b>
+
+				<small class="post-description">
+					工廠安全與衛生 / 基本電學 / 電子學
+				</small>
+			</div>
+		</div>
+
+	</div>
 
 </Layout>

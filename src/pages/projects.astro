@@ -10,16 +10,17 @@ import "../styles/projects.css"
 
 <Layout>
 	<div class="scanlines"></div>
-
+	<div class="background"></div>
+	<div class="background-grid"></div>
 	
 	<MainNavigation/>
 
-	<div class="project-container bg-neutral-950">
+	<div class="project-container">
 
-		<div class="search-bar">
+		<!-- <div class="search-bar">
 			<i class="fa-solid fa-magnifying-glass"></i>
 			<textarea name="a"  cols="5" rows="1"></textarea>
-		</div>
+		</div> -->
 		
 	
 		<div id="project-view" class="project-view">
@@ -75,14 +76,25 @@ import "../styles/projects.css"
 				<b class="absolute bottom-8 block text-shadow-md text-shadow-black text-xl p-2">...</b><br>
 				<small class="absolute bottom-4 text-shadow-md text-shadow-black pl-2">WORK IN PROCESS</small>
 			</div>
+
+			<div class="project">
+				<Border1/>
+		
+				<span class="block m-2 text-9xl fa-solid fa-paint-roller"></span>
+				<!-- <img class="w-full h-full opacity-80" src="/icrack41-blog/assets/project_img/portable_power_supply/finished_product.png" alt=""> -->
+				<b class="absolute bottom-8 block text-shadow-md text-shadow-black text-xl p-2">...</b><br>
+				<small class="absolute bottom-4 text-shadow-md text-shadow-black pl-2">WORK IN PROCESS</small>
+			</div>
 	</div>
 
-	<button id="left-button">
-		<h1 class="fa-solid fa-chevron-left"></h1>
+	<button id="left-button" class="absolute bottom-4 left-[30%] translate-x-[-50%]">
+		<h1 class="text-3xl fa-solid fa-chevron-left"></h1>
 	</button>
 
-	<button id="right-button">
-		<h1 class="fa-solid fa-chevron-right"></h1>
+	<h1 class="absolute bottom-4 left-[50%] translate-x-[-50%] text-3xl ">-</h1>
+
+	<button id="right-button" class="absolute bottom-4 left-[70%] translate-x-[-50%]">
+		<h1 class="text-3xl fa-solid fa-chevron-right"></h1>
 	</button>
 	
 	<script src="../scripts/projects_loop_scroll.js"></script>

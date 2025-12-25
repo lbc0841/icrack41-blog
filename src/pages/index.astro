@@ -1,9 +1,7 @@
 ---
 import MainNavigation from '../components/MainNavigation.astro';
-import SocialLinks from '../components/SocialLinks.astro';
 import Layout from '../layouts/Layout.astro';
-
-import HamburgerMenu from '../components/HamburgerMenu.astro';
+import MainIntroduce from '../components/main_introduce.astro';
 
 import { Image } from 'astro:assets';
 import profileImg from '../assets/profile_img.webp';
@@ -14,74 +12,40 @@ import "../styles/index.css";
 
 <Layout>
 	<div class="scanlines"></div>
-	<!-- <div class="background"></div> -->
-	<!-- <div class="background-grid opacity-40"></div> -->
+	<MainNavigation/>
 
-	<!-- <MainNavigation/> -->
-	<div class="absolute top-0 w-full flex flex-row justify-between items-center px-4 py-2 z-999">
-		<div class="flex flex-row font-share-tech-mono text-white">
-			<h4 class="text-xl select-none m-4">ICRACK</h4>
-		</div>
-
-		<div class="hidden md:flex flex-row gap-6 font-share-tech-mono text-white text-xl px-4">
-            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/about">About</a>
-            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/notes">Notes</a>
-            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/projects">Projects</a>
-            <a class="my-4 scale-100 hover:scale-110 duration-100 select-none" href="/icrack41-blog/posts">Posts</a>
-		</div>
-
-		<HamburgerMenu/>
-	</div>
-
-	<div id="pg1" class="h-full w-full" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6))">
+	<div id="pg1" class="h-full w-full" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
 		<div id="logo" class="absolute left-[50%] translate-x-[-50%] top-[44%] translate-y-[-50%] w-[100%] h-[70%] scale-x-125"></div>
 		<span class="et-float-in absolute w-full bottom-[42%] sm:bottom-[36%] scale-y-60 font-share-tech-mono tracking-[2px] text-gray-500 text-2xl text-center">CLICK TO CONTINUE</span>
-	</div>
 
-	<div id="pg2" class="absolute top-[24%] right-[6%] md:right-[16%]">
-		<h1 class="et-float-in text-2xl md:text-3xl font-bold mb-4">3D - Modeling</h1>
-		<span class="et-float-in text-xl px-2">Blender</span>
-
-		<div class="et-float-in grid grid-cols-3 gap-2 md:gap-4 mt-2">
-			<div class="border-1 rounded-lg flex flex-col w-18 md:w-26 h-18 md:h-26 hover:bg-white hover:text-black duration-200">
-				<i class="mx-auto mt-2 md:mt-6 mb-0 md:mb-1 text-4xl fa-solid fa-cube"></i>
-				<span class="text-center">Mesh</span>
-			</div>
-
-			<div class="border-1 rounded-lg flex flex-col w-18 md:w-26 h-18 md:h-26 hover:bg-white hover:text-black duration-200">
-				<i class="mx-auto mt-2 md:mt-6 mb-0 md:mb-1 text-4xl fa-solid fa-bone"></i>
-				<span class="text-center">Skeleton</span>
-			</div>
-
-			<div class="border-1 rounded-lg flex flex-col w-18 md:w-26 h-18 md:h-26 hover:bg-white hover:text-black duration-200">
-				<i class="mx-auto mt-2 md:mt-6 mb-0 md:mb-1 text-4xl fa-solid fa-s"></i>
-				<span class="text-center">Shader</span>
-			</div>
+		<!-- Date -->
+		<div class="absolute bottom-8 left-8 font-share-tech-mono text-2xl/6 tracking-wide border-l-6 pl-4">
+			<span class="block text-sm/4 opacity-80">LAST UPDATE</span>
+			DEC 2025
 		</div>
 
-		<button id="back" class="et-float-in text-2xl mt-16 ml-24 hover:text-gray-400"><i class="fa-solid fa-reply"></i> Go Back</button>
+		<!-- Social Links -->
+		<nav class="absolute bottom-8 right-8 text-md/6 gap-60">
+			<a href="https://discord.gg/GWEmUwaSFG" class="block border-1 px-4 py-2 mb-4 font-share-tech-mono text-center hover:scale-105" style="clip-path: polygon(70% 0, 100% 0, 100% 70%, 30% 100%, 0 100%, 0 30%);">
+				<span class="text-xl sm:text-xl fa-brands fa-discord"></span>
+				DISCORD
+			</a>
+	
+			<a href="https://github.com/lbc0841" class="block border-1 px-4 py-2 font-share-tech-mono text-center hover:scale-105" style="clip-path: polygon(70% 0, 100% 0, 100% 70%, 30% 100%, 0 100%, 0 30%);">
+				<span class="text-xl sm:text-xl fa-brands fa-github"></span>
+				GITHUB
+			</a>
+		</nav>
+	</div>
+
+	<div id="pg2" class="absolute w-full h-[86%] top-16 px-1">
+		<MainIntroduce/>
+		<button id="back" class="absolute bottom-0 left-[50%] translate-x-[-50%] text-2xl hover:text-gray-400"><i class="fa-solid fa-caret-left"></i> Go Back</button>
 	</div>
 	
-	<div class="absolute bottom-8 left-8 font-share-tech-mono text-2xl/6 tracking-wide border-l-6 pl-4">
-        <span class="block text-sm/4 opacity-80">LAST UPDATE</span>
-        DEC 2025
-    </div>
-	
-	<nav class="absolute bottom-8 right-8 text-md/6 gap-60">
-        <a href="https://discord.gg/GWEmUwaSFG" class="block border-1 px-4 py-2 mb-4 font-share-tech-mono text-center hover:scale-105" style="clip-path: polygon(70% 0, 100% 0, 100% 70%, 30% 100%, 0 100%, 0 30%);">
-			<span class="text-xl sm:text-xl fa-brands fa-discord"></span>
-			DISCORD
-		</a>
-
-        <a href="https://github.com/lbc0841" class="block border-1 px-4 py-2 font-share-tech-mono text-center hover:scale-105" style="clip-path: polygon(70% 0, 100% 0, 100% 70%, 30% 100%, 0 100%, 0 30%);">
-			<span class="text-xl sm:text-xl fa-brands fa-github"></span>
-			GITHUB
-		</a>
-    </nav>
-	<!-- <SocialLinks/> -->
 </Layout>
 
-<script src="../scripts/main_anim"></script>
+<script src="../scripts/main_bg"></script>
 
 <script>
 	window.addEventListener('load', function () {

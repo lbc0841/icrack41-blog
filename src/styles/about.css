@@ -94,6 +94,16 @@
     transition: all 0.3s;
 }
 
+.profile-img::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 98%);
+
+    transition: all 0.3s;
+}
+
 .profile-links{
     position: relative;
     top: 7rem;
@@ -111,13 +121,11 @@
 }
 
 .profile-container:hover .profile-img {
-
     transform: scale(1.2) translateY(10px);
 }
 
-.profile-container:hover .profile-links {
-    transform: scaleY(1);
-    transition: all 0.3s;
+.profile-container:hover .profile-img::after {
+    transform: scale(1.2) translateY(10px);
 }
 
 @media screen and (max-width: 800px){
@@ -285,17 +293,19 @@
 /* self intro ============================================================================================================== */
 
 .motto {
-    background: linear-gradient(45deg, #20ffff, #509de1);
-    background-clip: text;
-    color: transparent;
+    /* background: linear-gradient(45deg, #20ffff, #509de1);
+    background-clip: text; */
+
+    color: #28a2c8;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));
+
     font-size: 20px;
 
     width: 80%;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+
     padding-left: 20px;
-    border-left: solid 2px #20ffff;
+    border-left: solid 0.5rem #28a2c8;
     margin-left: 20px;
 }
 

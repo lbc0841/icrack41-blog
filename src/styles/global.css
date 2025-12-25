@@ -71,6 +71,20 @@ body {
     animation: none;
 }
 
+.font-share-tech-mono {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
 .background {
     position: absolute;
     top: 0;
@@ -79,27 +93,27 @@ body {
     width: 100%;
     z-index: -1;
 
-    background-image:
-        radial-gradient(closest-side, rgba(12, 93, 99, 0.4), rgba(12, 93, 99, 0)),
-        radial-gradient(closest-side, rgba(9, 61, 75, 0.4), rgba(9, 61, 75, 0)),
-        radial-gradient(closest-side, rgba(4, 19, 42, 0.4), rgba(4, 19, 42, 0));
+    background-color: #000;
+    background-image: linear-gradient(to bottom,rgba(0, 255, 0, 0) 20%, rgba(255, 255, 255, 0.4) 98%);
+
+    opacity: 40%;
 
     /* background-image:
-        radial-gradient(closest-side, rgba(0, 255, 0, 1), rgba(0, 255, 0, 0)),
-        radial-gradient(closest-side, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0)),
-        radial-gradient(closest-side, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0)); */
+        radial-gradient(closest-side, rgba(12, 93, 99, 0.4), rgba(12, 93, 99, 0)),
+        radial-gradient(closest-side, rgba(9, 61, 75, 0.4), rgba(9, 61, 75, 0)),
+        radial-gradient(closest-side, rgba(4, 19, 42, 0.4), rgba(4, 19, 42, 0)); */
 
-    background-size:
+    /* background-size:
         140vmax 140vmax,
         120vmax 120vmax,
-        110vmax 110vmax;
+        110vmax 110vmax; */
 
-    background-repeat:
+    /* background-repeat:
         no-repeat,
         no-repeat,
-        no-repeat;
+        no-repeat; */
     
-    animation: 16s anim_bg linear infinite;
+    /* animation: 16s anim_bg linear infinite; */
 }
 
 .background-grid {
@@ -112,6 +126,8 @@ body {
 
     background: url("../assets/grid.svg");
     background-size: 16vmax;
+
+    opacity: 40%;
 }
 
 @keyframes anim_bg {
@@ -340,16 +356,3 @@ details {
     color: #74d4ff;
 }
 
-.font-share-tech-mono {
-    font-family: 'Share Tech Mono', monospace;
-}
-
-.scanlines {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-    background-size: 100% 4px, 3px 100%;
-    pointer-events: none;
-    z-index: 10;
-}
