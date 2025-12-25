@@ -15,31 +15,44 @@
     padding: 3px;
     border-width: 3px;
     border-style: solid;
-
 }
 
-.border-container .corner-tl {
+.border-container .corner-tl-lg,
+.border-container .corner-tr-lg,
+.border-container .corner-bl-lg,
+.border-container .corner-br-lg {
+    position: absolute;
+    padding: 10px;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.border-container .corner-tl,
+.border-container .corner-tl-lg {
     top: -3px;
     left: -3px;
     border-right: none;
     border-bottom: none;
 }
 
-.border-container .corner-tr {
+.border-container .corner-tr,
+.border-container .corner-tr-lg {
     top: -3px;
     right: -3px;
     border-left: none;
     border-bottom: none;
 }
 
-.border-container .corner-bl {
+.border-container .corner-bl,
+.border-container .corner-bl-lg {
     bottom: -3px;
     left: -3px;
     border-right: none;
     border-top: none;
 }
 
-.border-container .corner-br {
+.border-container .corner-br,
+.border-container .corner-br-lg {
     bottom: -3px;
     right: -3px;
     border-left: none;

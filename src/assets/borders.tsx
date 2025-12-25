@@ -21,10 +21,10 @@ export const Border2 = () => {
     return (
         <div className="border-container">
 
-            <div className="corner-tr"></div>
-            <div className="corner-tl"></div>
-            <div className="corner-br"></div>
-            <div className="corner-bl"></div>
+            <div className="corner-tr-lg"></div>
+            <div className="corner-tl-lg"></div>
+            <div className="corner-br-lg"></div>
+            <div className="corner-bl-lg"></div>
             
         </div>
     );

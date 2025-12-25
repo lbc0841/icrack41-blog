@@ -1,11 +1,14 @@
 ---
----
-<div class="h-full w-full px-12 overflow-auto">
-    <div class="mt-20">
-        <h1 class="et-float-in text-2xl md:text-3xl font-bold mb-4">3D - Modeling</h1>
-        <span class="et-float-in text-xl px-2">Blender</span>
+import { Border2 } from "../assets/borders"
 
-        <div class="et-float-in grid grid-cols-3 gap-2 md:gap-4 mt-2">
+---
+<div class="h-full w-full overflow-auto snap-y snap-always snap-mandatory">
+
+    <!-- <div class="mt-[30dvh] mx-12 snap-center">
+        <h1 class="text-2xl md:text-3xl font-bold mb-4">3D - Modeling</h1>
+        <span class="text-xl px-2">Blender</span>
+
+        <div class="grid grid-cols-3 gap-2 md:gap-4 mt-2">
             <div class="border-1 rounded-lg flex flex-col w-18 md:w-26 h-18 md:h-26 hover:bg-white hover:text-black duration-200">
                 <i class="mx-auto mt-2 md:mt-6 mb-0 md:mb-1 text-4xl fa-solid fa-cube"></i>
                 <span class="text-center">Mesh</span>
@@ -21,17 +24,47 @@
                 <span class="text-center">Shader</span>
             </div>
         </div>
-    </div>
+    </div> -->
     
-    <div class="mt-80">
-        <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto scale-y-125" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
+    <!-- My Skills -->
+    <div class="mt-[50dvh] text-center snap-center">
+        <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto"  style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">My Skills</h1>
+    </div>
+
+    <!-- From Ideas to Reality -->
+    <div class="relative mt-[50dvh] mx-12 py-28 snap-center">
+        <Border2/>
+        <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto scale-y-125 -translate-y-4" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
             From Ideas to
-            <span class="text-blue-200">Reality</span>
+            <span class="text-blue-200" style="filter: drop-shadow(0 0 10px rgba(0,0,255,0.6));">Reality</span>
         </h1>
     </div>
 
     <!-- History -->
-    <div class="mt-80">
-        <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto">History</h1>
+    <div class="mt-[50dvh] text-center snap-center">
+        <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto"  style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">History</h1>
+        
+        <div class="inline-block text-left p-10 text-lg/8 text-shadow-md text-shadow-zinc-800 font-bold">
+            <span class="text-zinc-300"><span class="text-blue-200">2025 DEC:</span> 召喚友列 (Finished Fiends Page)</span><br>
+            <span class="text-zinc-300"><span class="text-blue-200">2025 中秋節:</span> 月球加入了世界 (Created a Moon Using Three.js)</span><br>
+            <span class="text-zinc-300"><span class="text-blue-200">2025 SEP:</span> 我是誰? (Finished About Page)</span><br>
+            <span class="text-zinc-300"><span class="text-blue-200">2025 July:</span> 筆記 (Finished Note Page)</span><br>
+            <span class="text-zinc-300"><span class="text-blue-200">2025 July:</span> 專案 (Finished Project Page)</span><br>
+            <span class="text-zinc-300"><span class="text-blue-200">2025 June:</span> 風格突變 (Changed Style)</span><br>
+            <span class="text-zinc-300"><span class="text-blue-200">2025 May:</span> 新的開始 (First Push on GitHub)</span><br>
+            <span class="text-zinc-300"><span class="text-blue-200">2025 May:</span> 鬼轉 Astro (Hexo to Astro)</span><br>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <div class="mt-[60dvh] h-[50dvh] bg-zinc-950 opacity-80 snap-center pt-[10dvh]">
+        <span class="block w-full text-center text-2xl font-share-tech-mono">Icrack</span>
+        <span class="block w-full text-center text-xl text-zinc-400">梭哈，是種智慧 / 賭狗，應有盡有</span>
+        <span class="block w-full text-center text-xl font-share-tech-mono text-zinc-400">Gmail: cracker04012008@gmail.com</span>
+
+        <span class="block w-full text-center font-share-tech-mono mt-12 text-sm text-zinc-400">© 2025 All rights reserved.</span>
+        <span class="block w-full text-center font-share-tech-mono pb-8 text-sm text-zinc-400">Powered by Astro / Tailwind CSS / Three.js</span>
+    </div>
+
+    
 </div>
