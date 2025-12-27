@@ -5,8 +5,8 @@
  width="32.000000pt" height="32.000000pt" viewBox="0 0 32.000000 32.000000"
  preserveAspectRatio="xMidYMid meet">
 
-<g transform="translate(0.000000,32.000000) scale(0.080000,-0.080000)"
-fill="#0b1119" stroke="#26f4fc" stroke-width="24">
+<g transform="translate(0.000000,32.000000) scale(0.060000,-0.060000)"
+fill="#0b1119" stroke="#fff" stroke-width="24">
 <path d="M30 360 c0 -26 65 -198 75 -198 6 0 18 20 28 44 15 36 25 46 63 61
 25 9 43 22 41 28 -3 9 -73 36 -188 72 -12 4 -19 2 -19 -7z"/>
 </g>

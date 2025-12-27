@@ -11,16 +11,17 @@ body.addEventListener("mousemove", function (e) {
 
 function createParticle(x, y) {
     const size = Math.floor(Math.random() * 3) + 3;
-    const offsetX = Math.floor(Math.random() * 20);
+    const offsetX = Math.floor(Math.random() * 40);
     const offsetY = Math.floor(Math.random() * 20);
 
-    let particle = document.createElement("div");
+    let particle = document.createElement("span");
     particle.classList.add("cursor-particle");
-    particle.style.left = (x+offsetX) + "px";
-    particle.style.top = (y+offsetY) + "px";
+    particle.textContent = Math.round(Math.random()+0.05);
+    particle.style.fontSize = "12px";
+    particle.style.left = (x+offsetX-15) + "px";
+    particle.style.top = (y+offsetY+10) + "px";
     particle.style.width = size + "px";
     particle.style.height = size + "px";
-    particle.style.background = "#0ff";
 
     // svg.appendChild(square);
     body.appendChild(particle);
