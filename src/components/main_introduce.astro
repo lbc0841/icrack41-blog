@@ -2,7 +2,7 @@
 import { Border2 } from "../assets/borders"
 
 ---
-<div class="h-full w-full overflow-auto snap-y snap-always snap-mandatory">
+<div id="scroll-root" class="h-full w-full overflow-auto snap-y snap-always snap-mandatory snap-always">
 
     <!-- <div class="mt-[30dvh] mx-12 snap-center">
         <h1 class="text-2xl md:text-3xl font-bold mb-4">3D - Modeling</h1>
@@ -27,7 +27,7 @@ import { Border2 } from "../assets/borders"
     </div> -->
     
     <!-- WELCOME -->
-    <div class="mt-[50dvh] text-center snap-center">
+    <div class="mt-[30dvh] text-center snap-center">
         <h1 class="text-6xl font-share-tech-mono font-bold text-center p-4" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
             <span class="text-blue-200" style="filter: drop-shadow(0 0 10px rgba(0,0,255,0.6));">WELCOME</span>
             TO MY BLOG
@@ -63,11 +63,11 @@ import { Border2 } from "../assets/borders"
     <!-- History -->
     <div class="mt-[50dvh] text-center snap-center">
         <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto"  style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">History</h1>
-        
+
         <div class="inline-block text-left text-lg/8 text-shadow-md text-shadow-zinc-800 font-bold mt-4">
             <span class="text-zinc-200">
                 <span class="text-blue-200">◇ 2025 December:</span><br>
-                <span class="border-l-2 border-white pl-8 ml-1">召喚友列</span><small class="text-sm"> (Finished Fiends Page)</small>
+                <span class="border-l-2 border-white pl-8 ml-1">友列</span><small class="text-sm"> (Finished Fiends Page)</small>
             </span><br>
 
             <span class="text-zinc-200">
@@ -90,6 +90,10 @@ import { Border2 } from "../assets/borders"
                 <span class="border-l-2 border-white pl-8 ml-1">新的開始</span><small class="text-sm"> (First Push on GitHub)</small><br>
                 <span class="border-l-2 border-white pl-8 ml-1">鬼轉 Astro</span><small class="text-sm"> (Hexo to Astro)</small>
         </div>
+
+        <!-- <span class="absolute top-[10%] left-0 w-full -z-20 overflow-visible text-[60dvh] font-share-tech-mono text-zinc-800 text-center">
+            2‧0‧2‧5
+        </span> -->
     </div>
 
     <!-- Footer -->
