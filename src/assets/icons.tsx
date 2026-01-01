@@ -339,3 +339,18 @@ export const PlanIcon = (props: React.SVGProps<SVGSVGElement>) => {
         </svg>
     );
 };
+
+export const LightBulbIcon = (props: React.SVGProps<SVGSVGElement>) => {
+    return (
+        <svg fill="currentColor" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="256" height="256" viewBox="-10.5714 -34 21.17 32"
+            preserveAspectRatio="xMidYMid meet"
+            {...props} >
+                <path d="M 0 -34 Q 5 -34 9 -29 Q 11 -26 10.5 -22 Q 10 -20 8 -17 Q 6.5 -15 5 -13 L 5 -9 L -5 -9 
+                    L -5 -13 Q -6.5 -15 -8 -17 Q -10 -20 -10.5 -22 Q -11 -26 -8 -30 Q -5 -34 0 -34 M -1 -9 L -4 -20 
+                    M 4 -20 L 1 -9 M -3 -18 L -1 -19 L 0 -17 L 1 -20 L 2 -17 L 3 -18 M 0 -8 L 4 -8 Q 5 -7 4 -6 L -4 -6 
+                    Q -5 -7 -4 -8 L 0 -8 M 0 -5 L 4 -5 Q 4 -3 2 -2 L -2 -2 Q -4 -3 -4 -5 L 0 -5" 
+                    stroke="#a0a0a0" stroke-width="0.5" fill="none"/>
+        </svg>
+    );
+};

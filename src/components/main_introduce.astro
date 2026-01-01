@@ -1,55 +1,46 @@
 ---
 import { Border2 } from "../assets/borders"
+import Image from "astro/components/Image.astro"
+import { LightBulbIcon } from "../assets/icons"
 
 ---
-<div id="scroll-root" class="h-full w-full overflow-auto snap-y snap-always snap-mandatory snap-always">
-
-    <!-- <div class="mt-[30dvh] mx-12 snap-center">
-        <h1 class="text-2xl md:text-3xl font-bold mb-4">3D - Modeling</h1>
-        <span class="text-xl px-2">Blender</span>
-
-        <div class="grid grid-cols-3 gap-2 md:gap-4 mt-2">
-            <div class="border-1 rounded-lg flex flex-col w-18 md:w-26 h-18 md:h-26 hover:bg-white hover:text-black duration-200">
-                <i class="mx-auto mt-2 md:mt-6 mb-0 md:mb-1 text-4xl fa-solid fa-cube"></i>
-                <span class="text-center">Mesh</span>
-            </div>
-
-            <div class="border-1 rounded-lg flex flex-col w-18 md:w-26 h-18 md:h-26 hover:bg-white hover:text-black duration-200">
-                <i class="mx-auto mt-2 md:mt-6 mb-0 md:mb-1 text-4xl fa-solid fa-bone"></i>
-                <span class="text-center">Skeleton</span>
-            </div>
-
-            <div class="border-1 rounded-lg flex flex-col w-18 md:w-26 h-18 md:h-26 hover:bg-white hover:text-black duration-200">
-                <i class="mx-auto mt-2 md:mt-6 mb-0 md:mb-1 text-4xl fa-solid fa-s"></i>
-                <span class="text-center">Shader</span>
-            </div>
-        </div>
-    </div> -->
+<div id="scroll-root" class="h-full w-full overflow-y-auto overflow-x-hidden snap-y snap-always snap-mandatory">
     
     <!-- WELCOME -->
-    <div class="mt-[30dvh] text-center snap-center">
-        <h1 class="text-6xl font-share-tech-mono font-bold text-center p-4" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
-            <span class="text-blue-200" style="filter: drop-shadow(0 0 10px rgba(0,0,255,0.6));">WELCOME</span>
+    <div class="et-float-in mt-[30dvh] text-center snap-center">
+        <h1 class="text-2xl font-share-tech-mono font-bold text-center p-4" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
+            <span class="text-blue-200 text-8xl" style="filter: drop-shadow(0 0 10px rgba(0,0,255,0.6));">WELCOME</span><br>
             TO MY BLOG
         </h1>
 
-        <span class="block text-zinc-300 text-shadow-md text-shadow-zinc-800 mt-2">View More:</span>
-
         <div class="grid grid-cols-3 gap-6 sm:gap-10  mt-2 mx-[12dvw] md:mx-[22dvw]">
-            <a class="block py-6 border-2 text-center font-share-tech-mono hover:bg-white hover:text-black hover:opacity-80" href="/icrack41-blog/notes">Notes</a>
-            <a class="block py-6 border-2 text-center font-share-tech-mono hover:bg-white hover:text-black hover:opacity-80" href="/icrack41-blog/projects">Projects</a>
-            <a class="block py-6 border-2 text-center font-share-tech-mono hover:bg-white hover:text-black hover:opacity-80" href="/icrack41-blog/friends">Friends</a>
+            <a class="clickable block py-6 border-2 text-center font-share-tech-mono hover:bg-white/30"  href="/icrack41-blog/notes">Notes</a>
+            <a class="clickable block py-6 border-2 text-center font-share-tech-mono hover:bg-white/30" href="/icrack41-blog/projects">Projects</a>
+            <a class="clickable block py-6 border-2 text-center font-share-tech-mono hover:bg-white/30" href="/icrack41-blog/friends">Friends</a>
         </div>
     </div>
 
     <!-- From Ideas to Reality -->
     <div class="relative mt-[50dvh] mx-12 py-28 snap-center">
         <Border2/>
-        <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto scale-y-125 -translate-y-4" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
+
+        <h1 class="pointer-events-none text-6xl font-share-tech-mono font-bold text-center mx-auto scale-y-125 -translate-y-4 z-10" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
             From Ideas to
             <span class="text-blue-200" style="filter: drop-shadow(0 0 10px rgba(0,0,255,0.6));">Reality</span>
         </h1>
+
+        <h2 class="pointer-events-none text-2xl font-bold text-center mx-auto text-zinc-400" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
+            點亮創意．照亮世界
+        </h2>
+
+        <div id="light-bulb" class="absolute top-0 left-[50%] h-[60dvh] translate-y-[-26dvh] translate-x-[-50%] w-12 overflow-visible">
+            <div class="absolute top-0 left-[50%] h-[80%] w-0.5 bg-zinc-400"></div>
+            <div id="light-bulb-mask" class="pointer-events-none absolute top-0 left-0 translate-x-[-50%] translate-y-[-40%] w-[4200px] h-[4200px] z-100"></div>
+            <LightBulbIcon className="clickable absolute bottom-0 left-[50%] translate-x-[-50%] rotate-180" width={140} height={140}/>
+        </div>
     </div>
+
+    <!-- <div class="et-shaking absolute top-0 left-[50%] h-[50dvh] w-6 bg-white"></div> -->
 
     <!-- Light bulb -->
     <!-- <div class="relative mt-[50dvh] mx-12 py-28 snap-center">
@@ -61,7 +52,7 @@ import { Border2 } from "../assets/borders"
 
 
     <!-- History -->
-    <div class="mt-[50dvh] text-center snap-center">
+    <div class="et-float-in mt-[50dvh] text-center snap-center">
         <h1 class="text-6xl font-share-tech-mono font-bold text-center mx-auto"  style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">History</h1>
 
         <div class="inline-block text-left text-lg/8 text-shadow-md text-shadow-zinc-800 font-bold mt-4">
@@ -90,10 +81,6 @@ import { Border2 } from "../assets/borders"
                 <span class="border-l-2 border-white pl-8 ml-1">新的開始</span><small class="text-sm"> (First Push on GitHub)</small><br>
                 <span class="border-l-2 border-white pl-8 ml-1">鬼轉 Astro</span><small class="text-sm"> (Hexo to Astro)</small>
         </div>
-
-        <!-- <span class="absolute top-[10%] left-0 w-full -z-20 overflow-visible text-[60dvh] font-share-tech-mono text-zinc-800 text-center">
-            2‧0‧2‧5
-        </span> -->
     </div>
 
     <!-- Footer -->

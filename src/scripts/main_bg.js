@@ -5,8 +5,11 @@ import { SSAOPass } from 'three/examples/jsm/postprocessing/SSAOPass.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-// gsap.registerPlugin(CSSPlugin, ScrollTrigger);
+import { Line2 } from 'three/addons/lines/Line2.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 
+// init
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const textureLoader = new THREE.TextureLoader();
@@ -68,7 +71,7 @@ const moonMaterial = new THREE.MeshStandardMaterial({
 });
 
 // particle
-const particleCount = 1024;
+const particleCount = 4096;
 const particleGeometry = new THREE.BufferGeometry();
 const particleMaterial = new THREE.PointsMaterial({
     size: 0.12,
@@ -85,35 +88,45 @@ function createTextTexture(text, fontSize = 64, color = '#ffffff') {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
-    // 先設定字型來測量
     ctx.font = `bold ${fontSize}px Arial`;
 
-    // 測量文字實際寬度
     const metrics = ctx.measureText(text);
     const textWidth = metrics.width;
-    const textHeight = fontSize * 1.2;  // 粗估高度（包含上下空間）
+    const textHeight = fontSize * 1.2;
 
-    // 設定 Canvas 為文字大小 + padding（避免邊緣太貼）
-    const padding = fontSize * 0.4;  // 可調整
+    const padding = fontSize * 0.4;
     canvas.width = textWidth + padding * 2;
     canvas.height = textHeight + padding * 2;
 
-    // 重新設定字型（因為改變 canvas 大小時會重置 context）
     ctx.font = `bold ${fontSize}px Arial`;
     ctx.fillStyle = color;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    // 在新中心畫文字
     ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 
     const texture = new THREE.CanvasTexture(canvas);
-    texture.minFilter = THREE.LinearFilter;  // 避免模糊
+    texture.minFilter = THREE.LinearFilter;
     texture.needsUpdate = true;
 
     return texture;
 }
 
+// clock hand
+const linePoints = [];
+linePoints.push(0, 0, 0);
+linePoints.push(0, 3, 0);
+
+const lineMaterial = new LineMaterial({
+    color: 0x999999,
+    linewidth: 3,
+});
+const lineGeometry = new LineGeometry();
+lineGeometry.setPositions(linePoints);
+
+const secondHand = new Line2(lineGeometry, lineMaterial);
+const minuteHand = new Line2(lineGeometry, lineMaterial);
+const hourHand = new Line2(lineGeometry, lineMaterial);
 
 // ------ transform data ------
 
@@ -161,28 +174,28 @@ function setParticleColor(index, r, g, b){
     particleData.targetColor[index * 3 + 2] = b;
 }
 
-function arrangeParticlesIn2DPlane(cols, rows, gap) {
-    const width = (cols - 1) * gap;
-    const height = (rows - 1) * gap;
+function particlesToPlane(cols, rows, gap) {
+    const width = (cols-1) * gap;
+    const height = (rows-1) * gap;
 
     let index = 0;
-
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
-            const x = col * gap - width / 2;
-            const y = row * gap - height / 2;
+            const x = col*gap - width/2;
+            const y = row*gap - height/2;
             const z = 0;
 
             setParticlePosition(index, x, y, z);
             index++;
+            console.log(index);
         }
     }
 }
 
-function arrangeParticlesInCircle(radius) {
+function particlesToCircle(radius) {
     let ring = 4;
     let ringCount = 64;
-    let displacementZ = [0, 0.2, 0.95, 0.1];
+    let displacementZ = [0, 0.2, 0.95, 0.1, 0, 1, 0.1, 0.2];
 
     for (let i = 0; i < particleCount; i++) {
         
@@ -198,6 +211,49 @@ function arrangeParticlesInCircle(radius) {
             ringCount *= 2;
         }
     }
+}
+
+function particlesToImage(imgSrc) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.src = imgSrc;
+
+    console.log("particlesToImage");
+
+    img.onload = function() {
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        ctx.drawImage(img, 0, 0);
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        const w = canvas.width;
+        const h = canvas.height;
+
+        console.log("w-"+w);
+        console.log("h-"+h);
+
+        let index = 4095;
+        for (let y = 0; y < 128; y += 2) {
+            for (let x = 0; x < 128; x += 2) {
+                const i = (y * w + x) * 4;
+
+                const r = data[i] / 255;
+                const g = data[i + 1] / 255;
+                const b = data[i + 2] / 255;
+
+                particleData.color[index * 3]     = r;
+                particleData.color[index * 3 + 1] = g;
+                particleData.color[index * 3 + 2] = b;
+
+                index--;
+            }
+        }
+    };
 }
 
 // ------ scene.add ------
@@ -241,7 +297,7 @@ for (let i = 0; i < 12; i++) {
 }
 
 const spriteMaterial = new THREE.SpriteMaterial({
-    map: createTextTexture("2‧0‧2‧5", 500, '#020203'),
+    map: createTextTexture("2‧0‧2‧6", 500, '#020203'),
     transparent: true,
     depthWrite: false,
 });
@@ -254,6 +310,29 @@ text2025.scale.x = 20;
 text2025.scale.y = 16;
 text2025.scale.z = 16;
 scene.add(text2025);
+
+// clock hand
+secondHand.position.x = 7;
+secondHand.position.y = 0.5;
+secondHand.position.z = -4;
+
+minuteHand.position.x = 7;
+minuteHand.position.y = 0.5;
+minuteHand.position.z = -4;
+
+hourHand.position.x = 7;
+hourHand.position.y = 0.5;
+hourHand.position.z = -4;
+
+minuteHand.rotation.z = 0;
+hourHand.rotation.z = 1;
+
+minuteHand.scale.y = 0.8;
+hourHand.scale.y = 0.6;
+
+scene.add(secondHand);
+scene.add(minuteHand);
+scene.add(hourHand);
 
 // ------ set page ------
 
@@ -268,7 +347,7 @@ const setMainPage = () => {
     scrollPage.style.display = "none";
 
     for (let i = 0; i < particleCount; i++) {
-        setParticlePosition(i, (Math.random()-0.5)*50, (Math.random()-0.5)*50, (Math.random()-0.5)*50);
+        setParticlePosition(i, (Math.random()-0.5)*100, (Math.random()-0.5)*100, (Math.random()-0.5)*100);
         setParticleColor(i, 1, 1, 1);
     }
 
@@ -289,11 +368,15 @@ const setMainPage = () => {
     });
     text2025.visible = false;
     moon.visible = true;
+
+    secondHand.visible = false;
+    minuteHand.visible = false;
+    hourHand.visible = false;
 }
 
 const setPage1 = () => {
     for (let i = 0; i < particleCount; i++) {
-        setParticlePosition(i, (Math.random()-0.5)*50, (Math.random()-0.5)*50, (Math.random()-0.5)*50);
+        setParticlePosition(i, (Math.random()-0.5)*100, (Math.random()-0.5)*100, (Math.random()-0.5)*100);
         setParticleColor(i, 1, 1, 1);
     }
 
@@ -318,20 +401,20 @@ const setPage1 = () => {
 const setPage2 = () => {
 
     for (let i = 0; i < particleCount; i++) {
-        setParticlePosition(i, (Math.random()-0.5)*20, (Math.random()-0.5)*20, (Math.random()-0.5)*20);
-        setParticleColor(i, Math.random(), Math.random(), Math.random());
+        setParticlePosition(i, (Math.random()-0.5)*50, (Math.random()-0.5)*50, (Math.random()-0.5)*50);
+        setParticleColor(i, Math.random()/2, Math.random()/2, Math.random()/2);
     }
 
     cameraData.targetX = 10;
-    cameraData.targetY = 4;
+    cameraData.targetY = 5;
     cameraData.targetZ = 0;
 
     cameraData.targetRotateX = 0;
-    cameraData.targetRotateY = -0.1;
+    cameraData.targetRotateY = -0.4;
     cameraData.targetRotateZ = 0;
 
     pointData.targetX = 10;
-    pointData.targetY = 4;
+    pointData.targetY = 8;
     pointData.targetZ = -8;
 
     clockNumData.targetScaleX = 0;
@@ -347,16 +430,20 @@ const setPage2 = () => {
     });
     text2025.visible = false;
     particleMaterial.size = 0.12;
+
+    secondHand.visible = false;
+    minuteHand.visible = false;
+    hourHand.visible = false;
 };
 
 const setPage3 = () => {
-    arrangeParticlesInCircle(10);
+    particlesToCircle(10);
 
     for (let i = 0; i < particleCount; i++) {
         setParticleColor(i, 0.5, 0.75, 0.81);
     }
 
-    cameraData.targetX = 6;
+    cameraData.targetX = 5.5;
     cameraData.targetY = 0.5;
     cameraData.targetZ = 0;
 
@@ -383,14 +470,56 @@ const setPage3 = () => {
 
     points.rotation.y = 0;
     moon.visible = false;
-    particleMaterial.size = 0.05;
+    particleMaterial.size = 0.04;
+
+    secondHand.visible = true;
+    minuteHand.visible = true;
+    hourHand.visible = true;
+};
+
+const setPage4 = () => {
+    particlesToPlane(64, 64, 0.1);
+    particlesToImage("icrack41-blog/qr_code.png");
+
+    cameraData.targetX = 7;
+    cameraData.targetY = 0.5;
+    cameraData.targetZ = 0;
+
+    cameraData.targetRotateX = 0;
+    cameraData.targetRotateY = 0;
+    cameraData.targetRotateZ = 0;
+
+    pointData.targetX = 7;
+    pointData.targetY = 0.5;
+    pointData.targetZ = -5;
+
+    clockNumData.targetScaleX = 1;
+    clockNumData.targetScaleY = 1;
+    clockNumData.targetScaleZ = 1;
+
+    text2025Data.targetScaleX = 20;
+    text2025Data.targetScaleY = 16;
+    text2025Data.targetScaleZ = 16;
+
+    clockNumbers.forEach(num => {
+        num.visible = false;
+    });
+    text2025.visible = false;
+
+    points.rotation.y = 0;
+    moon.visible = false;
+    particleMaterial.size = 0.08;
+
+    secondHand.visible = false;
+    minuteHand.visible = false;
+    hourHand.visible = false;
 };
 
 const handGroup = new THREE.Group();
 const handGeom = new THREE.BoxGeometry(0.02, 2.5, 0.02);
 const handMat = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 const hand = new THREE.Mesh(handGeom, handMat);
-hand.position.y = 1.25; // 軸心在底部
+hand.position.y = 1.25;
 handGroup.add(hand);
 scene.add(handGroup);
 handGroup.visible = false;
@@ -398,13 +527,14 @@ handGroup.visible = false;
 // update view
 let currentSection = 0;
 let isUpdating = false;
-console.log(currentSection);
 
 function updateView() {
     if(currentSection === 0){ setMainPage(); }
     else if (currentSection === 1){ setPage1(); }
     else if (currentSection === 2){ setPage2(); } 
     else if (currentSection === 3){ setPage3(); }
+    else if (currentSection === 4){ setPage4(); }
+
     console.log(currentSection);
 
     isUpdating = true;
@@ -489,13 +619,43 @@ document.getElementById('back').addEventListener('click', () => {
     updateView();
 });
 
+const lightBulb = document.getElementById('light-bulb');
+const lightBulbMask = document.getElementById('light-bulb-mask');
+
+lightBulb.addEventListener('click', () => {
+    if(lightOn){
+        lightBulbMask.style.background = "radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.92) 10%)";
+        lightOn = false;
+    }
+    else{
+        lightBulbMask.style.background = "radial-gradient(rgba(253, 236, 166, 0.2) 0%, rgba(0, 0, 0, 0) 12%)";
+        lightOn = true;
+    }
+});
+
 // scroll listener
+let lightOn = false;
 const scrollRoot = document.getElementById('scroll-root');
 scrollRoot.addEventListener('scroll', () => {
-    const index = Math.round(scrollRoot.scrollTop / window.innerHeight)+1;
-    if (index !== currentSection) {
-        currentSection = index;
-        updateView();
+    if(currentSection != 0){
+        const index = Math.round(scrollRoot.scrollTop / window.innerHeight) + 1;
+        if (index != currentSection) {
+            currentSection = index;
+
+            if(currentSection == 2){
+                if(!lightOn){
+                    lightBulbMask.style.background = "radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.92) 10%)";
+                    lightBulb.style.animation = "anim-et-swing 5s ease-in-out";
+                }
+                lightBulb.style.visibility = "visible";
+            }
+            else{
+                lightBulb.style.animation = "none";
+                lightBulb.style.visibility = "hidden";
+            }
+
+            updateView();
+        }
     }
 });
 
@@ -528,20 +688,20 @@ function animate(){
     if (ambientLight.intensity < 1) ambientLight.intensity += 0.01;
     if (directionalLight.position.y < 9) directionalLight.position.y += 0.08;
 
-    // point / particle
+    // particle
     if(currentSection == 2){
         points.rotation.y += 0.002;
     }
+
+    // clock hand
+    secondHand.rotation.z -= 0.002;
 
     // camera
     if(!isUpdating && currentSection != 0){
         const lerp = 0.05; // 越小越平滑
         camera.rotation.y += (cameraRotateOffsetY-camera.rotation.y)*lerp;
         camera.position.y += (cameraPositionOffsetY-camera.position.y)*lerp;
-
     }
     
-    // camera.rotation.x = (targetRotX - camera.rotation.x)*lerp + cameraData.targetRotateX;
-
     composer.render();
 }

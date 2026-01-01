@@ -84,11 +84,10 @@
 
 /* entering-progress */
 .et-progress{
-
     animation: none;
 }
 
-@keyframes anim-entering-progress {
+@keyframes anim-et-progress {
     0% {
         transform: scaleX(0);
     }
@@ -96,6 +95,33 @@
         transform: scaleX(1);
     }
 }
+
+/* entering-shaking */
+#light-bulb {
+    animation: none;
+    transform-origin: 50% 0%;
+    visibility: hidden;
+}
+
+@keyframes anim-et-swing {
+    0%   { transform: rotate(150deg); }
+    30%  { transform: rotate(-50deg); }
+    50%  { transform: rotate(30deg); }
+    70%  { transform: rotate(-15deg); }
+    85%  { transform: rotate(8deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* @keyframes anim-et-shaking {
+    0%{
+        opacity: 0;
+        transform: scale(0.6, 0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+} */
 
 /* cursor-particle */
 .cursor-particle {
@@ -119,3 +145,4 @@
         opacity: 0;
     }
 }
+

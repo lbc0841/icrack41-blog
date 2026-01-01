@@ -48,7 +48,7 @@ const enteringPathObserver = new IntersectionObserver((entries) => {
 const enteringProgressObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = "anim-entering-progress 0.3s ease-out";
+            entry.target.style.animation = "anim-et-progress 0.3s ease-out";
             entry.target.style.visibility = "visible";
         }
         else {

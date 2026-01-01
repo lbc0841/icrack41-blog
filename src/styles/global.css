@@ -85,6 +85,40 @@ body {
     z-index: 10;
 }
 
+.click-hint {
+    pointer-events: none;
+    color: white;
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+    
+    text-align: center;
+
+    border-radius: 50%;
+    border: 1px rgba(255, 255, 255, 0.15) solid;
+
+    z-index: 100;
+}
+
+@keyframes click-hint-enter {
+    0% {
+        stroke: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        stroke: rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes click-hint-leave {
+    0% {
+        stroke: rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        stroke: rgba(255, 255, 255, 0.2);
+    }
+}
+
 .background {
     position: absolute;
     top: 0;
