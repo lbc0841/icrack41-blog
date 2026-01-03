@@ -214,7 +214,7 @@ function particlesToCircle(radius) {
 
 const img = new Image();
 img.crossOrigin = 'anonymous';
-img.src = "icrack41-blog/discord.png";
+img.src = "/icrack41-blog/discord.png";
 let imageData;
 
 const canvas = document.createElement('canvas');
