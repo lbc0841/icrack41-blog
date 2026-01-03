@@ -153,7 +153,7 @@ const clockNumData = {
     targetScaleX: 0, targetScaleY: 0, targetScaleZ: 0
 }
 
-const text2025Data = {
+const text2026Data = {
     targetScaleX: 0, targetScaleY: 0, targetScaleZ: 0
 }
 
@@ -187,7 +187,6 @@ function particlesToPlane(cols, rows, gap) {
 
             setParticlePosition(index, x, y, z);
             index++;
-            console.log(index);
         }
     }
 }
@@ -213,47 +212,48 @@ function particlesToCircle(radius) {
     }
 }
 
-function particlesToImage(imgSrc) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+const img = new Image();
+img.crossOrigin = 'anonymous';
+img.src = "icrack41-blog/discord.png";
+let imageData;
 
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.src = imgSrc;
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
 
+img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+}
+
+function particlesToImage() {
     console.log("particlesToImage");
 
-    img.onload = function() {
-        canvas.width = img.width;
-        canvas.height = img.height;
+    const data = imageData.data;
+    const w = canvas.width;
+    const h = canvas.height;
 
-        ctx.drawImage(img, 0, 0);
+    console.log("w-"+w);
+    console.log("h-"+h);
 
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-        const w = canvas.width;
-        const h = canvas.height;
+    let index = 4095;
+    for (let y = 0; y < 128; y += 2) {
+        for (let x = 0; x < 128; x += 2) {
+            const i = (y * w + x) * 4;
 
-        console.log("w-"+w);
-        console.log("h-"+h);
+            const r = data[i] / 255;
+            const g = data[i + 1] / 255;
+            const b = data[i + 2] / 255;
 
-        let index = 4095;
-        for (let y = 0; y < 128; y += 2) {
-            for (let x = 0; x < 128; x += 2) {
-                const i = (y * w + x) * 4;
+            setParticleColor(index, r, g, b);
+            // particleData.color[index * 3]     = r;
+            // particleData.color[index * 3 + 1] = g;
+            // particleData.color[index * 3 + 2] = b;
 
-                const r = data[i] / 255;
-                const g = data[i + 1] / 255;
-                const b = data[i + 2] / 255;
-
-                particleData.color[index * 3]     = r;
-                particleData.color[index * 3 + 1] = g;
-                particleData.color[index * 3 + 2] = b;
-
-                index--;
-            }
+            index--;
         }
-    };
+    }
 }
 
 // ------ scene.add ------
@@ -289,7 +289,7 @@ for (let i = 0; i < 12; i++) {
     });
 
     const sprite = new THREE.Sprite(spriteMaterial);
-    sprite.position.set(x+7, y+0.5, z-4);
+    sprite.position.set(x+6.8, y+6, z-3);
 
     sprite.visible = false;
     scene.add(sprite);
@@ -302,26 +302,26 @@ const spriteMaterial = new THREE.SpriteMaterial({
     depthWrite: false,
 });
 
-const text2025 = new THREE.Sprite(spriteMaterial);
-text2025.position.set(7, 0, -6);
+const text2026 = new THREE.Sprite(spriteMaterial);
+text2026.position.set(7, 6, -6);
 
-text2025.visible = false;
-text2025.scale.x = 20;
-text2025.scale.y = 16;
-text2025.scale.z = 16;
-scene.add(text2025);
+text2026.visible = false;
+text2026.scale.x = 20;
+text2026.scale.y = 16;
+text2026.scale.z = 16;
+scene.add(text2026);
 
 // clock hand
 secondHand.position.x = 7;
-secondHand.position.y = 0.5;
+secondHand.position.y = 6;
 secondHand.position.z = -4;
 
 minuteHand.position.x = 7;
-minuteHand.position.y = 0.5;
+minuteHand.position.y = 6;
 minuteHand.position.z = -4;
 
 hourHand.position.x = 7;
-hourHand.position.y = 0.5;
+hourHand.position.y = 6;
 hourHand.position.z = -4;
 
 minuteHand.rotation.z = 0;
@@ -366,7 +366,7 @@ const setMainPage = () => {
     clockNumbers.forEach(num => {
         num.visible = false;
     });
-    text2025.visible = false;
+    text2026.visible = false;
     moon.visible = true;
 
     secondHand.visible = false;
@@ -421,14 +421,14 @@ const setPage2 = () => {
     clockNumData.targetScaleY = 0;
     clockNumData.targetScaleZ = 0;
 
-    text2025Data.targetScaleX = 0;
-    text2025Data.targetScaleY = 0;
-    text2025Data.targetScaleZ = 0;
+    text2026Data.targetScaleX = 0;
+    text2026Data.targetScaleY = 0;
+    text2026Data.targetScaleZ = 0;
 
     clockNumbers.forEach(num => {
         num.visible = false;
     });
-    text2025.visible = false;
+    text2026.visible = false;
     particleMaterial.size = 0.12;
 
     secondHand.visible = false;
@@ -437,6 +437,47 @@ const setPage2 = () => {
 };
 
 const setPage3 = () => {
+    particlesToPlane(64, 64, 0.2);
+    particlesToImage();
+
+    cameraData.targetX = 7;
+    cameraData.targetY = 0.5;
+    cameraData.targetZ = 2;
+
+    cameraData.targetRotateX = 0;
+    cameraData.targetRotateY = -0.2;
+    cameraData.targetRotateZ = 0;
+
+    pointData.targetX = 9.4;
+    pointData.targetY = 0.3;
+    pointData.targetZ = -2.4;
+
+    clockNumData.targetScaleX = 1;
+    clockNumData.targetScaleY = 1;
+    clockNumData.targetScaleZ = 1;
+
+    text2026Data.targetScaleX = 1;
+    text2026Data.targetScaleY = 1;
+    text2026Data.targetScaleZ = 1;
+
+    clockNumbers.forEach(num => {
+        num.visible = false;
+        clockNumData.targetScaleX = 0;
+        clockNumData.targetScaleY = 0;
+        clockNumData.targetScaleZ = 0;
+    });
+    text2026.visible = false;
+
+    points.rotation.y = 0;
+    moon.visible = false;
+    particleMaterial.size = 0.15;
+
+    secondHand.visible = false;
+    minuteHand.visible = false;
+    hourHand.visible = false;
+};
+
+const setPage4 = () => {
     particlesToCircle(10);
 
     for (let i = 0; i < particleCount; i++) {
@@ -444,29 +485,32 @@ const setPage3 = () => {
     }
 
     cameraData.targetX = 5.5;
-    cameraData.targetY = 0.5;
-    cameraData.targetZ = 0;
+    cameraData.targetY = 6;
+    cameraData.targetZ = 1;
 
     cameraData.targetRotateX = 0;
     cameraData.targetRotateY = -0.2;
     cameraData.targetRotateZ = 0;
 
     pointData.targetX = 7;
-    pointData.targetY = 0.5;
+    pointData.targetY = 6;
     pointData.targetZ = -4;
 
     clockNumData.targetScaleX = 1;
     clockNumData.targetScaleY = 1;
     clockNumData.targetScaleZ = 1;
 
-    text2025Data.targetScaleX = 20;
-    text2025Data.targetScaleY = 16;
-    text2025Data.targetScaleZ = 16;
+    text2026Data.targetScaleX = 20;
+    text2026Data.targetScaleY = 16;
+    text2026Data.targetScaleZ = 16;
 
     clockNumbers.forEach(num => {
         num.visible = true;
+        clockNumData.targetScaleX = 1;
+        clockNumData.targetScaleY = 1;
+        clockNumData.targetScaleZ = 1;
     });
-    text2025.visible = true;
+    text2026.visible = true;
 
     points.rotation.y = 0;
     moon.visible = false;
@@ -477,42 +521,23 @@ const setPage3 = () => {
     hourHand.visible = true;
 };
 
-const setPage4 = () => {
-    particlesToPlane(64, 64, 0.1);
-    particlesToImage("icrack41-blog/qr_code.png");
+const setPage5 = () => {
+    for (let i = 0; i < particleCount; i++) {
+        setParticlePosition(i, (Math.random()-0.5)*100, (Math.random()-0.5)*100, (Math.random()-0.5)*100);
+        setParticleColor(i, 1, 1, 1);
+    }
 
-    cameraData.targetX = 7;
-    cameraData.targetY = 0.5;
-    cameraData.targetZ = 0;
+    cameraData.targetX = 10;
+    cameraData.targetY = 6;
+    cameraData.targetZ = 6;
 
     cameraData.targetRotateX = 0;
-    cameraData.targetRotateY = 0;
+    cameraData.targetRotateY = 2;
     cameraData.targetRotateZ = 0;
 
-    pointData.targetX = 7;
-    pointData.targetY = 0.5;
-    pointData.targetZ = -5;
-
-    clockNumData.targetScaleX = 1;
-    clockNumData.targetScaleY = 1;
-    clockNumData.targetScaleZ = 1;
-
-    text2025Data.targetScaleX = 20;
-    text2025Data.targetScaleY = 16;
-    text2025Data.targetScaleZ = 16;
-
-    clockNumbers.forEach(num => {
-        num.visible = false;
-    });
-    text2025.visible = false;
-
-    points.rotation.y = 0;
-    moon.visible = false;
-    particleMaterial.size = 0.08;
-
-    secondHand.visible = false;
-    minuteHand.visible = false;
-    hourHand.visible = false;
+    pointData.targetX = 0;
+    pointData.targetY = 6;
+    pointData.targetZ = -6;
 };
 
 const handGroup = new THREE.Group();
@@ -534,6 +559,7 @@ function updateView() {
     else if (currentSection === 2){ setPage2(); } 
     else if (currentSection === 3){ setPage3(); }
     else if (currentSection === 4){ setPage4(); }
+    else if (currentSection === 5){ setPage5(); }
 
     console.log(currentSection);
 
@@ -600,10 +626,10 @@ function updateView() {
             ease: "power2.inOut"
         });
     });
-    gsap.to(text2025.scale, {
-        x: text2025Data.targetScaleX,
-        y: text2025Data.targetScaleY,
-        z: text2025Data.targetScaleZ,
+    gsap.to(text2026.scale, {
+        x: text2026Data.targetScaleX,
+        y: text2026Data.targetScaleY,
+        z: text2026Data.targetScaleZ,
         duration: 2,
         ease: "power2.inOut"
     });
@@ -631,6 +657,31 @@ lightBulb.addEventListener('click', () => {
         lightBulbMask.style.background = "radial-gradient(rgba(253, 236, 166, 0.2) 0%, rgba(0, 0, 0, 0) 12%)";
         lightOn = true;
     }
+});
+
+const discordSend = document.getElementById('discord-send');
+const discordMsgBox = document.getElementById('discord-msg-box');
+
+discordSend.addEventListener('click', () => {
+    const newMsg = document.createElement('div');
+    newMsg.className = 'mt-8 flex w-full';
+
+    const avatar = document.createElement('img');
+    avatar.src = discordMsgBox.dataset.avatarSrc;
+    avatar.className = 'rounded-2xl mr-2 h-8 w-8';
+
+    const bigImg = document.createElement('img');
+    bigImg.src = discordMsgBox.dataset.yoooSrc;
+    bigImg.className = 'mr-2 h-20 w-20';
+
+    newMsg.appendChild(avatar);
+    newMsg.appendChild(bigImg);
+    discordMsgBox.appendChild(newMsg);
+
+    discordMsgBox.scrollTo({
+        top: discordMsgBox.scrollHeight,
+        behavior: 'smooth'
+    });
 });
 
 // scroll listener
