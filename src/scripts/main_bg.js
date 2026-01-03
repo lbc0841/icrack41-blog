@@ -212,9 +212,10 @@ function particlesToCircle(radius) {
     }
 }
 
+const resImg = document.getElementById("res-img")
 const img = new Image();
 img.crossOrigin = 'anonymous';
-img.src = "/discord.png";
+img.src = resImg.dataset.discordSrc;
 let imageData;
 
 const canvas = document.createElement('canvas');
@@ -429,7 +430,7 @@ const setPage2 = () => {
         num.visible = false;
     });
     text2026.visible = false;
-    particleMaterial.size = 0.12;
+    particleMaterial.size = 0.16;
 
     secondHand.visible = false;
     minuteHand.visible = false;
@@ -470,7 +471,7 @@ const setPage3 = () => {
 
     points.rotation.y = 0;
     moon.visible = false;
-    particleMaterial.size = 0.15;
+    particleMaterial.size = 0.2;
 
     secondHand.visible = false;
     minuteHand.visible = false;
@@ -667,11 +668,11 @@ discordSend.addEventListener('click', () => {
     newMsg.className = 'mt-8 flex w-full';
 
     const avatar = document.createElement('img');
-    avatar.src = discordMsgBox.dataset.avatarSrc;
+    avatar.src = resImg.dataset.discordSrc;
     avatar.className = 'rounded-2xl mr-2 h-8 w-8';
 
     const bigImg = document.createElement('img');
-    bigImg.src = discordMsgBox.dataset.yoooSrc;
+    bigImg.src = resImg.dataset.yoooSrc;
     bigImg.className = 'mr-2 h-20 w-20';
 
     newMsg.appendChild(avatar);
@@ -732,8 +733,8 @@ window.addEventListener('resize', () => {
 // anim
 function animate(){
     // moon
-    moon.rotation.x += 0.0002;
-    moon.rotation.y += 0.0002;
+    moon.rotation.x += 0.0003;
+    moon.rotation.y += 0.0003;
 
     // light
     if (ambientLight.intensity < 1) ambientLight.intensity += 0.01;

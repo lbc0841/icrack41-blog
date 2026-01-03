@@ -3,16 +3,30 @@ import MainNavigation from '../components/MainNavigation.astro';
 import Layout from '../layouts/Layout.astro';
 import MainIntroduce from '../components/main_introduce.astro';
 
+import yoooImg from '../assets/img/yooo.webp';
+import discordImg from '../assets/img/discord.png';
+
 import "../styles/index.css";
 ---
 
 
 <Layout>
-	<div class="scanlines"></div>
 	<MainNavigation/>
 
-	<div id="mainPage" class="h-full w-full" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
-		<div id="logo" class="clickable absolute left-[50%] translate-x-[-50%] top-[44%] translate-y-[-50%] w-[100%] h-[70%] scale-x-125"></div>
+	<div id="res-img" 
+		data-discord-src={discordImg.src} 
+        data-yooo-src={yoooImg.src}>
+	</div>
+
+	<div id="mainPage" class="h-full w-full">
+
+		<div class="scanlines"></div>
+
+
+		<div id="logo" 
+			class="clickable absolute left-[50%] translate-x-[-50%] top-[44%] translate-y-[-50%] w-[100%] h-[70%] scale-x-125"
+			style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
+		</div>
 		<span class="pointer-events-none et-float-in absolute w-full bottom-[42%] sm:bottom-[36%] scale-y-60 font-share-tech-mono tracking-[2px] text-gray-500 text-2xl text-center">CLICK TO CONTINUE</span>
 
 		<!-- Date -->

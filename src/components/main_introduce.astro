@@ -2,8 +2,7 @@
 import { Border2 } from "../assets/borders"
 import Image from "astro/components/Image.astro"
 import profileImg from '../assets/img/profile_img.webp';
-import yoooImg from '../assets/img/yooo.webp';
-import discordImg from '../assets/img/discord.png';
+
 import { LightBulbIcon } from "../assets/icons"
 
 ---
@@ -45,20 +44,22 @@ import { LightBulbIcon } from "../assets/icons"
 
     <!-- My Server -->
     <div class="et-float-in mt-[30dvh] text-center snap-center">
-        <div class="w-[80%] bg-black/80 border-2 border-zinc-900 rounded-md mx-auto p-4">
-            <div id="discord-msg-box" class="h-[64dvh] overflow-y-scroll p-2"
-                data-avatar-src={discordImg.src} 
-                data-yooo-src={yoooImg.src}>
+        <h1 class="pointer-events-none text-6xl font-share-tech-mono font-bold text-center mx-auto scale-y-125 -translate-y-4 text-shadow-lg text-shadow-blue-950" 
+            style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
+            Join My Server
+        </h1>
 
+        <div class="w-[80%] bg-black/80 border-2 border-zinc-900 rounded-md mx-auto p-4 opacity-80 hover:opacity-100 duration-200">
+            <div id="discord-msg-box" class="h-[54dvh] overflow-y-scroll p-2">
                 <div class="flex w-full">
                     <Image class="rounded-2xl mr-2 h-8 w-8" src={profileImg} alt="profile-img" height={20} width={20}/>
                     <div>
-                        <span class="block text-left text-2xl">Join My Discord Server</span>
-                        <div class="w-64 h-48 rounded-2xl border-1 border-zinc-600 bg-zinc-900 overflow-hidden">
+                        <span class="block text-left text-lg text-blue-500">https://discord.gg/GWEmUwaSFG</span>
+                        <div class="w-64 h-48 rounded-xl border-1 border-zinc-600 bg-zinc-900 overflow-hidden">
                             <div class="w-full h-14 bg-zinc-400"></div>
                             <span class="block text-left px-4 mt-10">My Server</span>
                             <small class="block text-left px-4 text-zinc-400">建立日期：2025年3月</small>
-                            <a class="block bg-green-600 hover:bg-green-700 w-[90%] mx-auto p-1 text-center rounded-md" href="https://discord.gg/GWEmUwaSFG">前往伺服器</a>
+                            <a class="clickable block bg-green-600 hover:bg-green-700 w-[90%] mx-auto p-1 text-center rounded-md" href="https://discord.gg/GWEmUwaSFG">前往伺服器</a>
                         </div>
                     </div>
                 </div>
