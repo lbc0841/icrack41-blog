@@ -290,21 +290,43 @@ for (let i = 0; i < 12; i++) {
     });
 
     const sprite = new THREE.Sprite(spriteMaterial);
-    sprite.position.set(x+6.8, y+6, z-3);
+    sprite.position.set(x+4, y+6, z-3);
 
     sprite.visible = false;
     scene.add(sprite);
     clockNumbers.push(sprite);
 }
 
+const clockNumbers2 = [];
+for (let i = 0; i < 12; i++) {
+    const angle = (i / 12) * Math.PI*2;
+
+    const y = Math.cos(angle) * (clockRadius-0.6);
+    const x = Math.sin(angle) * (clockRadius-0.6);
+    const z = 0;
+
+    const spriteMaterial = new THREE.SpriteMaterial({
+        map: createTextTexture(i*5, 80, '#d0d0d0'),
+        transparent: true,
+        depthWrite: false,
+    });
+
+    const sprite = new THREE.Sprite(spriteMaterial);
+    sprite.position.set(x+3.9, y+6, z-3);
+
+    sprite.visible = false;
+    scene.add(sprite);
+    clockNumbers2.push(sprite);
+}
+
 const spriteMaterial = new THREE.SpriteMaterial({
-    map: createTextTexture("2‧0‧2‧6", 500, '#020203'),
+    map: createTextTexture("2‧0‧2‧6", 80, '#020203'),
     transparent: true,
     depthWrite: false,
 });
 
 const text2026 = new THREE.Sprite(spriteMaterial);
-text2026.position.set(7, 6, -6);
+text2026.position.set(4, 6, -6);
 
 text2026.visible = false;
 text2026.scale.x = 20;
@@ -313,15 +335,15 @@ text2026.scale.z = 16;
 scene.add(text2026);
 
 // clock hand
-secondHand.position.x = 7;
+secondHand.position.x = 3.6;
 secondHand.position.y = 6;
 secondHand.position.z = -4;
 
-minuteHand.position.x = 7;
+minuteHand.position.x = 3.6;
 minuteHand.position.y = 6;
 minuteHand.position.z = -4;
 
-hourHand.position.x = 7;
+hourHand.position.x = 3.6;
 hourHand.position.y = 6;
 hourHand.position.z = -4;
 
@@ -365,6 +387,9 @@ const setMainPage = () => {
     pointData.targetZ = -8;
 
     clockNumbers.forEach(num => {
+        num.visible = false;
+    });
+    clockNumbers2.forEach(num => {
         num.visible = false;
     });
     text2026.visible = false;
@@ -418,18 +443,6 @@ const setPage2 = () => {
     pointData.targetY = 8;
     pointData.targetZ = -8;
 
-    clockNumData.targetScaleX = 0;
-    clockNumData.targetScaleY = 0;
-    clockNumData.targetScaleZ = 0;
-
-    text2026Data.targetScaleX = 0;
-    text2026Data.targetScaleY = 0;
-    text2026Data.targetScaleZ = 0;
-
-    clockNumbers.forEach(num => {
-        num.visible = false;
-    });
-    text2026.visible = false;
     particleMaterial.size = 0.16;
 
     secondHand.visible = false;
@@ -446,20 +459,20 @@ const setPage3 = () => {
     cameraData.targetZ = 2;
 
     cameraData.targetRotateX = 0;
-    cameraData.targetRotateY = -0.2;
+    cameraData.targetRotateY = 0.2;
     cameraData.targetRotateZ = 0;
 
-    pointData.targetX = 9.4;
+    pointData.targetX = 7;
     pointData.targetY = 0.3;
-    pointData.targetZ = -2.4;
+    pointData.targetZ = -2.5;
 
-    clockNumData.targetScaleX = 1;
-    clockNumData.targetScaleY = 1;
-    clockNumData.targetScaleZ = 1;
+    clockNumData.targetScaleX = 0;
+    clockNumData.targetScaleY = 0;
+    clockNumData.targetScaleZ = 0;
 
-    text2026Data.targetScaleX = 1;
-    text2026Data.targetScaleY = 1;
-    text2026Data.targetScaleZ = 1;
+    text2026Data.targetScaleX = 0;
+    text2026Data.targetScaleY = 0;
+    text2026Data.targetScaleZ = 0;
 
     clockNumbers.forEach(num => {
         num.visible = false;
@@ -467,11 +480,15 @@ const setPage3 = () => {
         clockNumData.targetScaleY = 0;
         clockNumData.targetScaleZ = 0;
     });
+    clockNumbers2.forEach(num => {
+        num.visible = false;
+    });
+
     text2026.visible = false;
 
     points.rotation.y = 0;
     moon.visible = false;
-    particleMaterial.size = 0.2;
+    particleMaterial.size = 0.16;
 
     secondHand.visible = false;
     minuteHand.visible = false;
@@ -485,15 +502,15 @@ const setPage4 = () => {
         setParticleColor(i, 0.5, 0.75, 0.81);
     }
 
-    cameraData.targetX = 5.5;
+    cameraData.targetX = 5;
     cameraData.targetY = 6;
-    cameraData.targetZ = 1;
+    cameraData.targetZ = 1.5;
 
     cameraData.targetRotateX = 0;
     cameraData.targetRotateY = -0.2;
     cameraData.targetRotateZ = 0;
 
-    pointData.targetX = 7;
+    pointData.targetX = 4;
     pointData.targetY = 6;
     pointData.targetZ = -4;
 
@@ -511,6 +528,10 @@ const setPage4 = () => {
         clockNumData.targetScaleY = 1;
         clockNumData.targetScaleZ = 1;
     });
+    clockNumbers2.forEach(num => {
+        num.visible = true;
+    });
+
     text2026.visible = true;
 
     points.rotation.y = 0;
@@ -524,8 +545,8 @@ const setPage4 = () => {
 
 const setPage5 = () => {
     for (let i = 0; i < particleCount; i++) {
-        setParticlePosition(i, (Math.random()-0.5)*100, (Math.random()-0.5)*100, (Math.random()-0.5)*100);
-        setParticleColor(i, 1, 1, 1);
+        setParticlePosition(i, (Math.random()-0.5)*30, (Math.random()-0.5)*30, (Math.random()-0.5)*30);
+        setParticleColor(i, 0, 0, 0);
     }
 
     cameraData.targetX = 10;
@@ -533,12 +554,14 @@ const setPage5 = () => {
     cameraData.targetZ = 6;
 
     cameraData.targetRotateX = 0;
-    cameraData.targetRotateY = 2;
+    cameraData.targetRotateY = -1;
     cameraData.targetRotateZ = 0;
 
     pointData.targetX = 0;
     pointData.targetY = 6;
     pointData.targetZ = -6;
+
+    particleMaterial.size = 0.1;
 };
 
 const handGroup = new THREE.Group();
@@ -623,6 +646,15 @@ function updateView() {
             x: clockNumData.targetScaleX,
             y: clockNumData.targetScaleY,
             z: clockNumData.targetScaleZ,
+            duration: 2,
+            ease: "power2.inOut"
+        });
+    });
+    clockNumbers2.forEach(num => {
+        gsap.to(num.scale, {
+            x: clockNumData.targetScaleX/2.5,
+            y: clockNumData.targetScaleY/2.5,
+            z: clockNumData.targetScaleZ/2.5,
             duration: 2,
             ease: "power2.inOut"
         });

@@ -11,6 +11,7 @@ import "../styles/index.css";
 
 
 <Layout>
+	<div class="scanlines"></div>
 	<MainNavigation/>
 
 	<div id="res-img" 
@@ -18,11 +19,7 @@ import "../styles/index.css";
         data-yooo-src={yoooImg.src}>
 	</div>
 
-	<div id="mainPage" class="h-full w-full">
-
-		<div class="scanlines"></div>
-
-
+	<div id="mainPage" class="h-full w-full" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
 		<div id="logo" 
 			class="clickable absolute left-[50%] translate-x-[-50%] top-[44%] translate-y-[-50%] w-[100%] h-[70%] scale-x-125"
 			style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
@@ -54,7 +51,6 @@ import "../styles/index.css";
 		<span class="absolute bottom-0 right-4 sm:right-[50%] sm:translate-x-[50%] text-lg text-gray-500 font-share-tech-mono">- Scroll Down -</span>
 		<button id="back" class="absolute bottom-0 left-4 text-2xl hover:text-blue-300 font-share-tech-mono"><i class="fa-solid fa-caret-left"></i> Go Back</button>
 	</div>
-	
 </Layout>
 
 <script src="../scripts/main_bg"></script>
@@ -70,5 +66,3 @@ import "../styles/index.css";
 		});
 	});
 </script>
-
-
