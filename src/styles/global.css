@@ -131,23 +131,6 @@ body {
     background-image: linear-gradient(to bottom,rgba(0, 255, 0, 0) 20%, rgba(255, 255, 255, 0.4) 98%);
 
     opacity: 40%;
-
-    /* background-image:
-        radial-gradient(closest-side, rgba(12, 93, 99, 0.4), rgba(12, 93, 99, 0)),
-        radial-gradient(closest-side, rgba(9, 61, 75, 0.4), rgba(9, 61, 75, 0)),
-        radial-gradient(closest-side, rgba(4, 19, 42, 0.4), rgba(4, 19, 42, 0)); */
-
-    /* background-size:
-        140vmax 140vmax,
-        120vmax 120vmax,
-        110vmax 110vmax; */
-
-    /* background-repeat:
-        no-repeat,
-        no-repeat,
-        no-repeat; */
-    
-    /* animation: 16s anim_bg linear infinite; */
 }
 
 .background-grid {
@@ -158,8 +141,8 @@ body {
     width: 100%;
     z-index: -1;
 
-    background: url("../assets/grid.svg");
-    background-size: 16vmax;
+    background: linear-gradient(0deg, #000 90%, #fff 10%);
+    background-size: 100% 10px, 100% 10px;
 
     opacity: 40%;
 }

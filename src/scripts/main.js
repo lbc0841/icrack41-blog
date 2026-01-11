@@ -83,6 +83,16 @@ const particleMaterial = new THREE.PointsMaterial({
     ),
 });
 
+// box line
+const boxGeometry = new THREE.BoxGeometry(2, 2, 2);
+const edges = new THREE.EdgesGeometry(boxGeometry);
+
+const boxLine = [
+    new THREE.LineSegments(edges),
+    new THREE.LineSegments(edges),
+    new THREE.LineSegments(edges)
+];
+
 // clock text
 function createTextTexture(text, fontSize = 64, color = '#ffffff') {
     const canvas = document.createElement('canvas');
@@ -271,6 +281,23 @@ const points = new THREE.Points(particleGeometry, particleMaterial);
 scene.add(points);
 points.position.z = -6;
 
+// box line
+boxLine[0].position.x = 8;
+boxLine[0].position.y = 7;
+boxLine[0].position.z = -6;
+scene.add(boxLine[0]);
+
+boxLine[1].position.x = 15;
+boxLine[1].position.y = 5;
+boxLine[1].position.z = -2;
+boxLine[1].rotation.z = 1;
+scene.add(boxLine[1]);
+
+boxLine[2].position.x = 10;
+boxLine[2].position.y = 3;
+boxLine[2].position.z = -3;
+scene.add(boxLine[2]);
+
 // clock number
 const clockRadius = 3.2;
 const clockNumbers = [];
@@ -386,6 +413,10 @@ const setMainPage = () => {
     pointData.targetY = 0;
     pointData.targetZ = -8;
 
+    boxLine.forEach(line => {
+        line.visible = false;
+    });
+
     clockNumbers.forEach(num => {
         num.visible = false;
     });
@@ -421,6 +452,10 @@ const setPage1 = () => {
     pointData.targetY = 6;
     pointData.targetZ = -6;
 
+    boxLine.forEach(line => {
+        line.visible = false;
+    });
+
     moon.visible = true;
 };
 
@@ -445,6 +480,10 @@ const setPage2 = () => {
 
     particleMaterial.size = 0.16;
 
+    boxLine.forEach(line => {
+        line.visible = true;
+    });
+
     secondHand.visible = false;
     minuteHand.visible = false;
     hourHand.visible = false;
@@ -465,6 +504,10 @@ const setPage3 = () => {
     pointData.targetX = 7;
     pointData.targetY = 0.3;
     pointData.targetZ = -2.5;
+
+    boxLine.forEach(line => {
+        line.visible = false;
+    });
 
     clockNumData.targetScaleX = 0;
     clockNumData.targetScaleY = 0;
@@ -776,6 +819,15 @@ function animate(){
     if(currentSection == 2){
         points.rotation.y += 0.002;
     }
+
+    // box line
+    boxLine[0].rotation.x += 0.001;
+
+    boxLine[1].rotation.x += 0.001;
+    boxLine[1].rotation.y += 0.001;
+
+    boxLine[2].rotation.y += 0.001;
+    boxLine[2].rotation.z += 0.001;
 
     // clock hand
     secondHand.rotation.z -= 0.002;

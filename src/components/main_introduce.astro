@@ -44,14 +44,14 @@ import { LightBulbIcon } from "../assets/icons"
     </div>
 
     <!-- My Server -->
-    <div class="et-float-in w-full md:w-[50dvw] mt-[30dvh] text-center snap-center">
+    <div class="et-float-in w-full md:w-[70dvw] lg:w-[50dvw] mt-[30dvh] text-center snap-center">
         <h1 class="pointer-events-none text-6xl font-share-tech-mono font-bold text-center mx-auto scale-y-90 -translate-y-4 text-shadow-lg text-shadow-blue-950" 
             style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));">
             Join My Server
         </h1>
 
         <div class="w-[80%] bg-black/80 border-2 border-zinc-900 rounded-md mx-auto p-4">
-            <div id="discord-msg-box" class="h-[50dvh] overflow-y-scroll p-2">
+            <div id="discord-msg-box" class="h-[50dvh] overflow-y-scroll overflow-x-hidden p-2">
                 <div class="flex w-full">
                     <Image class="rounded-2xl mr-2 h-8 w-8" src={profileImg} alt="profile-img" height={20} width={20}/>
                     <div>
@@ -108,14 +108,9 @@ import { LightBulbIcon } from "../assets/icons"
 
     <!-- Footer -->
     <div class="relative mt-[50dvh] snap-center">
-        <!-- <div class="flex w-full">
-            <Image class="mr-2 h-30 w-30" src={profileImg} alt="profile-img"/>
-        </div> -->
-        <a-waves class="et-float-in">
-            <svg></svg>
-        </a-waves>
+        <canvas id="dino" class="w-full h-[40dvh]"></canvas>
 
-        <div class="absolute bottom-0 w-full h-[50dvh] bg-zinc-950 opacity-80 pt-[10dvh] mt-8">
+        <div class="w-full h-[50dvh] bg-zinc-900 opacity-80 pt-[10dvh]">
             <span class="block w-full text-center text-2xl font-share-tech-mono">Icrack</span>
             <span class="block w-full text-center text-xl text-zinc-400">梭哈，是種智慧 / 賭狗，應有盡有</span>
             <span class="block w-full text-center text-xl font-share-tech-mono text-zinc-400">Gmail: cracker04012008@gmail.com</span>
