@@ -8,13 +8,13 @@ if(!(/Mobi|Android|iPhone|iPad|iPod|Phone/i.test(navigator.userAgent))){
     svg.style.position = "absolute";
     svg.style.zIndex = "100";
     svg.style.pointerEvents = "none";
-    svg.style.left = "0px";
-    svg.style.top = "0px";
+    svg.style.left = "-100px";
+    svg.style.top = "-100px";
     svg.style.mixBlendMode = "difference";
 
     const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
     polygon.style.fill = "none";
-    polygon.style.stroke = "#a0a0a0";
+    polygon.style.stroke = "rgba(255, 255, 255, 0.1)";
     polygon.style.strokeWidth = "2";
 
     const hint = document.createElementNS("http://www.w3.org/2000/svg", "text");
@@ -87,7 +87,7 @@ if(!(/Mobi|Android|iPhone|iPad|iPod|Phone/i.test(navigator.userAgent))){
 
     // mousemove listener
     document.addEventListener("mousemove", function (e) {
-        svg.style.top  = `${e.clientY - 40}px`;
+        svg.style.top  = `${e.clientY - 50}px`;
         svg.style.left = `${e.clientX - 50}px`;
     });
 
@@ -114,7 +114,7 @@ if(!(/Mobi|Android|iPhone|iPad|iPod|Phone/i.test(navigator.userAgent))){
             if(hoverCount == 0){
                 variation = 4;
                 baseRadius = 70;
-                polygon.style.stroke = "rgba(255, 255, 255, 0.2)";
+                polygon.style.stroke = "rgba(255, 255, 255, 0.1)";
                 polygon.style.animation = "click-hint-leave 0.2s ease-in-out";
 
                 hint.style.visibility = "hidden";

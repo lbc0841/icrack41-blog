@@ -134,17 +134,18 @@ body {
 }
 
 .background-grid {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: -1;
 
-    background: linear-gradient(0deg, #000 90%, #fff 10%);
-    background-size: 100% 10px, 100% 10px;
+    background-image: 
+        linear-gradient(0deg, rgba(255, 255, 255, 0.08) 1px, rgba(0, 0, 0, 0) 1px), 
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, rgba(0, 0, 0, 0) 1px);
 
-    opacity: 40%;
+    background-size: 60px 60px;
 }
 
 @keyframes anim_bg {

@@ -18,7 +18,7 @@ if(!(/Mobi|Android|iPhone|iPad|iPod|Phone/i.test(navigator.userAgent))){
         particle.classList.add("cursor-particle");
         particle.textContent = Math.round(Math.random()+0.05);
         particle.style.fontSize = "12px";
-        particle.style.left = (x+offsetX-15) + "px";
+        particle.style.left = (x+offsetX-10) + "px";
         particle.style.top = (y+offsetY+10) + "px";
         particle.style.width = size + "px";
         particle.style.height = size + "px";

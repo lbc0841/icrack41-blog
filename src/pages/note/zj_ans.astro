@@ -3,12 +3,14 @@ import MainNavigation from '../../components/MainNavigation.astro';
 import ZjAnsLayout from '../../layouts/ZjAnsLayout.astro';
 
 import "../../styles/index.css";
+import zj_question from "../../data/zj_question.json";
 ---
 
 
 <ZjAnsLayout>
-    <div class="background opacity-80"></div>
-    <div class="background-grid opacity-40"></div>
+    <div class="scanlines"></div>
+    <div class="background"></div>
+    <div class="background-grid"></div>
     
     <MainNavigation/>
 
@@ -16,87 +18,12 @@ import "../../styles/index.css";
         <h1 class="text-2xl mb-4">Zerojudge 題解</h1>
 
         <h2 class="text-xl text-zinc-400 mb-4"># 基礎題庫 <small class="text-sm ml-2">( 106 / 718 )</small></h2>
+        {
+            zj_question.basic.map(q => (
+                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
+            ))
+        }
 
-        <a href="/icrack41-blog/zj_ans/a001">a001</a>
-        <a href="/icrack41-blog/zj_ans/a002">a002</a>
-        <a href="/icrack41-blog/zj_ans/a003">a003</a>
-        <a href="/icrack41-blog/zj_ans/a004">a004</a>
-        <a href="/icrack41-blog/zj_ans/a005">a005</a>
-        <a href="/icrack41-blog/zj_ans/a006">a006</a>
-        <a href="/icrack41-blog/zj_ans/a009">a009</a>
-        <a href="/icrack41-blog/zj_ans/a010">a010</a>
-        <a href="/icrack41-blog/zj_ans/a013">a013</a>
-        <a href="/icrack41-blog/zj_ans/a015">a015</a>
-        <a href="/icrack41-blog/zj_ans/a017">a017</a>
-        <a href="/icrack41-blog/zj_ans/a020">a020</a>
-        <a href="/icrack41-blog/zj_ans/a021">a021</a>
-        <a href="/icrack41-blog/zj_ans/a022">a022</a>
-        <a href="/icrack41-blog/zj_ans/a024">a024</a>
-        <a href="/icrack41-blog/zj_ans/a034">a034</a>
-        <a href="/icrack41-blog/zj_ans/a038">a038</a>
-        <a href="/icrack41-blog/zj_ans/a040">a040</a>
-        <a href="/icrack41-blog/zj_ans/a042">a042</a>
-        <a href="/icrack41-blog/zj_ans/a044">a044</a>
-        <a href="/icrack41-blog/zj_ans/a053">a053</a>
-        <a href="/icrack41-blog/zj_ans/a054">a054</a>
-        <a href="/icrack41-blog/zj_ans/a058">a058</a>
-        <a href="/icrack41-blog/zj_ans/a059">a059</a>
-        <a href="/icrack41-blog/zj_ans/a065">a065</a>
-        <a href="/icrack41-blog/zj_ans/a095">a095</a>
-        <a href="/icrack41-blog/zj_ans/a104">a104</a>
-        <a href="/icrack41-blog/zj_ans/a121">a121</a>
-        <a href="/icrack41-blog/zj_ans/a147">a147</a>
-        <a href="/icrack41-blog/zj_ans/a148">a148</a>
-        <a href="/icrack41-blog/zj_ans/a149">a149</a>
-        <a href="/icrack41-blog/zj_ans/a215">a215</a>
-        <a href="/icrack41-blog/zj_ans/a216">a216</a>
-        <a href="/icrack41-blog/zj_ans/a224">a224</a>
-        <a href="/icrack41-blog/zj_ans/a225">a225</a>
-        <a href="/icrack41-blog/zj_ans/a229">a229</a>
-        <a href="/icrack41-blog/zj_ans/a244">a244</a>
-        <a href="/icrack41-blog/zj_ans/a248">a248</a>
-        <a href="/icrack41-blog/zj_ans/a263">a263</a>
-        <a href="/icrack41-blog/zj_ans/a271">a271</a>
-        <a href="/icrack41-blog/zj_ans/a291">a291</a>
-        <a href="/icrack41-blog/zj_ans/a410">a410</a>
-        <a href="/icrack41-blog/zj_ans/a414">a414</a>
-        <a href="/icrack41-blog/zj_ans/a417">a417</a>
-        <a href="/icrack41-blog/zj_ans/a524">a524</a>
-        <a href="/icrack41-blog/zj_ans/a528">a528</a>
-        <a href="/icrack41-blog/zj_ans/a647">a647</a>
-        <a href="/icrack41-blog/zj_ans/a693">a693</a>
-        <a href="/icrack41-blog/zj_ans/a694">a694</a>
-        <a href="/icrack41-blog/zj_ans/a738">a738</a>
-        <a href="/icrack41-blog/zj_ans/a740">a740</a>
-        <a href="/icrack41-blog/zj_ans/a746">a746</a>
-        <a href="/icrack41-blog/zj_ans/a799">a799</a>
-        <a href="/icrack41-blog/zj_ans/a915">a915</a>
-        <a href="/icrack41-blog/zj_ans/a981">a981</a>
-        <a href="/icrack41-blog/zj_ans/a982">a982</a>
-        <a href="/icrack41-blog/zj_ans/b265">b265</a>
-        <a href="/icrack41-blog/zj_ans/b294">b294</a>
-        <a href="/icrack41-blog/zj_ans/b367">b367</a>
-        <a href="/icrack41-blog/zj_ans/b373">b373</a>
-        <a href="/icrack41-blog/zj_ans/b374">b374</a>
-        <a href="/icrack41-blog/zj_ans/b510">b510</a>
-        <a href="/icrack41-blog/zj_ans/b511">b511</a>
-        <a href="/icrack41-blog/zj_ans/b512">b512</a>
-        <a href="/icrack41-blog/zj_ans/b537">b537</a>
-        <a href="/icrack41-blog/zj_ans/b538">b538</a>
-        <a href="/icrack41-blog/zj_ans/b557">b557</a>
-        <a href="/icrack41-blog/zj_ans/b558">b558</a>
-        <a href="/icrack41-blog/zj_ans/b572">b572</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b592">b592</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b593">b593</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b594">b594</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b595">b595</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b603">b603</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b604">b604</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b605">b605</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b607">b607</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b680">b680</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b701">b701</a>
-        <a class="text-red-500" href="/icrack41-blog/zj_ans/b757">b757</a>
         <a class="text-red-500" href="/icrack41-blog/zj_ans/b758">b758</a>
         <a class="text-red-500" href="/icrack41-blog/zj_ans/b759">b759</a>
         <a class="text-red-500" href="/icrack41-blog/zj_ans/b762">b762</a>
@@ -741,22 +668,36 @@ import "../../styles/index.css";
 
         <hr class="my-8 text-zinc-600">
         <h2 class="text-xl text-zinc-400 mb-4"># 競賽題庫 <small class="text-sm ml-2">( 0 / 498 )</small></h2>
-
+        {
+            zj_question.contest.map(q => (
+                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
+            ))
+        }
 
         <hr class="my-8 text-zinc-600">
         <h2 class="text-xl text-zinc-400 mb-4"># IOI/APCS <small class="text-sm ml-2">( 0 / 650 )</small></h2>
-
+        {
+            zj_question.ioi_apcs.map(q => (
+                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
+            ))
+        }
 
         <hr class="my-8 text-zinc-600">
         <h2 class="text-xl text-zinc-400 mb-4"># UVa 題庫 <small class="text-sm ml-2">( 3 / 621 )</small></h2>
-
-        <a href="/icrack41-blog/zj_ans/a223">a223</a>
-        <a href="/icrack41-blog/zj_ans/a518">a518</a>
-        <a href="/icrack41-blog/zj_ans/d111">d111</a>
-
+        {
+            zj_question.uva.map(q => (
+                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
+            ))
+        }
 
         <hr class="my-8 text-zinc-600">
         <h2 class="text-xl text-zinc-400 mb-4"># 原創/不分類題庫 <small class="text-sm ml-2">( 0 / 967 )</small></h2>
+        {
+            zj_question.uncategorized.map(q => (
+                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
+            ))
+        }
+
     </div>
     
 </ZjAnsLayout>
@@ -767,7 +708,6 @@ import "../../styles/index.css";
         width: 3rem;
         text-align: center;
     }
-
     a:hover{
         color: #51a2ff;
     }

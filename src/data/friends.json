@@ -1,0 +1,104 @@
+[
+    {
+        "name": "小一",
+        "desc": "一個喜歡開發遊戲的人類",
+        "avatar": "https://avatars.githubusercontent.com/littleonechung",
+        "links":
+        [
+            { "icon": "fa-brands fa-instagram", "url": "https://www.instagram.com/littleonechung/" },
+            { "icon": "fa-solid fa-border-all", "url": "https://vocus.cc/salon/littleone720" }
+        ]
+    },
+    {
+        "name": "su2u4",
+        "desc": "廢物一個",
+        "avatar": "https://avatars.githubusercontent.com/su2u4-1",
+        "links":
+        [
+            { "icon": "fa-brands fa-github", "url": "https://github.com/su2u4-1/" }
+        ]
+    },
+    {
+        "name": "匿名用戶9487",
+        "desc": "被電神電爛的廢物",
+        "avatar": "https://avatars.githubusercontent.com/qwo877",
+        "links":
+        [
+            { "icon": "fa-solid fa-globe", "url": "https://qwo877.github.io/me/" }
+        ]
+    },
+    {
+        "name": "橘子",
+        "desc": "橘子喵",
+        "avatar": "https://avatars.githubusercontent.com/LittleOrange666",
+        "links":
+        [
+            { "icon": "fa-solid fa-globe", "url": "https://xn--gew.tw/" }
+        ]
+    },
+    {
+        "name": "伊藤有栖",
+        "desc": "競程邊角料",
+        "avatar": "https://avatars.githubusercontent.com/siewilly",
+        "links":
+        [
+            { "icon": "fa-solid fa-globe", "url": "https://siewilly.github.io/" }
+        ]
+    },
+    {
+        "name": "PepperSauce",
+        "desc": "好想成為資安佬...",
+        "avatar": "https://avatars.githubusercontent.com/PepperSauce0712",
+        "links":
+        [
+            { "icon": "fa-solid fa-globe", "url": "https://peppersauce0712.github.io/" }
+        ]
+    },
+    {
+        "name": "Small Z",
+        "desc": "Developer",
+        "avatar": "https://avatars.githubusercontent.com/yuzen9622",
+        "links":
+        [
+            { "icon": "fa-solid fa-globe", "url": "https://www.yuzen.dev/zh-Hans" }
+        ]
+    },
+    {
+        "name": "Justin",
+        "desc": "",
+        "avatar": "https://avatars.githubusercontent.com/him6794",
+        "links":
+        [
+            { "icon": "fa-brands fa-github", "url": "https://github.com/him6794" },
+            { "icon": "fa-solid fa-globe", "url": "https://justin0711.com/" }
+        ]
+    },
+    {
+        "name": "伊藤喵貓",
+        "desc": "",
+        "avatar": "https://avatars.githubusercontent.com/Twcat0503",
+        "links":
+        [
+            { "icon": "fa-brands fa-github", "url": "https://github.com/twcat0503" }
+
+        ]
+    },
+    {
+        "name": "鴨鴨",
+        "desc": "我是一個小廢廢",
+        "avatar": "https://avatars.githubusercontent.com/ya-ya-12",
+        "links":
+        [
+            { "icon": "fa-solid fa-globe", "url": "https://ya-ya-12.github.io/" }
+        ]
+    },
+    {
+        "name": "淳",
+        "desc": "群除我佬，我是肺霧",
+        "avatar": "https://avatars.githubusercontent.com/Chuen666666",
+        "links":
+        [
+            { "icon": "fa-solid fa-globe", "url": "https://chuen666666.github.io/" }
+        ]
+    }
+]
