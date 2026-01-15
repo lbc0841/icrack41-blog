@@ -37,20 +37,20 @@
         {"number": "b537" , "color": "text-white"}, {"number": "b538" , "color": "text-white"},
         {"number": "b557" , "color": "text-white"}, {"number": "b558" , "color": "text-white"},
         {"number": "b572" , "color": "text-white"}, {"number": "b592" , "color": "text-red-500"},
-        {"number": "b593" , "color": "text-red-500"}, {"number": "b594" , "color": "text-red-500"},
+        {"number": "b593" , "color": "text-white"}, {"number": "b594" , "color": "text-red-500"},
         {"number": "b595" , "color": "text-red-500"}, {"number": "b603" , "color": "text-red-500"},
         {"number": "b604" , "color": "text-red-500"}, {"number": "b605" , "color": "text-red-500"},
         {"number": "b607" , "color": "text-red-500"}, {"number": "b680" , "color": "text-red-500"},
         {"number": "b701" , "color": "text-red-500"}, {"number": "b757" , "color": "text-red-500"},
         {"number": "b758" , "color": "text-red-500"}, {"number": "b759" , "color": "text-red-500"},
         {"number": "b762" , "color": "text-red-500"}, {"number": "b836" , "color": "text-red-500"},
-        {"number": "b860" , "color": "text-red-500"}, {"number": "b877" , "color": "text-red-500"},
+        {"number": "b860" , "color": "text-red-500"}, {"number": "b877" , "color": "text-white"},
         {"number": "b884" , "color": "text-red-500"}, {"number": "b893" , "color": "text-red-500"},
         {"number": "b897" , "color": "text-red-500"}, {"number": "b911" , "color": "text-red-500"},
         {"number": "b923" , "color": "text-red-500"}, {"number": "b924" , "color": "text-red-500"},
-        {"number": "b936" , "color": "text-red-500"}, {"number": "b938" , "color": "text-red-500"},
-        {"number": "b944" , "color": "text-red-500"}, {"number": "b969" , "color": "text-red-500"},
-        {"number": "b970" , "color": "text-red-500"}, {"number": "b971" , "color": "text-red-500"},
+        {"number": "b936" , "color": "text-red-500"}, {"number": "b938" , "color": "text-white"},
+        {"number": "b944" , "color": "text-red-500"}, {"number": "b969" , "color": "text-white"},
+        {"number": "b970" , "color": "text-white"}, {"number": "b971" , "color": "text-white"},
         {"number": "b981" , "color": "text-red-500"}, {"number": "b982" , "color": "text-red-500"},
 
         {"number": "c148" , "color": "text-red-500"}, {"number": "c149" , "color": "text-red-500"},
@@ -63,14 +63,14 @@
         {"number": "c315" , "color": "text-red-500"}, {"number": "c316" , "color": "text-red-500"},
         {"number": "c317" , "color": "text-red-500"}, {"number": "c318" , "color": "text-red-500"},
         {"number": "c350" , "color": "text-red-500"}, {"number": "c356" , "color": "text-red-500"},
-        {"number": "c364" , "color": "text-red-500"}, {"number": "c379" , "color": "text-red-500"},
+        {"number": "c364" , "color": "text-red-500"}, {"number": "c379" , "color": "text-white"},
         {"number": "c381" , "color": "text-red-500"}, {"number": "c382" , "color": "text-red-500"},
         {"number": "c418" , "color": "text-red-500"}, {"number": "c419" , "color": "text-red-500"},
         {"number": "c420" , "color": "text-red-500"}, {"number": "c431" , "color": "text-red-500"},
         {"number": "c435" , "color": "text-red-500"}, {"number": "c440" , "color": "text-red-500"},
         {"number": "c488" , "color": "text-red-500"}, {"number": "c508" , "color": "text-red-500"},
         {"number": "c547" , "color": "text-red-500"}, {"number": "c548" , "color": "text-red-500"},
-        {"number": "c560" , "color": "text-red-500"}, {"number": "c561" , "color": "text-red-500"},
+        {"number": "c560" , "color": "text-red-500"}, {"number": "c561" , "color": "text-white"},
         {"number": "c562" , "color": "text-red-500"}, {"number": "c572" , "color": "text-red-500"},
         {"number": "c618" , "color": "text-red-500"}, {"number": "c636" , "color": "text-red-500"},
         {"number": "c638" , "color": "text-red-500"}, {"number": "c643" , "color": "text-red-500"},
@@ -82,31 +82,31 @@
         {"number": "c782" , "color": "text-red-500"}, {"number": "c807" , "color": "text-red-500"},
         {"number": "c929" , "color": "text-red-500"}, 
 
-        {"number": "d010" , "color": "text-red-500"}, {"number": "d018" , "color": "text-red-500"},
-        {"number": "d049" , "color": "text-red-500"}, {"number": "d050" , "color": "text-red-500"},
-        {"number": "d051" , "color": "text-red-500"}, {"number": "d058" , "color": "text-red-500"},
-        {"number": "d060" , "color": "text-red-500"}, {"number": "d063" , "color": "text-red-500"},
-        {"number": "d064" , "color": "text-red-500"}, {"number": "d065" , "color": "text-red-500"},
-        {"number": "d066" , "color": "text-red-500"}, {"number": "d067" , "color": "text-red-500"},
-        {"number": "d068" , "color": "text-red-500"}, {"number": "d069" , "color": "text-red-500"},
-        {"number": "d070" , "color": "text-red-500"}, {"number": "d071" , "color": "text-red-500"},
-        {"number": "d072" , "color": "text-red-500"}, {"number": "d073" , "color": "text-red-500"},
-        {"number": "d074" , "color": "text-red-500"}, {"number": "d086" , "color": "text-red-500"},
+        {"number": "d010" , "color": "text-white"}, {"number": "d018" , "color": "text-white"},
+        {"number": "d049" , "color": "text-white"}, {"number": "d050" , "color": "text-white"},
+        {"number": "d051" , "color": "text-white"}, {"number": "d058" , "color": "text-white"},
+        {"number": "d060" , "color": "text-white"}, {"number": "d063" , "color": "text-white"},
+        {"number": "d064" , "color": "text-white"}, {"number": "d065" , "color": "text-white"},
+        {"number": "d066" , "color": "text-white"}, {"number": "d067" , "color": "text-white"},
+        {"number": "d068" , "color": "text-white"}, {"number": "d069" , "color": "text-white"},
+        {"number": "d070" , "color": "text-white"}, {"number": "d071" , "color": "text-white"},
+        {"number": "d072" , "color": "text-white"}, {"number": "d073" , "color": "text-white"},
+        {"number": "d074" , "color": "text-white"}, {"number": "d086" , "color": "text-red-500"},
         {"number": "d098" , "color": "text-red-500"}, {"number": "d115" , "color": "text-red-500"},
         {"number": "d119" , "color": "text-red-500"}, {"number": "d122" , "color": "text-red-500"},
         {"number": "d124" , "color": "text-red-500"}, {"number": "d166" , "color": "text-red-500"},
         {"number": "d212" , "color": "text-red-500"}, {"number": "d244" , "color": "text-red-500"},
         {"number": "d277" , "color": "text-red-500"}, {"number": "d299" , "color": "text-red-500"},
         {"number": "d326" , "color": "text-red-500"}, {"number": "d392" , "color": "text-red-500"},
-        {"number": "d460" , "color": "text-red-500"}, {"number": "d461" , "color": "text-red-500"},
+        {"number": "d460" , "color": "text-red-500"}, {"number": "d461" , "color": "text-white"},
         {"number": "d471" , "color": "text-red-500"}, {"number": "d478" , "color": "text-red-500"},
-        {"number": "d483" , "color": "text-red-500"}, {"number": "d485" , "color": "text-red-500"},
-        {"number": "d489" , "color": "text-red-500"}, {"number": "d490" , "color": "text-red-500"},
-        {"number": "d491" , "color": "text-red-500"}, {"number": "d498" , "color": "text-red-500"},
+        {"number": "d483" , "color": "text-white"}, {"number": "d485" , "color": "text-white"},
+        {"number": "d489" , "color": "text-red-500"}, {"number": "d490" , "color": "text-white"},
+        {"number": "d491" , "color": "text-red-500"}, {"number": "d498" , "color": "text-white"},
         {"number": "d507" , "color": "text-red-500"}, {"number": "d511" , "color": "text-red-500"},
         {"number": "d526" , "color": "text-red-500"}, {"number": "d527" , "color": "text-red-500"},
         {"number": "d532" , "color": "text-red-500"}, {"number": "d550" , "color": "text-red-500"},
-        {"number": "d555" , "color": "text-red-500"}, {"number": "d559" , "color": "text-red-500"},
+        {"number": "d555" , "color": "text-red-500"}, {"number": "d559" , "color": "text-white"},
         {"number": "d561" , "color": "text-red-500"}, {"number": "d562" , "color": "text-red-500"},
         {"number": "d563" , "color": "text-red-500"}, {"number": "d566" , "color": "text-red-500"},
         {"number": "d570" , "color": "text-red-500"}, {"number": "d573" , "color": "text-red-500"},
@@ -146,7 +146,7 @@
         {"number": "e456" , "color": "text-red-500"}, {"number": "e465" , "color": "text-red-500"},
         {"number": "e470" , "color": "text-red-500"}, {"number": "e484" , "color": "text-red-500"},
         {"number": "e494" , "color": "text-red-500"}, {"number": "e509" , "color": "text-red-500"},
-        {"number": "e598" , "color": "text-red-500"}, {"number": "e604" , "color": "text-red-500"},
+        {"number": "e598" , "color": "text-white"}, {"number": "e604" , "color": "text-red-500"},
         {"number": "e621" , "color": "text-red-500"}, {"number": "e622" , "color": "text-red-500"},
         {"number": "e623" , "color": "text-red-500"}, {"number": "e698" , "color": "text-red-500"},
         {"number": "e700" , "color": "text-red-500"}, {"number": "e780" , "color": "text-red-500"},
@@ -173,7 +173,7 @@
         {"number": "f149" , "color": "text-red-500"}, {"number": "f152" , "color": "text-red-500"},
         {"number": "f164" , "color": "text-red-500"}, {"number": "f165" , "color": "text-red-500"},
         {"number": "f255" , "color": "text-red-500"}, {"number": "f256" , "color": "text-red-500"},
-        {"number": "f257" , "color": "text-red-500"}, {"number": "f259" , "color": "text-red-500"},
+        {"number": "f257" , "color": "text-red-500"}, {"number": "f259" , "color": "text-white"},
         {"number": "f260" , "color": "text-red-500"}, {"number": "f277" , "color": "text-red-500"},
         {"number": "f281" , "color": "text-red-500"}, {"number": "f282" , "color": "text-red-500"},
         {"number": "f290" , "color": "text-red-500"}, {"number": "f291" , "color": "text-red-500"},
@@ -233,7 +233,7 @@
         {"number": "g220" , "color": "text-red-500"}, {"number": "g256" , "color": "text-red-500"},
         {"number": "g297" , "color": "text-red-500"}, {"number": "g307" , "color": "text-red-500"},
         {"number": "g308" , "color": "text-red-500"}, {"number": "g309" , "color": "text-red-500"},
-        {"number": "g310" , "color": "text-red-500"}, {"number": "g353" , "color": "text-red-500"},
+        {"number": "g310" , "color": "text-red-500"}, {"number": "g353" , "color": "text-white"},
         {"number": "g384" , "color": "text-red-500"}, {"number": "g420" , "color": "text-red-500"},
         {"number": "g421" , "color": "text-red-500"}, {"number": "g422" , "color": "text-red-500"},
         {"number": "g424" , "color": "text-red-500"}, {"number": "g488" , "color": "text-red-500"},
@@ -338,7 +338,7 @@
         {"number": "l072" , "color": "text-red-500"}, {"number": "l179" , "color": "text-red-500"},
         {"number": "l253" , "color": "text-red-500"}, {"number": "l254" , "color": "text-red-500"},
         {"number": "l255" , "color": "text-red-500"}, {"number": "l899" , "color": "text-red-500"},
-        {"number": "l960" , "color": "text-red-500"}, 
+        {"number": "l960" , "color": "text-white"}, 
 
         {"number": "m283" , "color": "text-red-500"}, {"number": "m685" , "color": "text-red-500"},
         {"number": "m702" , "color": "text-red-500"},
@@ -370,13 +370,13 @@
         {"number": "p015" , "color": "text-red-500"}, {"number": "p016" , "color": "text-red-500"},
         {"number": "p500" , "color": "text-red-500"},
 
-        {"number": "q001" , "color": "text-red-500"}, {"number": "q026" , "color": "text-red-500"},
-        {"number": "q027" , "color": "text-red-500"}, {"number": "q052" , "color": "text-red-500"},
-        {"number": "q053" , "color": "text-red-500"}, {"number": "q063" , "color": "text-red-500"},
-        {"number": "q082" , "color": "text-red-500"}, {"number": "q089" , "color": "text-red-500"},
-        {"number": "q851" , "color": "text-red-500"}, {"number": "q853" , "color": "text-red-500"},
+        {"number": "q001" , "color": "text-white"}, {"number": "q026" , "color": "text-white"},
+        {"number": "q027" , "color": "text-white"}, {"number": "q052" , "color": "text-white"},
+        {"number": "q053" , "color": "text-white"}, {"number": "q063" , "color": "text-white"},
+        {"number": "q082" , "color": "text-white"}, {"number": "q089" , "color": "text-white"},
+        {"number": "q851" , "color": "text-white"}, {"number": "q853" , "color": "text-red-500"},
         {"number": "q859" , "color": "text-red-500"}, {"number": "q860" , "color": "text-red-500"},
-        {"number": "q868" , "color": "text-red-500"}, {"number": "q869" , "color": "text-red-500"},
+        {"number": "q868" , "color": "text-red-500"}, {"number": "q869" , "color": "text-white"},
         {"number": "q870" , "color": "text-red-500"}, {"number": "q877" , "color": "text-red-500"},
         {"number": "q879" , "color": "text-red-500"}, {"number": "q881" , "color": "text-red-500"},
         {"number": "q889" , "color": "text-red-500"}, {"number": "q896" , "color": "text-red-500"},
@@ -384,27 +384,27 @@
         {"number": "q917" , "color": "text-red-500"}, {"number": "q918" , "color": "text-red-500"},
         {"number": "q919" , "color": "text-red-500"}, {"number": "q960" , "color": "text-red-500"},
 
-        {"number": "r001" , "color": "text-red-500"}, {"number": "r168" , "color": "text-red-500"}
+        {"number": "r001" , "color": "text-white"}, {"number": "r168" , "color": "text-white"}
     ],
 
     "contest":
     [
-        {"number": "a228" , "color": "text-red-500"}
+        {"number": "-" , "color": "text-red-500"}
     ],
 
     "ioi_apcs":
     [
-        {"number": "a019" , "color": "text-red-500"}
+        {"number": "-" , "color": "text-red-500"}
     ],
 
     "uva":
     [
-        {"number": "a011" , "color": "text-red-500"},
+        {"number": "-" , "color": "text-red-500"},
         {"number": "a223" , "color": "text-white"}
     ],
 
     "uncategorized":
     [
-        {"number": "a007" , "color": "text-red-500"}
+        {"number": "-" , "color": "text-red-500"}
     ]
 }
