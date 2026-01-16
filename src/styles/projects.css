@@ -105,7 +105,7 @@
     background-color: rgba(0, 0, 0, 0.1);
 
     transform-origin: 50% 50%;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 @media screen and (max-width: 400px) {
@@ -116,44 +116,52 @@
 
 .project:nth-child(1)
 {
-    transform: translateX(-100%) scale(0.7);
+    translate: -100%;
+    /* transform: translateX(-100%) scale(0.7); */
     opacity: 0;
 }
 .project:nth-child(2)
 {
-    transform: translateX(-95%) scale(1);
+    translate: -95%;
+    /* transform: translateX(-95%) scale(1); */
     opacity: 1;
 }
 .project:nth-child(3)
 {
-    transform: translateX(-85%) scale(1);
+    translate: -85%;
+    /* transform: translateX(-85%) scale(1); */
     opacity: 1;
 }
 .project:nth-child(4)
 {
-    transform: translateX(-75%) scale(1);
+    translate: -75%;
+    /* transform: translateX(-75%) scale(1); */
     opacity: 1;
 }
 .project:nth-child(5)
 {
-    transform: translateX(-65%) scale(1);
+    translate: -65%;
+    /* transform: translateX(-65%) scale(1); */
     opacity: 1;
 }
 .project:nth-child(6)
 {
-    transform: translateX(-55%) scale(1);
+    translate: -55%;
+    /* transform: translateX(-55%) scale(1); */
     opacity: 1;
 }
 .project:nth-child(7)
 {
-    transform: translateX(-45%) scale(0.7);
+    translate: -45%;
+    /* transform: translateX(-45%) scale(0.7); */
     opacity: 0;
 }
 
 
 .project:hover {
     color: #94dbfa;
-
+    scale: 1.05;
+    /* transform: scale(1.02); */
 }
 
 .project .title {

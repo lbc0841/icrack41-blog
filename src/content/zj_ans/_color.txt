@@ -7,6 +7,21 @@ orange
 blue
 <font color="#51a2ff"></font>
 
+red
+<font color="#ff2020">※ </font>
+
+---
+
+<details class="eg" close>
+<summary></summary>
+
+</details>
+
+<details class="eg_math" close>
+<summary></summary>
+
+</details>
+
 🔹
 🔸
 ✅

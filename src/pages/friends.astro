@@ -2,7 +2,7 @@
 import MainNavigation from "../components/MainNavigation.astro";
 import Layout from "../layouts/Layout.astro";
 
-import { Border1 } from "../assets/borders.tsx"
+import { Border1 } from "../assets/borders.tsx";
 import friends from "../data/friends.json";
 ---
 
@@ -18,7 +18,7 @@ import friends from "../data/friends.json";
                 <div class="relative w-full h-30">
                     <Border1/>
                     <h1 class="absolute top-4 left-30 text-2xl">{friend.name}</h1>
-                    <small class="absolute top-12 left-30 text-md text-zinc-400">{friend.desc}</small>
+                    <small class="absolute top-12 left-30 text-md text-zinc-400" style="white-space: pre-wrap;">{friend.desc}</small>
 
                     <div class="absolute bottom-1 right-2">
                         {friend.links.map(link => (

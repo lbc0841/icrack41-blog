@@ -1,8 +1,5 @@
 .post-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
 
     width: 98%;
     height: 100%;
@@ -108,6 +105,8 @@
     
     margin-left: 20px;
     margin-top: 10px;
+
+    white-space: pre-line;
 
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;

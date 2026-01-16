@@ -2,8 +2,10 @@
 import MainNavigation from "../components/MainNavigation.astro";
 import Layout from "../layouts/Layout.astro";
 
-import { Border1 } from "../assets/borders.tsx"
-import "../styles/posts.css"
+import { Border1 } from "../assets/borders.tsx";
+import "../styles/posts.css";
+
+import notes from "../data/notes.json";
 ---
 
 <Layout>
@@ -12,49 +14,18 @@ import "../styles/posts.css"
 	<div class="background-grid"></div>
     <MainNavigation/>
 
-    <div class="post-container">
-	
-		<div class="post" onclick="location.href='/icrack41-blog/note/zj_ans'">
-			<Border1/>
-
-			<div class="text-container">
-				<b class="post-title">Zerojudge 題解</b>
-
-				<small class="post-description">
-					目前進度：<br>
-                    - 基礎題庫 ( 106 / 718 )<br>
-                    - 競賽題庫 ( 0 / 498 )<br>
-                    - IOI/APCS ( 0 / 650 )<br>
-                    - UVa 題庫 ( 3 / 621 )<br>
-				</small>
-			</div>
-		</div>
-
-		<div class="post" onclick="location.href='/icrack41-blog/blog/digital_electronic'">
-			<Border1/>
-
-			<div class="text-container">
-				<b class="post-title">數位電子乙級</b>
-
-				<small class="post-description">
-					數位電子乙級證照<br>
-					Layout / Quartus / 建議 / 注意事項
-				</small>
-			</div>
-		</div>
-
-        <div class="post" onclick="location.href='/icrack41-blog/blog/professional_subjects_1'">
-			<Border1/>
-
-			<div class="text-container">
-				<b class="post-title">電機電子群-資電類-專一</b>
-
-				<small class="post-description">
-					工廠安全與衛生 / 基本電學 / 電子學
-				</small>
-			</div>
-		</div>
-
+    <div class="px-8 pt-16 pb-2 h-full w-full overflow-y-scroll overflow-x-hidden">
+		{
+			notes.map(note => (
+				<div class="relative min-h-30 mb-10 p-6 hover:text-blue-300 hover:scale-102 duration-200" onclick={`location.href='${note.url}'`}>
+					<Border1/>
+					<div class="text-container">
+						<b class="block text-3xl">{note.title}</b>
+						<small class="block whitespace-pre-line mt-4 opacity-70">{note.description}</small>
+					</div>
+				</div>
+			))
+		}
 	</div>
 
 </Layout>
