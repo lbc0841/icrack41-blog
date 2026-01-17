@@ -31,7 +31,8 @@
     overflow: hidden;
     height: 100dvh;
     width: 100dvw;
-    font-size: 22px;
+
+    font-size: 20px;
 }
 
 @media screen and (max-width: 640px) {

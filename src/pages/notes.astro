@@ -19,9 +19,12 @@ import notes from "../data/notes.json";
 			notes.map(note => (
 				<div class="relative min-h-30 mb-10 p-6 hover:text-blue-300 hover:scale-102 duration-200" onclick={`location.href='${note.url}'`}>
 					<Border1/>
-					<div class="text-container">
+					<div class="">
 						<b class="block text-3xl">{note.title}</b>
 						<small class="block whitespace-pre-line mt-4 opacity-70">{note.description}</small>
+
+						<b class="text-end mt-8 block text-lg">{note.state}</b>
+						<b class="text-end block text-xs opacity-70">{note.date}</b>
 					</div>
 				</div>
 			))

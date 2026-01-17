@@ -187,6 +187,10 @@ details {
     position: relative;
 }
 
+details[open] summary {
+    margin-bottom: 1rem;
+}
+
 /* eg */
 .eg::before {
     content: "";
@@ -263,6 +267,45 @@ details {
 
     border-radius: 6px;
     border: solid 2px #0078d7;
+}
+
+/* dt */
+.dt::before {
+    content: "";
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: solid 2px gainsboro;
+    pointer-events: none;
+}
+.dt summary::marker {
+    content: "";
+    display: none;
+}
+.dt summary::before {
+    content: ">";
+    display: inline-block;
+    color: gainsboro;
+    padding-left: 0.2rem;
+    padding-right: 0.4rem;
+    margin-right: 0.8rem;
+
+    border-radius: 6px;
+    border: solid 2px gainsboro;
+}
+.dt[open] summary::before {
+    content: ">";
+    display: inline-block;
+    color: black;
+    background: gainsboro;
+    padding-left: 0.2rem;
+    padding-right: 0.4rem;
+    margin-right: 0.8rem;
+
+    border-radius: 6px;
+    border: solid 2px gainsboro;
 }
 
 /* ------ others ------ */
