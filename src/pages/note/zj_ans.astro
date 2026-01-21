@@ -4,8 +4,11 @@ import ZjAnsLayout from '../../layouts/ZjAnsLayout.astro';
 
 import "../../styles/index.css";
 import zj_question from "../../data/zj_question.json";
----
 
+import { getCollection } from 'astro:content';
+const allAns = await getCollection('zj_ans');           // 假設 collection 名叫 zj_ans
+const ansSet = new Set(allAns.map(entry => entry.slug));
+---
 
 <ZjAnsLayout>
     <div class="scanlines"></div>
@@ -17,45 +20,54 @@ import zj_question from "../../data/zj_question.json";
     <div class="w-full h-[84%] mt-16 px-6 justify-center items-center overflow-y-auto">
         <h1 class="text-2xl mb-4">Zerojudge 題解</h1>
 
-        <h2 class="text-xl text-zinc-400 mb-4"># 基礎題庫 <small class="text-sm ml-2">( 106 / 718 )</small></h2>
+        <h2 class="text-xl text-zinc-400 mb-4"># 基礎題庫 <small class="text-sm ml-2">( {zj_question.basic.length} )</small></h2>
         {
-            zj_question.basic.map(q => (
-                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
-            ))
+            zj_question.basic.map(q => {
+                const hasPage = ansSet.has(q.number.toString());
+                const color = hasPage ? "text-white" : "text-red-500";
+                return(<a class={color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>)
+            })
         }
 
         <hr class="my-8 text-zinc-600">
-        <h2 class="text-xl text-zinc-400 mb-4"># 競賽題庫 <small class="text-sm ml-2">( 0 / 498 )</small></h2>
+        <h2 class="text-xl text-zinc-400 mb-4"># 競賽題庫 <small class="text-sm ml-2">( {zj_question.contest.length} )</small></h2>
         {
-            zj_question.contest.map(q => (
-                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
-            ))
+            zj_question.contest.map(q => {
+                const hasPage = ansSet.has(q.number.toString());
+                const color = hasPage ? "text-white" : "text-red-500";
+                return(<a class={color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>)
+            })
         }
 
         <hr class="my-8 text-zinc-600">
-        <h2 class="text-xl text-zinc-400 mb-4"># IOI/APCS <small class="text-sm ml-2">( 0 / 650 )</small></h2>
+        <h2 class="text-xl text-zinc-400 mb-4"># IOI/APCS <small class="text-sm ml-2">( {zj_question.ioi_apcs.length} )</small></h2>
         {
-            zj_question.ioi_apcs.map(q => (
-                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
-            ))
+            zj_question.ioi_apcs.map(q => {
+                const hasPage = ansSet.has(q.number.toString());
+                const color = hasPage ? "text-white" : "text-red-500";
+                return(<a class={color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>)
+            })
         }
 
         <hr class="my-8 text-zinc-600">
-        <h2 class="text-xl text-zinc-400 mb-4"># UVa 題庫 <small class="text-sm ml-2">( 3 / 621 )</small></h2>
+        <h2 class="text-xl text-zinc-400 mb-4"># UVa 題庫 <small class="text-sm ml-2">( {zj_question.uva.length} )</small></h2>
         {
-            zj_question.uva.map(q => (
-                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
-            ))
+            zj_question.uva.map(q => {
+                const hasPage = ansSet.has(q.number.toString());
+                const color = hasPage ? "text-white" : "text-red-500";
+                return(<a class={color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>)
+            })
         }
 
         <hr class="my-8 text-zinc-600">
-        <h2 class="text-xl text-zinc-400 mb-4"># 原創/不分類題庫 <small class="text-sm ml-2">( 0 / 967 )</small></h2>
+        <h2 class="text-xl text-zinc-400 mb-4"># 原創/不分類題庫 <small class="text-sm ml-2">( {zj_question.uncategorized.length} )</small></h2>
         {
-            zj_question.uncategorized.map(q => (
-                <a class={q.color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>
-            ))
+            zj_question.uncategorized.map(q => {
+                const hasPage = ansSet.has(q.number.toString());
+                const color = hasPage ? "text-white" : "text-red-500";
+                return(<a class={color} href={`/icrack41-blog/zj_ans/${q.number}`}>{q.number}</a>)
+            })
         }
-
     </div>
     
 </ZjAnsLayout>

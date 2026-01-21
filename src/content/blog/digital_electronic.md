@@ -64,7 +64,7 @@ tags: ["cpp"]
 <details class="dt" open>
 <summary>顯示內容</summary>
 
-<font color="#ff7000">未使用的規定接腳 每隻扣10分</font>
+<font color="#ff7000">未依測試當日抽籤指定的題組顯示 不予評分</font>
 
 ![qustion](../../../src/assets/notes/digital_electronic/q_seg.png)
 
